@@ -1,0 +1,45 @@
+<html>
+
+<head>
+
+   <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+
+   <title>CKEditor</title>
+<script src="CKEditor/ckeditor.js"></script>
+
+</head>
+
+<body>
+
+   <form action="testCK.php" method="post">
+
+   <textarea name="editor1">CKEditor Demo</textarea>
+
+   <input type="submit" name="submit" value="Submit" />
+
+   </form>
+
+</body>
+<script type="text/javascript">
+
+   // 启用 CKEitor 的上传功能，使用了 CKFinder 插件
+
+   CKEDITOR.replace( 'editor1', {
+
+   filebrowserBrowseUrl : 'CKFinder/ckfinder.html',
+
+   filebrowserImageBrowseUrl : 'CKFinder/ckfinder.html?Type=Images',
+
+   filebrowserFlashBrowseUrl : 'CKFinder/ckfinder.html?Type=Flash',
+
+   filebrowserUploadUrl : 'CKFinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+
+   filebrowserImageUploadUrl : 'CKFinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+
+   filebrowserFlashUploadUrl : 'CKFinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+
+   });
+
+</script>
+
+</html>
