@@ -1,0 +1,56 @@
+/* CSS Document */
+
+.xiantiao{
+	background:#CCC;
+	height: 1px;
+	overflow: hidden;
+	margin-top:5px;
+	width:100%;
+}
+
+li>label{
+	display:block; 
+	width:100px;
+	float:left;
+	text-align:right;
+	vertical-align:baseline;
+	padding-right:10px;
+}
+li{
+	list-style:none;
+	margin:10px;
+	font-family:"宋体";
+	font-size:15px;
+}
+
+li>input{
+	font-size:20px;
+	background-image:url(images/input_bg.gif);
+}
+
+li>span{
+	font-size:14px;
+	color:#333;
+}
+
+.tishi{
+	text-align:left;
+	padding-left:5px;
+}
+.bread-left{
+	float:left;
+	width:137px;
+	height:46px;
+	line-height:46px;
+	font-size:14px;
+	font-weight:bold;
+	text-align:right;
+}
+.bread-right{
+	font-size:14px;
+	float:right;
+	height:46px;
+	line-height:46px;
+	padding-right:20px;
+}
+

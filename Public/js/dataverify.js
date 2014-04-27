@@ -43,9 +43,16 @@ $(function(){
 			$(this).css("border-width","1px");
 			$(this).addClass("error");  //应用错误强调的显示css:error需要提前定义
 		}else{
-			$(this).css("border-color","");
-			$("#log_code").html("");
+			$.get("/teaShop/index.php/Reg/checkCode",{'code':codestr},function(data){
+				if(data=="no"){
+      				$("#log_code").html("<span style='color:#C00;'>验证码错误</span>");
+      			}else{
+      				$(this).css("border-color","");
+					$("#log_code").html("");
+      			}
+			});
 		}
-		});
+	});
 	
 });							
+

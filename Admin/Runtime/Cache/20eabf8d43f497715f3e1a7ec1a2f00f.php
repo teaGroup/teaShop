@@ -6,7 +6,7 @@
 		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css" />
 		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/invalid.css" />
 
-		 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.3.2.min.js"></script>
+		 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.6.2.min.js"></script>
 		 <script type="text/javascript" src="__PUBLIC__/js/simpla.jquery.configuration.js"></script>
 		 <script type="text/javascript" src="__PUBLIC__/js/facebox.js"></script>
 		 <script type="text/javascript" src="__PUBLIC__/js/jquery.wysiwyg.js"></script>
@@ -28,12 +28,12 @@
 			<ul id="main-nav"> 
 				
 				<li>
-					<a href="###" class="nav-top-item no-submenu">
+					<a href="__APP__/Index/index/" class="nav-top-item no-submenu">
 						修改密码
 					</a>       
 				</li>
 				<li>
-					<a href="###" class="nav-top-item no-submenu">
+					<a href="__APP__/Index/index/" class="nav-top-item no-submenu">
 						管理会员信息
 					</a>       
 				</li>
@@ -92,5 +92,9 @@
 				
 			</ul>
 		</div></div>
+		<div id="content">
+			
+		</div>
+
 	</body>
 </html>

@@ -4,13 +4,19 @@
 			$this->display();
 		}
 
+		//检查验证码是否正确
+		public function checkCode(){
+			$code=$_GET['code'];
+			if(md5($code)!=$_SESSION['verify']){
+				echo 'no';
+			}else{
+				echo 'yes';
+			}
+		}
+
 		function doLogin(){
 			$adminname = $_POST['username'];
 			$adminpwd = $_POST['pwd'];
-			$code = $_POST['code'];
-			if(md5($code)!=$_SESSION['verify']){
-				$this->error('验证码不正确');
-			}
 			
 			$admin = M('Admin');
 			$where['Admin_Name'] = $adminname;
