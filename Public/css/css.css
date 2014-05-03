@@ -1,16 +1,12 @@
 @charset "utf-8";
 /*××××××××××××××××××××公共样式×××××××××××××××××××××××××××*/
-body{background:#fff; font-size:12px; font-family:"宋体",Arial,Verdana ; line-height:150%; margin:0; padding:0; color:#404040;}
-div{margin:0 auto; padding:0; }
-h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd,form,img,p{
-margin:0; padding:0; border:none; list-style-type:none; 
-}
+
 a{text-decoration:none; color:#534134;}
 a:hover{color:#FF6600;}
 /*×××××××××××××××××××××××××××××××首页布局×××××××××××××××××××××××××××××××××××*/
 #head {
-	background-color: #6F6;
-	height: 150px;
+	/*background-color: #6F6;*/
+	height: 143px;
 	width: 100%;
 }
 #flash {
@@ -30,8 +26,7 @@ a:hover{color:#FF6600;}
 	margin: 0 auto;
 }
 #foot {
-	background-color: #900;
-	height: 340px;
+	height: 270px;
 	width: 100%;
 	margin-top:5px;
 }
@@ -162,7 +157,7 @@ a:hover{color:#FF6600;}
 	height:11px;
 	padding:0 4px 0 0;
 	color:#FFF;
-	background:url(../images/numbg_201208.gif) 0 -90px no-repeat;
+	background:url(numbg_201208.gif) 0 -90px no-repeat;
 	text-align:center;
 	font:10px/11px Arial;
 	margin:10px 8px 0 0
@@ -204,7 +199,7 @@ a:hover{color:#FF6600;}
 	padding-left:40px;
 	font-size:x-large;
 	overflow: hidden;
-	background:url(../images/tb7.jpg) no-repeat;
+	background:url(tb7.jpg) no-repeat;
 }
 .productAreaHead LI{
 	float:left;
@@ -218,7 +213,7 @@ a:hover{color:#FF6600;}
 {
 	border-left: none;
 	background-color: #49932a;
-	background-image:url(../images/more.jpg);
+	background-image:url(more.jpg);
 	background-repeat:no-repeat;
 	padding: 0 10px 0 30px;
 	height: 20px;
@@ -268,10 +263,11 @@ a:hover{color:#FF6600;}
 .goods_list .onegoods img
 {
 	width:145px;
-	height:115px;
+	height:125px;
 }
-.goods_list .onegoods p{
-	font-size:12px;
+.goods_list p{
+	font-size:10px;
+	overflow: hidden;
 }
 /**********************幻灯片**********************************/
 .slide{
@@ -312,38 +308,4 @@ a:hover{color:#FF6600;}
 	border:1px solid #8BD56B;
 }
 .FocusPic .change i.cur {background:#397221; border:none; color:#FFF;}
-/******************************注册********************************************/
-.reg-item{
-	width:800px;
-	margin:0 auto;
-}
-.reg-item li>label{
-	display:block; 
-	width:100px;
-	float:left;
-	text-align:right;
-	vertical-align:baseline;
-	padding-right:10px;
-	padding-top:10px;
-}
-.reg-item li{
-	list-style:none;
-	margin:10px;
-	font-family:"宋体";
-	font-size:18px;
-	color:#999999;
-}
-.reg-item li>input{
-	font-size:20px;
-	width:200px;
-	height:30px;
-}
-.reg-item form img{
-	position:relative;
-	top:10px;
 
-}
-.tijiao{
-	margin-left:110px;
-	margin-top:10px;
-}
