@@ -2,7 +2,9 @@
 <html>
      <head>
 	      <title>浮生若茶</title>
-		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/reset.css" />
+	</head>
+	<body>
+		﻿		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/reset.css" />
 		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css" />
 		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/invalid.css" />
 
@@ -12,10 +14,6 @@
 		 <script type="text/javascript" src="__PUBLIC__/js/jquery.wysiwyg.js"></script>
 		 <script type="text/javascript" src="__PUBLIC__/js/jquery.datePicker.js"></script>
 		 <script type="text/javascript" src="__PUBLIC__/js/jquery.date.js"></script>
-	 
-	</head>
-	<body>
-		﻿
 	   <div id="body-wrapper"> 
 	          <div id="sidebar"><div id="sidebar-wrapper">
 			<h1 id="sidebar-title"><a href="#">Admin Login</a></h1>
