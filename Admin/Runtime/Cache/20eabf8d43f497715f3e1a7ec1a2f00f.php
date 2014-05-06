@@ -6,7 +6,7 @@
 		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css" />
 		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/invalid.css" />
 
-		 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.6.2.min.js"></script>
+		 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.3.2.min.js"></script>
 		 <script type="text/javascript" src="__PUBLIC__/js/simpla.jquery.configuration.js"></script>
 		 <script type="text/javascript" src="__PUBLIC__/js/facebox.js"></script>
 		 <script type="text/javascript" src="__PUBLIC__/js/jquery.wysiwyg.js"></script>
@@ -92,9 +92,5 @@
 				
 			</ul>
 		</div></div>
-		<div id="content">
-			
-		</div>
-
 	</body>
 </html>
