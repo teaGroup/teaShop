@@ -1,64 +1,28 @@
-[ 2014-05-06T12:47:51+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkName?username=qin2
-INFO: [ app_begin ] --START--
-INFO: Run ReadHtmlCache Behavior [ RunTime:0.001875s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002040s ]
-SQL: DESCRIBE t_user [ RunTime:0.043085s ]
-SQL: SELECT * FROM `t_user` WHERE ( `User_Name` = 'qin2' ) LIMIT 1   [ RunTime:0.001483s ]
-
-[ 2014-05-06T12:48:07+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkEmail?email=456%40qq.com
-INFO: [ app_begin ] --START--
-INFO: Run ReadHtmlCache Behavior [ RunTime:0.002227s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002404s ]
-SQL: DESCRIBE t_user [ RunTime:0.011011s ]
-SQL: SELECT * FROM `t_user` WHERE ( `User_Email` = '456@qq.com' ) LIMIT 1   [ RunTime:0.000943s ]
-
-[ 2014-05-06T12:48:11+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkCode?code=5663
-INFO: [ app_begin ] --START--
-INFO: Run ReadHtmlCache Behavior [ RunTime:0.001996s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002165s ]
-
-[ 2014-05-06T12:48:48+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkEmail?email=456%40qq.com
-INFO: [ app_begin ] --START--
-INFO: Run ReadHtmlCache Behavior [ RunTime:0.002147s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002319s ]
-SQL: DESCRIBE t_user [ RunTime:0.011041s ]
-SQL: SELECT * FROM `t_user` WHERE ( `User_Email` = '456@qq.com' ) LIMIT 1   [ RunTime:0.000982s ]
-
-[ 2014-05-06T12:48:50+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkName?username=qin2
-INFO: [ app_begin ] --START--
-INFO: Run ReadHtmlCache Behavior [ RunTime:0.001870s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002037s ]
-SQL: DESCRIBE t_user [ RunTime:0.010179s ]
-SQL: SELECT * FROM `t_user` WHERE ( `User_Name` = 'qin2' ) LIMIT 1   [ RunTime:0.000999s ]
-
-[ 2014-05-06T12:48:51+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkEmail?email=456%40qq.com
-INFO: [ app_begin ] --START--
-INFO: Run ReadHtmlCache Behavior [ RunTime:0.001631s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001791s ]
-SQL: DESCRIBE t_user [ RunTime:0.012302s ]
-SQL: SELECT * FROM `t_user` WHERE ( `User_Email` = '456@qq.com' ) LIMIT 1   [ RunTime:0.000922s ]
-
-[ 2014-05-06T12:48:51+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkCode?code=5663
-INFO: [ app_begin ] --START--
-INFO: Run ReadHtmlCache Behavior [ RunTime:0.001902s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002078s ]
-
-[ 2014-05-06T12:48:55+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkCode?code=5663
-INFO: [ app_begin ] --START--
-INFO: Run ReadHtmlCache Behavior [ RunTime:0.001986s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002156s ]
-
-[ 2014-05-06T12:48:59+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkCode?code=2034
-INFO: [ app_begin ] --START--
-INFO: Run ReadHtmlCache Behavior [ RunTime:0.002036s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002206s ]
-
-[ 2014-05-06T12:49:01+08:00 ] ERR: (ThinkException) 非法操作:白茶6
-[ 2014-05-06T12:49:01+08:00 ] ERR: (ThinkException) 非法操作:白茶10
-[ 2014-05-06T12:49:01+08:00 ] ERR: (ThinkException) 非法操作:bai1
-[ 2014-05-06T12:49:01+08:00 ] ERR: (ThinkException) 非法操作:bai2
-[ 2014-05-06T12:49:28+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkCode?code=9501
-INFO: [ app_begin ] --START--
-INFO: Run ReadHtmlCache Behavior [ RunTime:0.001926s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002101s ]
-
+[ 2014-05-06T23:41:44+08:00 ] ERR: (ThinkException) 非法操作:白茶6
+[ 2014-05-06T23:41:44+08:00 ] ERR: (ThinkException) 非法操作:bai1
+[ 2014-05-06T23:41:44+08:00 ] ERR: (ThinkException) 非法操作:白茶10
+[ 2014-05-06T23:41:44+08:00 ] ERR: (ThinkException) 非法操作:bai2
+[ 2014-05-06T23:41:46+08:00 ] ERR: (ThinkException) 非法操作:bai1
+[ 2014-05-06T23:41:46+08:00 ] ERR: (ThinkException) 非法操作:bai2
+[ 2014-05-06T23:41:46+08:00 ] ERR: (ThinkException) 非法操作:白茶10
+[ 2014-05-06T23:41:46+08:00 ] ERR: (ThinkException) 非法操作:白茶6
+[ 2014-05-06T23:41:46+08:00 ] ERR: (ThinkException) 非法操作:白茶10
+[ 2014-05-06T23:41:46+08:00 ] ERR: (ThinkException) 非法操作:白茶6
+[ 2014-05-06T23:41:46+08:00 ] ERR: (ThinkException) 非法操作:bai2
+[ 2014-05-06T23:41:46+08:00 ] ERR: (ThinkException) 非法操作:bai1
+[ 2014-05-06T23:41:47+08:00 ] ERR: (ThinkException) 非法操作:白茶6
+[ 2014-05-06T23:41:47+08:00 ] ERR: (ThinkException) 非法操作:bai2
+[ 2014-05-06T23:41:47+08:00 ] ERR: (ThinkException) 非法操作:bai1
+[ 2014-05-06T23:41:47+08:00 ] ERR: (ThinkException) 非法操作:白茶10
+[ 2014-05-06T23:41:47+08:00 ] ERR: (ThinkException) 非法操作:bai1
+[ 2014-05-06T23:41:47+08:00 ] ERR: (ThinkException) 非法操作:白茶6
+[ 2014-05-06T23:41:47+08:00 ] ERR: (ThinkException) 非法操作:白茶10
+[ 2014-05-06T23:41:47+08:00 ] ERR: (ThinkException) 非法操作:bai2
+[ 2014-05-06T23:48:54+08:00 ] ERR: (ThinkException) 非法操作:白茶6
+[ 2014-05-06T23:48:54+08:00 ] ERR: (ThinkException) 非法操作:白茶10
+[ 2014-05-06T23:48:54+08:00 ] ERR: (ThinkException) 非法操作:bai2
+[ 2014-05-06T23:48:54+08:00 ] ERR: (ThinkException) 非法操作:bai1
+[ 2014-05-06T23:49:08+08:00 ] ERR: (ThinkException) 非法操作:白茶10
+[ 2014-05-06T23:49:08+08:00 ] ERR: (ThinkException) 非法操作:bai1
+[ 2014-05-06T23:49:08+08:00 ] ERR: (ThinkException) 非法操作:白茶6
+[ 2014-05-06T23:49:08+08:00 ] ERR: (ThinkException) 非法操作:bai2

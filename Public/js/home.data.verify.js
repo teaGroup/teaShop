@@ -4,7 +4,7 @@ $(function(){
      var flag1=false,flag2=false,flag3=false,flag4=false,flag5=false;
 	 
 	function chkreg(){
-			if(flag1==true && flag2==true && flag3==true && flag4==true && flag5==true){
+			if(flag1==true && flag2==true && flag3==true && flag4==true){
 				$('#reg').removeAttr("disabled");
 			}else{
 				$("#reg").attr('disabled',"true");

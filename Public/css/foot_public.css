@@ -1,6 +1,5 @@
 @charset "utf-8";
 /* CSS Document */
-*{ margin: 0px; padding: 0px; }*
 
 .help a:link    {color:#333333; text-decoration:none;}
 .help a:visited {color:#333333; text-decoration:none;}
@@ -49,13 +48,13 @@
 	background:#2D591A;
 	padding:0px;
 	font-size:12px; 
-	color:#333333;
+	color:#82CF5F;
 	line-height:24px;
 	font-family: "Tahoma", "Arial", "Sans-Serif";
 }
 
 
-.footer {
+.foot {
 	padding:10px 0 0 0;
 	color:#82CF5F;
     width:100%;
@@ -64,11 +63,15 @@
 	text-align:center;
 }
 
-.footer a {
+.foot a{
     padding:0px 5px;
-	color:#82CF5F;
 	text-align:left;
+	color: #82CF5F;
 }
+.foot a:link    {color:#82CF5F; text-decoration:none;}
+.foot a:visited {color:#82CF5F; text-decoration:none;}
+.foot a:hover   {color:#82CF5F; text-decoration:underline;}
+.foot a:active  {color:#82CF5F; text-decoration:none;}
 
 
 

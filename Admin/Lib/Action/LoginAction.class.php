@@ -16,7 +16,7 @@
 
 		function doLogin(){
 			$adminname = $_POST['username'];
-			$adminpwd = $_POST['pwd'];
+			$adminpwd = md5($_POST['pwd']);
 			
 			$admin = M('Admin');
 			$where['Admin_Name'] = $adminname;

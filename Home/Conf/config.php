@@ -1,8 +1,9 @@
 <?php
 return array(
 	//'配置项'=>'配置值'
-	'TMPL_L_DELIM' => '<{',
-	'TMPL_R_DELIM' => '}>',
+	//'URL_PATHINFO_DEPR' => '-',  //修改URL的分隔符
+	'TMPL_L_DELIM'=>'<{',
+	'TMPL_R_DELIM'=>'}>',
 	'DB_TYPE' => 'pdo',
 	'DB_DSN' => 'mysql:host=localhost;dbname=teashop;charset=UTF-8',
 	'DB_USER' => 'root',

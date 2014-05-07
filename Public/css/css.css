@@ -10,9 +10,10 @@ a:hover{color:#FF6600;}
 	width: 100%;
 }
 #flash {
-	background-color: #FF6;
-	height: 440px;
+	/*background-color: #FF6;*/
+	height: 500px;
 	width: 100%;
+	z-index: 10px;
 }
 #container {
 	background-color: #f6f6f6;
@@ -157,7 +158,7 @@ a:hover{color:#FF6600;}
 	height:11px;
 	padding:0 4px 0 0;
 	color:#FFF;
-	background:url(numbg_201208.gif) 0 -90px no-repeat;
+	background:url(../images/numbg_201208.gif) 0 -90px no-repeat;
 	text-align:center;
 	font:10px/11px Arial;
 	margin:10px 8px 0 0
@@ -199,7 +200,7 @@ a:hover{color:#FF6600;}
 	padding-left:40px;
 	font-size:x-large;
 	overflow: hidden;
-	background:url(tb7.jpg) no-repeat;
+	background:url(../images/tb7.jpg) no-repeat;
 }
 .productAreaHead LI{
 	float:left;
@@ -213,7 +214,7 @@ a:hover{color:#FF6600;}
 {
 	border-left: none;
 	background-color: #49932a;
-	background-image:url(more.jpg);
+	background-image:url(../images/more.jpg);
 	background-repeat:no-repeat;
 	padding: 0 10px 0 30px;
 	height: 20px;
@@ -308,4 +309,47 @@ a:hover{color:#FF6600;}
 	border:1px solid #8BD56B;
 }
 .FocusPic .change i.cur {background:#397221; border:none; color:#FFF;}
+
+/******************************注册********************************************/
+.reg-item{
+	width:800px;
+	margin:0 auto;
+}
+.reg-item li>label{
+	display:block; 
+	width:100px;
+	float:left;
+	text-align:right;
+	vertical-align:baseline;
+	padding-right:10px;
+	padding-top:10px;
+}
+.reg-item li{
+	list-style:none;
+	margin:10px;
+	font-family:"宋体";
+	font-size:18px;
+	color:#999999;
+}
+.reg-item li>input{
+	font-size:20px;
+	width:200px;
+	height:30px;
+}
+.reg-item form img{
+	position:relative;
+	top:10px;
+
+}
+.tijiao{
+	margin-left:110px;
+	margin-top:10px;
+}
+.top1{
+	/*background: #8ac;*/
+	height: 100px;
+	padding-top: 30px;
+	padding-left: 40px;
+	
+}
 

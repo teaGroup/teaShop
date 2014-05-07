@@ -1,5 +1,5 @@
 @charset "utf-8";
-
+*{margin: 0; padding: 0;}
 /* 
 	@名称: base
 	@功能: 重设浏览器默认样式

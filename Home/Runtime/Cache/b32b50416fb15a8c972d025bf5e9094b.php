@@ -2,7 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/register.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/css.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/foot_public.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/h_style.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/base.css" />
 <script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/js/home.data.verify.js"></script>
 
@@ -10,7 +13,24 @@
 </head>
 
 <body>
-<div id="head"> 此处显示 id "head" 的内容 </div>
+<div id="head"> 
+<div class="topbar">
+  <div class="topbar2">
+    <div class="add_fav"> <a onclick="" href="###">浮生若茶--名牌正品茶叶、茶礼商城！</a> </div>
+    <div class="login-info"> <font>欢迎光临！&nbsp;&nbsp;</font> </div>
+    <div class="quick-menu2">
+      <ul>
+        <li><a title="我的帐户" href="__APP__/Index/index">首页</a> </li>
+        <li><a title="帮助中心" href="#">帮助中心</a> </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="top1">
+<a href="###" title="浮生若茶-名牌正品茶叶、茶礼商城"><img src="__PUBLIC__/images/logo.jpg" alt="浮生若茶-专业茶叶、茶具网上商城"></a><span style="color:#7D6666; font-size:36px; margin-top:100px;">.账户注册</span>
+<hr/>
+</div>
+</div>
 <div class="reg-item">
 <form action="__URL__/doReg" method="post">
 <ol>
@@ -46,6 +66,12 @@
 </li>
 </ol>
 </form>
+</div>
+<div style="margin-top:135px;">
+<div class="foot_safe">
+<div class="foot"><a rel="nofollow" href="###" target="_blank">关于我们</a>|<a rel="nofollow" href="###" target="_blank">隐私申明</a>|<a rel="nofollow" href="###" target="_blank">成为供应商</a>|<a href="###" target="_blank">社区</a>|<a href="###" target="_blank">茶叶</a>|<a href="###" target="_blank">博客</a>|<a href="###" target="_blank">友情链接</a>|<a href="###" target="_blank">网站地图</a><br>
+  <center>Copyright 2014 - 2015 浮生若茶  中山大学南方学院计算机（1）班出品  All Rights Reserved </center>
+</div>
 </div>
 </body>
 </html>

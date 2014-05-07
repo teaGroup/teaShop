@@ -1,27 +1,46 @@
+
 <!DOCTYPE html>
-<html>
-<head>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <meta charset="utf-8">
+<head>
 <title>浮生若茶</title>
+<meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
 <load href="__PUBLIC__/css/css.css" />
 <load href="__PUBLIC__/css/slider.css" />
-<link href="__PUBLIC__/css/h_style.css" type="text/css" rel="stylesheet">
-<link rel="stylesheet" href="__PUBLIC__/css/base.css" />
 
 <load href="__PUBLIC__/js/jquery.min.js" />
 <load href="__PUBLIC__/js/Tab.js" />
 
-
-<script src="__PUBLIC__/js/head.js" type="text/javascript"></script>
-
+<!--幻灯片-->
+<script src="__PUBLIC__/js/jquery.seven.min.js"></script>
+<script src="__PUBLIC__/js/jquery.easing.min.js"></script>
+<link href="__PUBLIC__/css/sevenslider.css" rel="stylesheet" />
+<link href="__PUBLIC__/css/skins/fullwidth.css" rel="stylesheet" />
 </head>
 <body>
 <div id="head"> <include file="Public:header" /> </div>
 <!--**************************************************flash******************************************************-->
-<div id="flash"> 
-<header>
-  
-</header>
+<div id="flash">
+<script type="text/javascript" language="javascript">
+  $(document).ready(function(){
+    var tb=$(".seven_container").sevenslider({
+      width:774,
+      height:510,
+      fullwidth:true,animation:0,automation:true,autointerval:3,progress:false,progresstype:"linear",bullet:true,carousel:false,circular:true,responsive:true,swipe:true,keyboard:true,skin:"fullwidth",lightbox:true    });
+
+  });
+</script> 
+      <div class="seven_container">
+            <div id="seven_viewport">
+                <div class="seven_slider">
+                    <div class="seven_slide"><a class="seven_slide_title">春来品茗</a><img src="__PUBLIC__/images/adPic/1.jpg" /></div>
+                    <div class="seven_slide"><a class="seven_slide_title">藏茶</a><img src="__PUBLIC__/images/adPic/2.jpg" /></div>
+                    <div class="seven_slide"><a class="seven_slide_title">红茶专场</a><img src="__PUBLIC__/images/adPic/3.jpg" /></div>
+                </div>
+            </div>
+            <a id="left_btn" class="seven_nav">Previous Slide</a>
+            <a id="right_btn" class="seven_nav right_btn">Next Slide</a>
+  </div>
 </div>
 <div id="container">
   <div id="content">
@@ -224,110 +243,110 @@
           <div class="j2-tab-con">
             <div class="tab-con-item" style="display:block;">
             <div class="numlist" id="numtext">
-				<ul>
-				    <li class="first">
-						<em class="bg1">01</em>
+        <ul>
+            <li class="first">
+            <em class="bg1">01</em>
                         <img src="__PUBLIC__/images/白茶3.png" style="display: block; ">
-						<a href="#" target="_blank">【彝家山寨】四川凉山黑苦荞茶156克袋装</a><br />				
-						<span class="f1" style="display: inline; ">￥</span><span class="f2" style="display: inline; ">26</span>
-						
-					</li>
-				 
-				    <li class="">
-						<em class="bg2">02</em>
-						<img src="__PUBLIC__/images/白茶3.png" style="display: none; ">
-						<a href="#" target="_blank">【老曼峨】云南普洱茶深山老树生态饼茶100克熟茶</a>	<br />			
-						<span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">16</span>
-					</li>
-				 
-				    <li class="">
-						<em class="bg3">03</em>
-						<img src="__PUBLIC__/images/白茶5.png"  style="display: none; ">
-						<a href="#" target="_blank">【怡清源】安化黑茶金手筑茶颗粒装65g</a><br />				
-						<span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">46</span>
-					</li>
-				 
-				    <li class="">
-						<em>04</em>
-						<img src="__PUBLIC__/images/白茶3.png" style="display: none; ">
-						<a href="#" target="_blank">【彝家山寨】四川凉山黑苦荞茶156克袋装</a><br />				
-						<span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">15</span>
-					</li>
-				 
-				    <li class="">
-						<em>05</em>
-						<img src="__PUBLIC__/images/白茶7.png" style="display: none; ">
-						<a href="#" target="_blank">【老曼峨】云南普洱茶深山老树生态饼茶100克熟茶</a><br />				
-						<span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">93</span>
-					</li>
-				 
-				    <li class="">
-						<em>06</em>
-						<img src="__PUBLIC__/images/白茶3.png" style="display: none; ">
-						<a href="#" target="_blank">【怡清源】安化黑茶金手筑茶颗粒装65g</a><br />				
-						<span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">44</span>
-					</li>
-				 
-				    <li class="">
-						<em>07</em>
-						<img src="__PUBLIC__/images/白茶9.png"  style="display: none; ">
-						<a href="#" target="_blank">【彝家山寨】四川凉山黑苦荞茶156克袋装</a><br />				
-						<span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">170</span>
-					</li>
-				 
-				    <li class="">
-						<em>08</em>
-						<img src="__PUBLIC__/images/白茶3.png" style="display: none; ">
-						<a href="#" target="_blank">【老曼峨】云南普洱茶深山老树生态饼茶100克熟茶</a><br />				
-						<span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">85</span>
-					</li>
-				 
-				    <li class="">
-						<em>09</em>
-						<img src="__PUBLIC__/images/白茶6.png" style="display: none; ">
-						<a href="#" target="_blank">【怡清源】安化黑茶金手筑茶颗粒装65g</a><br />				
-						<span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">195</span>
-					</li>
-				 
-				    <li class="">
-						<em>10</em>
-						<img src="__PUBLIC__/images/白茶3.png"  style="display: none; ">
-						<a href="#" target="_blank">【彝家山寨】四川凉山黑苦荞茶156克袋装</a><br />				
-						<span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">95</span>
-					</li>
+            <a href="#" target="_blank">【彝家山寨】四川凉山黑苦荞茶156克袋装</a><br />        
+            <span class="f1" style="display: inline; ">￥</span><span class="f2" style="display: inline; ">26</span>
+            
+          </li>
+         
+            <li class="">
+            <em class="bg2">02</em>
+            <img src="__PUBLIC__/images/白茶3.png" style="display: none; ">
+            <a href="#" target="_blank">【老曼峨】云南普洱茶深山老树生态饼茶100克熟茶</a>  <br />      
+            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">16</span>
+          </li>
+         
+            <li class="">
+            <em class="bg3">03</em>
+            <img src="__PUBLIC__/images/白茶5.png"  style="display: none; ">
+            <a href="#" target="_blank">【怡清源】安化黑茶金手筑茶颗粒装65g</a><br />       
+            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">46</span>
+          </li>
+         
+            <li class="">
+            <em>04</em>
+            <img src="__PUBLIC__/images/白茶3.png" style="display: none; ">
+            <a href="#" target="_blank">【彝家山寨】四川凉山黑苦荞茶156克袋装</a><br />        
+            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">15</span>
+          </li>
+         
+            <li class="">
+            <em>05</em>
+            <img src="__PUBLIC__/images/白茶7.png" style="display: none; ">
+            <a href="#" target="_blank">【老曼峨】云南普洱茶深山老树生态饼茶100克熟茶</a><br />        
+            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">93</span>
+          </li>
+         
+            <li class="">
+            <em>06</em>
+            <img src="__PUBLIC__/images/白茶3.png" style="display: none; ">
+            <a href="#" target="_blank">【怡清源】安化黑茶金手筑茶颗粒装65g</a><br />       
+            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">44</span>
+          </li>
+         
+            <li class="">
+            <em>07</em>
+            <img src="__PUBLIC__/images/白茶9.png"  style="display: none; ">
+            <a href="#" target="_blank">【彝家山寨】四川凉山黑苦荞茶156克袋装</a><br />        
+            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">170</span>
+          </li>
+         
+            <li class="">
+            <em>08</em>
+            <img src="__PUBLIC__/images/白茶3.png" style="display: none; ">
+            <a href="#" target="_blank">【老曼峨】云南普洱茶深山老树生态饼茶100克熟茶</a><br />        
+            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">85</span>
+          </li>
+         
+            <li class="">
+            <em>09</em>
+            <img src="__PUBLIC__/images/白茶6.png" style="display: none; ">
+            <a href="#" target="_blank">【怡清源】安化黑茶金手筑茶颗粒装65g</a><br />       
+            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">195</span>
+          </li>
+         
+            <li class="">
+            <em>10</em>
+            <img src="__PUBLIC__/images/白茶3.png"  style="display: none; ">
+            <a href="#" target="_blank">【彝家山寨】四川凉山黑苦荞茶156克袋装</a><br />        
+            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">95</span>
+          </li>
                     <li class="">
-						<em>11</em>
-						<img src="__PUBLIC__/images/白茶2.png"  style="display: none; ">
-						<a href="#" target="_blank">【老曼峨】云南普洱茶深山老树生态饼茶100克熟茶</a><br />				
-						<span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">95</span>
-					</li>
+            <em>11</em>
+            <img src="__PUBLIC__/images/白茶2.png"  style="display: none; ">
+            <a href="#" target="_blank">【老曼峨】云南普洱茶深山老树生态饼茶100克熟茶</a><br />        
+            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">95</span>
+          </li>
                     <li class="">
-						<em>12</em>
-						<img src="__PUBLIC__/images/白茶3.png"  style="display: none; ">
-						<a href="#" target="_blank">【怡清源】安化黑茶金手筑茶颗粒装65g</a><br />				
-						<span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">95</span>
-					</li>
+            <em>12</em>
+            <img src="__PUBLIC__/images/白茶3.png"  style="display: none; ">
+            <a href="#" target="_blank">【怡清源】安化黑茶金手筑茶颗粒装65g</a><br />       
+            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">95</span>
+          </li>
                     <li class="">
-						<em>13</em>
-						<img src="__PUBLIC__/images/白茶4.png"  style="display: none; ">
-						<a href="#" target="_blank">【老曼峨】云南普洱茶深山老树生态饼茶100克熟茶</a><br />				
-						<span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">95</span>
-					</li>
+            <em>13</em>
+            <img src="__PUBLIC__/images/白茶4.png"  style="display: none; ">
+            <a href="#" target="_blank">【老曼峨】云南普洱茶深山老树生态饼茶100克熟茶</a><br />        
+            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">95</span>
+          </li>
                     <li class="">
-						<em>14</em>
-						<img src="__PUBLIC__/images/白茶3.png"  style="display: none; ">
-						<a href="#" target="_blank">【彝家山寨】四川凉山黑苦荞茶156克袋装</a><br />				
-						<span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">80</span>
-					</li>
+            <em>14</em>
+            <img src="__PUBLIC__/images/白茶3.png"  style="display: none; ">
+            <a href="#" target="_blank">【彝家山寨】四川凉山黑苦荞茶156克袋装</a><br />        
+            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">80</span>
+          </li>
                     <li class="">
-						<em>15</em>
-						<img src="__PUBLIC__/images/白茶5.png"  style="display: none; ">
-						<a href="#" target="_blank">【怡清源】安化黑茶金手筑茶颗粒装65g</a><br />				
-						<span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">58</span>
-					</li>
-				</ul>
-			</div>	
-			</div>
+            <em>15</em>
+            <img src="__PUBLIC__/images/白茶5.png"  style="display: none; ">
+            <a href="#" target="_blank">【怡清源】安化黑茶金手筑茶颗粒装65g</a><br />       
+            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">58</span>
+          </li>
+        </ul>
+      </div>  
+      </div>
             <div class="tab-con-item">
               2222222
             </div>
@@ -346,7 +365,7 @@
     <section>
       <header class="productAreaHead">
         <h1> 绿茶 </h1>
-        	<div class="moreProduct">
+          <div class="moreProduct">
                 <ul>
                     <li style="border-left:none;"><a href="/category-33.html">西湖龙井</a>|</li>
                     <li><a href="/category-17.html">碧螺春</a>|</li>
@@ -362,26 +381,26 @@
       </header>
       <section class="goods_table">
         <article class="goods_leftgg">
-        	<div class="slide">
-    			<div class="FocusPic" id="lv">
-            		<div class="changeDiv">
-            			<a href="#"><img src="__PUBLIC__/images/bai1.jpg" /></a>
-            			<a href="#"><img src="__PUBLIC__/images/bai2.jpg" /></a>
-            		</div>
-    			</div>
-			</div>
+          <div class="slide">
+          <div class="FocusPic" id="lv">
+                <div class="changeDiv">
+                  <a href="#"><img src="__PUBLIC__/images/adPic/lv1.jpg" /></a>
+                  <a href="#"><img src="__PUBLIC__/images/adPic/lv2.jpg" /></a>
+                </div>
+          </div>
+      </div>
             <script type="text/javascript"> 
-				$(function(){
-					new slide("#lv","cur",265,420,1);//焦点图
-				})
-				function $jquery(id){return document.getElementById(id)};
-			</script>
+        $(function(){
+          new slide("#lv","cur",265,420,1);//焦点图
+        })
+        function $jquery(id){return document.getElementById(id)};
+      </script>
         </article>
         <article class="goods_list"> 
-        	<ul>
-            	<li class="onegoods"> 
+          <ul>
+              <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="__PUBLIC__/images/白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="__PUBLIC__/images/白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -389,7 +408,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="__PUBLIC__/images/白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="__PUBLIC__/images/白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -397,7 +416,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="__ROOT__/Uploads/白茶4.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -405,7 +424,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -413,7 +432,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -421,7 +440,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -429,7 +448,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -437,7 +456,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -445,7 +464,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -453,7 +472,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -461,7 +480,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -469,7 +488,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -483,7 +502,7 @@
     <section>
       <header class="productAreaHead">
         <h1> 红茶 </h1>
-        	<div class="moreProduct">
+          <div class="moreProduct">
                 <ul>
                     <li style="border-left:none;"><a href="/category-110.html">正山小种</a></li>
                     <li><a href="/category-42.html">祁门红茶</a></li>
@@ -498,26 +517,26 @@
       </header>
       <section class="goods_table">
         <article class="goods_leftgg">
-        	<div class="slide">
-    			<div class="FocusPic" id="hong">
-            		<div class="changeDiv">
-            			<a href="#"><img src="bai1.jpg" /></a>
-            			<a href="#"><img src="bai2.jpg" /></a>
-            		</div>
-    			</div>
-			</div>
+          <div class="slide">
+          <div class="FocusPic" id="hong">
+                <div class="changeDiv">
+                  <a href="#"><img src="__PUBLIC__/images/adPic/hong1.jpg" /></a>
+                  <a href="#"><img src="__PUBLIC__/images/adPic/hong2.jpg" /></a>
+                </div>
+          </div>
+      </div>
             <script type="text/javascript"> 
-				$(function(){
-					new slide("#hong","cur",265,420,1);//焦点图
-				})
-				function $jquery(id){return document.getElementById(id)};
-			</script>
+        $(function(){
+          new slide("#hong","cur",265,420,1);//焦点图
+        })
+        function $jquery(id){return document.getElementById(id)};
+      </script>
         </article>
         <article class="goods_list"> 
-        	<ul>
-            	<li class="onegoods"> 
+          <ul>
+              <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -525,7 +544,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -533,7 +552,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -541,7 +560,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -549,7 +568,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -557,7 +576,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -565,7 +584,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -573,7 +592,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -581,7 +600,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -589,7 +608,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -597,7 +616,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -605,7 +624,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -619,7 +638,7 @@
 <section>
       <header class="productAreaHead">
         <h1> 白茶 </h1>
-        	<div class="moreProduct">
+          <div class="moreProduct">
                 <ul>
                     <li style="border-left:none;"><a href="/category-32.html">白毫银针</a></li>
                     <li><a href="/category-101.html">白牡丹</a></li>
@@ -629,26 +648,26 @@
       </header>
       <section class="goods_table">
         <article class="goods_leftgg">
-        	<div class="slide">
-    			<div class="FocusPic" id="bai">
-            		<div class="changeDiv">
-            			<a href="#"><img src="bai1.jpg" /></a>
-            			<a href="#"><img src="bai2.jpg" /></a>
-            		</div>
-    			</div>
-			</div>
+          <div class="slide">
+          <div class="FocusPic" id="bai">
+                <div class="changeDiv">
+                  <a href="#"><img src="__PUBLIC__/images/adPic/bai1.jpg" /></a>
+                  <a href="#"><img src="__PUBLIC__/images/adPic/bai2.jpg" /></a>
+                </div>
+          </div>
+      </div>
             <script type="text/javascript"> 
-				$(function(){
-					new slide("#bai","cur",265,420,1);//焦点图
-				})
-				function $jquery(id){return document.getElementById(id)};
-			</script>
+        $(function(){
+          new slide("#bai","cur",265,420,1);//焦点图
+        })
+        function $jquery(id){return document.getElementById(id)};
+      </script>
         </article>
         <article class="goods_list"> 
-        	<ul>
-            	<li class="onegoods"> 
+          <ul>
+              <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -656,7 +675,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -664,7 +683,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -672,7 +691,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -680,7 +699,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -688,7 +707,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -696,7 +715,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -704,7 +723,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -712,7 +731,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -720,7 +739,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -728,7 +747,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -736,7 +755,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -750,7 +769,7 @@
 <section>
       <header class="productAreaHead">
         <h1> 黑茶 </h1>
-        	<div class="moreProduct">
+          <div class="moreProduct">
                 <ul>
                     <li style="border-left:none;"><a href="/category-113.html">安化黑茶</a></li>
                     <li><a href="/category-156.html">泾渭茯茶</a></li>
@@ -761,26 +780,27 @@
       </header>
       <section class="goods_table">
         <article class="goods_leftgg">
-        	<div class="slide">
-    			<div class="FocusPic" id="hei">
-            		<div class="changeDiv">
-            			<a href="#"><img src="bai1.jpg" /></a>
-            			<a href="#"><img src="bai2.jpg" /></a>
-            		</div>
-    			</div>
-			</div>
+          <div class="slide">
+          <div class="FocusPic" id="hei">
+                <div class="changeDiv">
+                  <a href="#"><img src="__PUBLIC__/images/adPic/hei1.jpg" /></a>
+                  <a href="#"><img src="__PUBLIC__/images/adPic/hei2.jpg" /></a>
+                  <a href="#"><img src="__PUBLIC__/images/adPic/hei3.jpg" /></a>
+                </div>
+          </div>
+      </div>
             <script type="text/javascript"> 
-				$(function(){
-					new slide("#hei","cur",265,420,1);//焦点图
-				})
-				function $jquery(id){return document.getElementById(id)};
-			</script>
+        $(function(){
+          new slide("#hei","cur",265,420,1);//焦点图
+        })
+        function $jquery(id){return document.getElementById(id)};
+      </script>
         </article>
         <article class="goods_list"> 
-        	<ul>
-            	<li class="onegoods"> 
+          <ul>
+              <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -788,7 +808,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -796,7 +816,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -804,7 +824,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -812,7 +832,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -820,7 +840,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -828,7 +848,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -836,7 +856,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -844,7 +864,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -852,7 +872,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -860,7 +880,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -868,7 +888,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -882,7 +902,7 @@
 <section>
       <header class="productAreaHead">
         <h1> 乌龙茶 </h1>
-        	<div class="moreProduct">
+          <div class="moreProduct">
                 <ul>
                     <li style="border-left:none;"><a href="/category-18.html">安溪铁观音</a></li>
                     <li><a href="/category-19.html">武夷大红袍</a></li>
@@ -894,26 +914,26 @@
       </header>
       <section class="goods_table">
         <article class="goods_leftgg">
-        	<div class="slide">
-    			<div class="FocusPic" id="wulong">
-            		<div class="changeDiv">
-            			<a href="#"><img src="bai1.jpg" /></a>
-            			<a href="#"><img src="bai2.jpg" /></a>
-            		</div>
-    			</div>
-			</div>
+          <div class="slide">
+          <div class="FocusPic" id="wulong">
+                <div class="changeDiv">
+                  <a href="#"><img src="__PUBLIC__/images/adPic/wu1.jpg" /></a>
+                  <a href="#"><img src="__PUBLIC__/images/adPic/wu2.jpg" /></a>
+                </div>
+          </div>
+      </div>
             <script type="text/javascript"> 
-				$(function(){
-					new slide("#wulong","cur",265,420,1);//焦点图
-				})
-				function $jquery(id){return document.getElementById(id)};
-			</script>
+        $(function(){
+          new slide("#wulong","cur",265,420,1);//焦点图
+        })
+        function $jquery(id){return document.getElementById(id)};
+      </script>
         </article>
         <article class="goods_list"> 
-        	<ul>
-            	<li class="onegoods"> 
+          <ul>
+              <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -921,7 +941,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -929,7 +949,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -937,7 +957,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -945,7 +965,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -953,7 +973,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -961,7 +981,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -969,7 +989,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -977,7 +997,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -985,7 +1005,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -993,7 +1013,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1001,7 +1021,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1015,7 +1035,7 @@
 <section>
       <header class="productAreaHead">
         <h1> 花草茶 </h1>
-        	<div class="moreProduct">
+          <div class="moreProduct">
                 <ul>
                     <li style="border-left:none;"><a href="/category-170.html">茉莉花茶</a></li>
                     <li><a href="/category-153.html">苦荞茶</a></li>
@@ -1025,26 +1045,26 @@
       </header>
       <section class="goods_table">
         <article class="goods_leftgg">
-        	<div class="slide">
-    			<div class="FocusPic" id="hua">
-            		<div class="changeDiv">
-            			<a href="#"><img src="bai1.jpg" /></a>
-            			<a href="#"><img src="bai2.jpg" /></a>
-            		</div>
-    			</div>
-			</div>
+          <div class="slide">
+          <div class="FocusPic" id="hua">
+                <div class="changeDiv">
+                  <a href="#"><img src="__PUBLIC__/images/adPic/hua1.jpg" /></a>
+                  <a href="#"><img src="__PUBLIC__/images/adPic/hua2.jpg" /></a>
+                </div>
+          </div>
+      </div>
             <script type="text/javascript"> 
-				$(function(){
-					new slide("#hua","cur",265,420,1);//焦点图
-				})
-				function $jquery(id){return document.getElementById(id)};
-			</script>
+        $(function(){
+          new slide("#hua","cur",265,420,1);//焦点图
+        })
+        function $jquery(id){return document.getElementById(id)};
+      </script>
         </article>
         <article class="goods_list"> 
-        	<ul>
-            	<li class="onegoods"> 
+          <ul>
+              <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1052,7 +1072,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1060,7 +1080,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1068,7 +1088,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1076,7 +1096,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1084,7 +1104,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1092,7 +1112,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1100,7 +1120,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1108,7 +1128,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1116,7 +1136,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1124,7 +1144,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1132,7 +1152,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1146,7 +1166,7 @@
 <section>
       <header class="productAreaHead">
         <h1> 茶具 </h1>
-        	<div class="moreProduct">
+          <div class="moreProduct">
                 <ul>
                     <li style="border-left:none;"><a href="/category-102.html">玻璃茶具</a></li>
                     <li><a href="/category-157.html">陶瓷茶具</a></li>
@@ -1156,26 +1176,26 @@
       </header>
       <section class="goods_table">
         <article class="goods_leftgg">
-        	<div class="slide">
-    			<div class="FocusPic" id="chaju">
-            		<div class="changeDiv">
-            			<a href="#"><img src="bai1.jpg" /></a>
-            			<a href="#"><img src="bai2.jpg" /></a>
-            		</div>
-    			</div>
-			</div>
+          <div class="slide">
+          <div class="FocusPic" id="chaju">
+                <div class="changeDiv">
+                  <a href="#"><img src="__PUBLIC__/images/adPic/chaju1.jpg" /></a>
+                  <a href="#"><img src="__PUBLIC__/images/adPic/chaju2.jpg" /></a>
+                </div>
+          </div>
+      </div>
             <script type="text/javascript"> 
-				$(function(){
-					new slide("#chaju","cur",265,420,1);//焦点图
-				})
-				function $jquery(id){return document.getElementById(id)};
-			</script>
+        $(function(){
+          new slide("#chaju","cur",265,420,1);//焦点图
+        })
+        function $jquery(id){return document.getElementById(id)};
+      </script>
         </article>
         <article class="goods_list"> 
-        	<ul>
-            	<li class="onegoods"> 
+          <ul>
+              <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1183,7 +1203,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1191,7 +1211,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1199,7 +1219,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1207,7 +1227,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1215,7 +1235,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1223,7 +1243,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1231,7 +1251,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1239,7 +1259,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1247,7 +1267,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1255,7 +1275,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1263,7 +1283,7 @@
                  </li>
                  <li class="onegoods"> 
                    <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                   		<img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
                     </a>                             
                     <p class="price"><strong>￥588元</strong> </p>
                     <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
@@ -1273,12 +1293,12 @@
         </article>
       </section>
     </section>
+    
   </div>
 </div>
 <!--**************************************************尾部******************************************************-->
 <div id="foot"> 
 <include file="Public:footer" />
 </div>
-
 </body>
 </html>
