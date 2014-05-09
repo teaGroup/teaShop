@@ -88,9 +88,12 @@ class DbMysql extends Db{
      * @return mixed
      */
     public function query($str) {
-        if(0===stripos($str, 'call')){ // 存储过程查询支持
-            $this->close();
-        }
+        //if(0===stripos($str, 'call')){ // 存储过程查询支持
+            //$this->close();
+        //}
+		/*
+		
+		*/
         $this->initConnect(false);
         if ( !$this->_linkID ) return false;
         $this->queryStr = $str;

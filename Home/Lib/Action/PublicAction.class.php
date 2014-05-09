@@ -18,6 +18,9 @@
 		public function footer(){
 			$this->display();
 		}
+		public function footer2(){
+			$this->display();
+		}
 
 
 

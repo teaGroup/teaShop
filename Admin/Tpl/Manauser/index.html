@@ -1,0 +1,56 @@
+﻿<!doctype html>
+<html>
+     <head>
+	      <title>会员信息管理</title>
+	</head>
+	<body>
+           <include file="Header:header"/>
+		 <div>
+<center>
+       <form action="__APP__/Manauser/serach" method="post">
+	        <label for="tiaojian">
+		          <select name="tiaojian">
+				        <option value="User_Name">会员名称</option>
+				        <option value="User_Sex">性别</option>
+				        <option value="User_LastLogTime">最后登录时间</option>
+				        <option value="User_JoinDate">注册时间</option>
+				        <option value="UserL_level">等级</option>
+				</select>
+				<input type="text" name="keyword"/>&nbsp;&nbsp;<input type="submit" value="提交"/>
+		   </label>
+	  </form>
+       <table id="Tuser">
+	        <tr>
+		       <th>会员ID</th>
+		       <th>会员名称</th>
+		       <th>密码</th>
+		       <th>邮箱</th>
+		       <th>性别</th>
+		       <th>注册时间</th>
+		       <th>最后登录时间</th>
+		       <th>积分</th>
+		       <th>登录次数</th>
+		       <th>积分</th>
+			  <th>操作</th>
+		   </tr>
+		   <volist name="user" id="vo">
+		   <tr>
+		       <td><{$vo.pk_User_Id}></td>
+		       <td><{$vo.User_Name}></td>
+			  <td><{$vo.User_Pwd}></td>
+		       <td><{$vo.User_Email}></td>
+		       <td><{$vo.User_Sex}></td>
+		       <td><{$vo.User_JoinDate}></td>
+		       <td><{$vo.User_LastLogTime}></td>
+		       <td><{$vo.User_Credit}></td>
+			  <td><{$vo.User_LoginNum}></td>
+		       <td><{$vo.UserL_level}></td>
+		       <td><a href="__APP__/Manauser/id/<{$vo.pk_User_Id}>">删除</a></td>
+		   </tr>
+		   </volist>
+	  </table>
+	  <div id="div"><div id="black"><{$show}></div></div>
+</center>
+       </div>
+</body>
+</html>

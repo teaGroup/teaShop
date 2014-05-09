@@ -378,3 +378,7 @@ INFO: [ app_begin ] --END-- [ RunTime:0.000724s ]
 [ 2014-05-07T21:30:00+08:00 ] ERR: (ThinkException) 非法操作:白茶6
 [ 2014-05-07T21:34:38+08:00 ] ERR: (ThinkException) 非法操作:白茶10
 [ 2014-05-07T21:34:38+08:00 ] ERR: (ThinkException) 非法操作:白茶6
+[ 2014-05-07T23:04:00+08:00 ] ERR: (ThinkException) 非法操作:白茶10
+[ 2014-05-07T23:04:00+08:00 ] ERR: (ThinkException) 非法操作:白茶6
+[ 2014-05-07T23:07:39+08:00 ] ERR: (ThinkException) 非法操作:白茶10
+[ 2014-05-07T23:07:39+08:00 ] ERR: (ThinkException) 非法操作:白茶6

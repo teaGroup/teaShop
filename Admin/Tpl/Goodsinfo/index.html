@@ -1,0 +1,65 @@
+﻿<!doctype html>
+<html>
+     <head>
+	     <title>商品信息浏览</title>
+	</head>
+	<body>
+         <include file="Header:header"/>
+	    <div>
+            <center>
+                   <nav id="nav1">
+	              <a href="__APP__/Goodsinfo/index">浏览商品</a> |
+	              <a href="__APP__/Goodsinfo/add">添加商品</a>
+	              </nav>
+	       <hr/>
+	             <form action="__APP__/Goodsinfo/search" method="post" id="fom">
+	                      <select name="tiaojian">
+		                        <option value="Goods_Name">商品名称</option>
+		                        <option value="Goods_SellTime">上市时间</option>
+		                        <option value="Goods_Num">库存</option>
+		                        <option value="Classifi_Name">商品类别</option>
+				              <option value="Goods_SellNum">销售量</option>
+		                 </select>
+		                 <input type="text" name="keyword"/><input type="submit" value="提交"/>
+	             </form>
+                  <table id="table1">
+	                     <tr>
+		                    <th>商品ID号</th>
+		                    <th>商品名称</th>
+		                    <th>商品图片</th>
+		                    <th>商品价格</th>
+		                    <th>商品简介</th>
+		                    <th>商品类别</th>
+		                    <th>是否上架</th>
+		                    <th>上市时间</th>
+			               <th>库存</th>
+		                    <th>赠送积分</th>
+		                    <th>净含量</th>
+		                    <th>产品单位</th>
+		                    <th>销售量</th>
+			               <th>操作</th>
+		                 </tr>
+		                 <volist name="list" id="vo">
+		                 <tr align="center">
+		                      <td><{$vo.pk_GoodsInfo_Id}></td>
+		                      <td><{$vo.Goods_Name}></td>
+		                      <td><img src="<{$vo.Goods_img}>"/></td>
+		                      <td><{$vo.Goods_Price}></td>
+		                      <td id="text"><{$vo.Goods_Intro}></td>
+		                      <td><{$vo.Classifi_Name}></td>
+		                      <td><{$vo.Goods_IsSell}></td>
+		                      <td><{$vo.Goods_SellTime}></td>
+		                      <td><{$vo.Goods_Num}></td>
+		                      <td><{$vo.Goods_RewardCred}></td>
+		                      <td><{$vo.Goods_NetContent}></td>
+		                      <td><{$vo.Goods_Unit}></td>
+		                      <td><{$vo.Goods_SellNum}></td>
+		                      <td><a href="__APP__/Goodsinfo/del/id/<{$vo.pk_GoodsInfo_Id}>">删除</a> | <a href="__APP__/Goodsinfo/modify/id/<{$vo.pk_GoodsInfo_Id}>">修改</a></td>
+		                 </tr>
+		                 </volist>
+	             </table>
+	            <div id="div"><div id="black"><{$show}></div></div>
+             </center>
+		   </div>
+      </body>
+</html>

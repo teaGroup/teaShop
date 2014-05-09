@@ -1,0 +1,37 @@
+﻿<!doctype html>
+<html>
+     <head>
+	      <title>商品信息修改</title>
+		 <script language="javascript">
+		       window.onload=function(){
+			      if('<{$data.Goods_IsSell}>'=='男'){
+				      document.getElementsByName('sell')[0].checked='checked';
+				 }else{
+				      document.getElementsByName('sell')[1].checked='checked';
+				 }
+			  }
+		  </script>
+	</head>
+	<body>
+          <include file="Header:header"/>
+		<div>  
+              <center>
+       <form action="__APP__/Goodsinfo/update" method="post" enctype="multipart/form-data" id="form1">
+	     <input type="hidden" name="id" value="<{$data.pk_Goods_Id}>"/>
+          <label for="name">商品名称：<input type="text" name="name" value="<{$data.Goods_Name}>"/></label><br/>
+          <label for="img" id="img">商品图片上传：<img src="<{$vo.Goods_img}>" name="img"/></label><br/>
+          <label for="sell" id="sell">是否上架：<input type="radio" name="sell" value="1">是 <input type="radio" value="0" name="sell"/>否</label><br/>
+          <label for="num" id="num">库存：&nbsp;&nbsp;<input type="number" name="num" value="<{$data.Goods_Num}>"/></label><br/>
+          <label for="sellTime" id="sellTime">上市时间：<input type="date" name="sellTime" value="<{$data.Goods_SellTime}>"/></label><br/>
+          <label for="price">商品价格：<input type="price" name="price" value="<{$data.Goods_Price}>"/></label><br/>
+          <label for="rewardCred" id="rewardCred">赠送积分：<input type="number" name="rewardCred" value="<{$data.Goods_RewardCred}>"/>分</label><br/>
+          <label for="intro" id="intro">商品简介：<textarea name="intro"><{$data.Goods_Intro}></textarea></label><br/>
+          <label for="netContent">净含量：<input type="number" name="netContent" value="<{$data.Goods_NetContent}>"/></label><br/>
+          <label for="classifi" id="classifi">商品分类：<input type="text" name="classifi" value="<{$data.Classifi_Name}>"/></label><br/>
+          <label for="unit" id="unit">产品单位：<input type="text" name="unit" value="<{$data.Goods_Unit}>"/></label><br/>
+          <input type="submit" value="修改信息"/>		
+	  </form>
+</center>
+</div>
+</body>
+</html>

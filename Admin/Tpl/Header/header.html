@@ -1,31 +1,29 @@
-﻿		 <load href="__PUBLIC__/css/reset.css" />
-		 <load href="__PUBLIC__/css/style.css" />
-		 <load href="__PUBLIC__/css/invalid.css" />
-
-		 <load href="__PUBLIC__/js/jquery.min.js" />
-		 <load href="__PUBLIC__/js/simpla.jquery.configuration.js" />
-		 <load href="__PUBLIC__/js/facebox.js" />
-		 <load href="__PUBLIC__/js/jquery.wysiwyg.js" />
-		 <load href="__PUBLIC__/js/jquery.datePicker.js" />
-		 <load href="__PUBLIC__/js/jquery.date.js" />
-	   <div id="body-wrapper"> 
+﻿
+		 <link rel="stylesheet" href="__PUBLIC__/css/style.css" type="text/css" media="screen" />
+		 <link rel="stylesheet" href="__PUBLIC__/css/page.css" type="text/css" media="screen" />
+		 <link rel="stylesheet" href="__PUBLIC__/css/myStyle.css" type="text/css" media="screen"/>
+           
+		 <script type="text/javascript" src="__PUBLIC__/js/jquery-1.3.2.min.js"></script>
+           <script type="text/javascript" src="__PUBLIC__/js/simpla.jquery.configuration.js"></script>	
+	
+	    <div id="body-wrapper"> 
 	          <div id="sidebar"><div id="sidebar-wrapper">
 			<h1 id="sidebar-title"><a href="#">Admin Login</a></h1>
 			<a href="#"><img id="logo" src="__PUBLIC__/images/logo.png" alt="Simpla Admin logo" /></a>
 			<div id="profile-links">
 				Welcome, <a href="浏览自己的信息中心" title="Edit your profile">John Doe</a>!
 				<br />
-				<a href="#" title="View the Site">网站首页</a> | <a href="__APP__/Login/logout" title="Sign Out">注销登录</a>
+				<a href="__ROOT__/index.php/Index/index" title="View the Site">网站首页</a> | <a href="#" title="Sign Out">注销登录</a>
 			</div>
 			<ul id="main-nav"> 
 				
 				<li>
-					<a href="__APP__/Index/index/" class="nav-top-item no-submenu">
+					<a href="###" class="nav-top-item no-submenu">
 						修改密码
 					</a>       
 				</li>
 				<li>
-					<a href="__APP__/Index/index/" class="nav-top-item no-submenu">
+					<a href="__APP__/Manauser/index" class="nav-top-item no-submenu">
 						管理会员信息
 					</a>       
 				</li>
@@ -35,8 +33,8 @@
 					商品管理
 					</a>
 					<ul>
-						<li><a href="#">商品分类管理</a></li>
-						<li><a class="current" href="#">商品信息管理</a></li>
+						<li><a href="__APP__/Classifi/index">商品分类管理</a></li>
+						<li><a class="current" href="__APP__/Goodsinfo/index">商品信息管理</a></li>
 						<li><a href="#">商品订单管理</a></li>
 						<li><a href="#">商品评价管理</a></li>
 					</ul>
