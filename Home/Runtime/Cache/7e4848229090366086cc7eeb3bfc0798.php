@@ -402,7 +402,7 @@ $.get("/teaShop/index.php/Reg/checkEmail",{'email':emailstr},function(data,statu
  </div>
 <!--**************************************************flash******************************************************-->
 <div id="flash">
-<script type="text/javascript" language="javascript">
+  <script type="text/javascript" language="javascript">
   $(document).ready(function(){
     var tb=$(".seven_container").sevenslider({
       width:774,
@@ -410,7 +410,7 @@ $.get("/teaShop/index.php/Reg/checkEmail",{'email':emailstr},function(data,statu
       fullwidth:true,animation:0,automation:true,autointerval:3,progress:false,progresstype:"linear",bullet:true,carousel:false,circular:true,responsive:true,swipe:true,keyboard:true,skin:"fullwidth",lightbox:true    });
 
   });
-</script> 
+  </script> 
       <div class="seven_container">
             <div id="seven_viewport">
                 <div class="seven_slider">
@@ -438,181 +438,34 @@ $.get("/teaShop/index.php/Reg/checkEmail",{'email':emailstr},function(data,statu
         <div class="tab-con">
           <div class="j-tab-con">
             <div class="tab-con-item" style="display:block;">
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶2.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶2.png">
-                <p class="price"><strong>￥40元</strong></p>
-                <p>【品品香】高级白牡丹50g散装</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶2.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶2.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶2.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶2.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶2.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶2.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶2.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
+              <?php if(is_array($newgoods)): $i = 0; $__LIST__ = $newgoods;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> <a href="#"><img src="<?php echo ($vo["Goods_img"]); ?>"></a>
+                  <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong></p>
+                  <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>
+                </li><?php endforeach; endif; else: echo "" ;endif; ?>
             </div>
             <div class="tab-con-item">
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶3.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶5.png">
-                <p class="price"><strong>￥40元</strong></p>
-                <p>【品品香】高级白牡丹50g散装</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶9.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶10.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶11.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶6.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶2.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶2.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
+              <?php if(is_array($hotgoods)): $i = 0; $__LIST__ = $hotgoods;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> <a href="#"><img src="<?php echo ($vo["Goods_img"]); ?>"></a>
+                  <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong></p>
+                  <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>
+                </li><?php endforeach; endif; else: echo "" ;endif; ?>
             </div>
             <div class="tab-con-item">
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶8.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶3.png">
-                <p class="price"><strong>￥40元</strong></p>
-                <p>【品品香】高级白牡丹50g散装</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶2.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶4.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶2.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶9.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶2.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶2.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶2.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
+              <?php if(is_array($jbchaju)): $i = 0; $__LIST__ = $jbchaju;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> <a href="#"><img src="<?php echo ($vo["Goods_img"]); ?>"></a>
+                  <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong></p>
+                  <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>
+                </li><?php endforeach; endif; else: echo "" ;endif; ?>
             </div>
             <div class="tab-con-item">
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶8.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶2.png">
-                <p class="price"><strong>￥40元</strong></p>
-                <p>【品品香】高级白牡丹50g散装</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶2.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶2.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶5.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶2.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶2.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶7.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
-              <li class="onegoods"> <img src="__PUBLIC__/images/白茶8.png">
-                <p class="price"><strong>￥10元</strong></p>
-                <p>【绿雪芽】有机白茶袋泡盒装50g</p>
-              </li>
+              <?php if(is_array($gift)): $i = 0; $__LIST__ = $gift;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> <a href="#"><img src="<?php echo ($vo["Goods_img"]); ?>"></a>
+                  <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong></p>
+                  <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>
+                </li><?php endforeach; endif; else: echo "" ;endif; ?>
             </div>
           </div>
         </div>
-        
-        
-        
       </div>
       <!--××××××××××××××××××××××排行榜×××××××××××××××××××××××××-->
-      <div class="indexhot_right" id="tab2">
+    <div class="indexhot_right" id="tab2">
       <span class="leader"><b>排行榜</b></span>
         <div class="tab2-nav j2-tab-nav">
           <a href="javascript:void(0);" class="current">周</a>
@@ -622,122 +475,106 @@ $.get("/teaShop/index.php/Reg/checkEmail",{'email':emailstr},function(data,statu
         <!--列表-->
         <div class="tab2-con renqi">
           <div class="j2-tab-con">
-            <div class="tab-con-item" style="display:block;">
-            <div class="numlist" id="numtext">
+      <div class="tab-con-item" style="display:block;">
+      <div class="numlist" id="numtext">
         <ul>
-            <li class="first">
-            <em class="bg1">01</em>
-                        <img src="__PUBLIC__/images/白茶3.png" style="display: block; ">
-            <a href="#" target="_blank">【彝家山寨】四川凉山黑苦荞茶156克袋装</a><br />        
-            <span class="f1" style="display: inline; ">￥</span><span class="f2" style="display: inline; ">26</span>
-            
-          </li>
+          <?php if(is_array($rankingW)): $i = 0; $__LIST__ = array_slice($rankingW,0,1,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="first">
+              <em class="bg1">1</em>
+                  <img src="<?php echo ($vo["Goods_img"]); ?>" style="display: block; ">
+              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />        
+              <span class="f1" style="display: inline; ">￥</span><span class="f2" style="display: inline; "><?php echo ($vo["Goods_Price"]); ?></span>
+            </li><?php endforeach; endif; else: echo "" ;endif; ?>
          
-            <li class="">
-            <em class="bg2">02</em>
-            <img src="__PUBLIC__/images/白茶3.png" style="display: none; ">
-            <a href="#" target="_blank">【老曼峨】云南普洱茶深山老树生态饼茶100克熟茶</a>  <br />      
-            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">16</span>
-          </li>
+          <?php if(is_array($rankingW)): $i = 0; $__LIST__ = array_slice($rankingW,1,1,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="">
+              <em class="bg2">2</em>
+              <img src="<?php echo ($vo["Goods_img"]); ?>" style="display: none; ">
+              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a>  <br />      
+              <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><?php echo ($vo["Goods_Price"]); ?></span>
+            </li><?php endforeach; endif; else: echo "" ;endif; ?>
          
-            <li class="">
-            <em class="bg3">03</em>
-            <img src="__PUBLIC__/images/白茶5.png"  style="display: none; ">
-            <a href="#" target="_blank">【怡清源】安化黑茶金手筑茶颗粒装65g</a><br />       
-            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">46</span>
-          </li>
+          <?php if(is_array($rankingW)): $i = 0; $__LIST__ = array_slice($rankingW,2,1,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="">
+              <em class="bg3">3</em>
+              <img src="<?php echo ($vo["Goods_img"]); ?>"  style="display: none; ">
+              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />       
+              <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><?php echo ($vo["Goods_Price"]); ?></span>
+            </li><?php endforeach; endif; else: echo "" ;endif; ?>
          
-            <li class="">
-            <em>04</em>
-            <img src="__PUBLIC__/images/白茶3.png" style="display: none; ">
-            <a href="#" target="_blank">【彝家山寨】四川凉山黑苦荞茶156克袋装</a><br />        
-            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">15</span>
-          </li>
-         
-            <li class="">
-            <em>05</em>
-            <img src="__PUBLIC__/images/白茶7.png" style="display: none; ">
-            <a href="#" target="_blank">【老曼峨】云南普洱茶深山老树生态饼茶100克熟茶</a><br />        
-            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">93</span>
-          </li>
-         
-            <li class="">
-            <em>06</em>
-            <img src="__PUBLIC__/images/白茶3.png" style="display: none; ">
-            <a href="#" target="_blank">【怡清源】安化黑茶金手筑茶颗粒装65g</a><br />       
-            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">44</span>
-          </li>
-         
-            <li class="">
-            <em>07</em>
-            <img src="__PUBLIC__/images/白茶9.png"  style="display: none; ">
-            <a href="#" target="_blank">【彝家山寨】四川凉山黑苦荞茶156克袋装</a><br />        
-            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">170</span>
-          </li>
-         
-            <li class="">
-            <em>08</em>
-            <img src="__PUBLIC__/images/白茶3.png" style="display: none; ">
-            <a href="#" target="_blank">【老曼峨】云南普洱茶深山老树生态饼茶100克熟茶</a><br />        
-            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">85</span>
-          </li>
-         
-            <li class="">
-            <em>09</em>
-            <img src="__PUBLIC__/images/白茶6.png" style="display: none; ">
-            <a href="#" target="_blank">【怡清源】安化黑茶金手筑茶颗粒装65g</a><br />       
-            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">195</span>
-          </li>
-         
-            <li class="">
-            <em>10</em>
-            <img src="__PUBLIC__/images/白茶3.png"  style="display: none; ">
-            <a href="#" target="_blank">【彝家山寨】四川凉山黑苦荞茶156克袋装</a><br />        
-            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">95</span>
-          </li>
-                    <li class="">
-            <em>11</em>
-            <img src="__PUBLIC__/images/白茶2.png"  style="display: none; ">
-            <a href="#" target="_blank">【老曼峨】云南普洱茶深山老树生态饼茶100克熟茶</a><br />        
-            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">95</span>
-          </li>
-                    <li class="">
-            <em>12</em>
-            <img src="__PUBLIC__/images/白茶3.png"  style="display: none; ">
-            <a href="#" target="_blank">【怡清源】安化黑茶金手筑茶颗粒装65g</a><br />       
-            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">95</span>
-          </li>
-                    <li class="">
-            <em>13</em>
-            <img src="__PUBLIC__/images/白茶4.png"  style="display: none; ">
-            <a href="#" target="_blank">【老曼峨】云南普洱茶深山老树生态饼茶100克熟茶</a><br />        
-            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">95</span>
-          </li>
-                    <li class="">
-            <em>14</em>
-            <img src="__PUBLIC__/images/白茶3.png"  style="display: none; ">
-            <a href="#" target="_blank">【彝家山寨】四川凉山黑苦荞茶156克袋装</a><br />        
-            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">80</span>
-          </li>
-                    <li class="">
-            <em>15</em>
-            <img src="__PUBLIC__/images/白茶5.png"  style="display: none; ">
-            <a href="#" target="_blank">【怡清源】安化黑茶金手筑茶颗粒装65g</a><br />       
-            <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; ">58</span>
-          </li>
+          <?php if(is_array($rankingW)): $i = 0; $__LIST__ = array_slice($rankingW,3,null,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="">
+              <em><?php echo ($key+1); ?></em>
+              <img src="<?php echo ($vo["Goods_img"]); ?>" style="display: none; ">
+              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />        
+              <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><?php echo ($vo["Goods_Price"]); ?></span>
+            </li><?php endforeach; endif; else: echo "" ;endif; ?>
         </ul>
       </div>  
       </div>
-            <div class="tab-con-item">
-              2222222
-            </div>
-            <div class="tab-con-item">
-              111111
-            </div>
-            <div class="tab-con-item">
-              3333333
-            </div>
-            </div>
+      <div class="tab-con-item">
+      <div class="numlist" id="numtext">
+        <ul>
+          <?php if(is_array($rankingM)): $i = 0; $__LIST__ = array_slice($rankingM,0,1,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="first">
+              <em class="bg1">1</em>
+                  <img src="<?php echo ($vo["Goods_img"]); ?>" style="display: block; ">
+              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />        
+              <span class="f1" style="display: inline; ">￥</span><span class="f2" style="display: inline; "><?php echo ($vo["Goods_Price"]); ?></span>
+            </li><?php endforeach; endif; else: echo "" ;endif; ?>
+         
+          <?php if(is_array($rankingM)): $i = 0; $__LIST__ = array_slice($rankingM,1,1,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="">
+              <em class="bg2">2</em>
+              <img src="<?php echo ($vo["Goods_img"]); ?>" style="display: none; ">
+              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a>  <br />      
+              <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><?php echo ($vo["Goods_Price"]); ?></span>
+            </li><?php endforeach; endif; else: echo "" ;endif; ?>
+         
+          <?php if(is_array($rankingM)): $i = 0; $__LIST__ = array_slice($rankingM,2,1,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="">
+              <em class="bg3">3</em>
+              <img src="<?php echo ($vo["Goods_img"]); ?>"  style="display: none; ">
+              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />       
+              <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><?php echo ($vo["Goods_Price"]); ?></span>
+            </li><?php endforeach; endif; else: echo "" ;endif; ?>
+         
+          <?php if(is_array($rankingM)): $i = 0; $__LIST__ = array_slice($rankingM,3,null,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="">
+              <em><?php echo ($key+1); ?></em>
+              <img src="<?php echo ($vo["Goods_img"]); ?>" style="display: none; ">
+              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />        
+              <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><?php echo ($vo["Goods_Price"]); ?></span>
+            </li><?php endforeach; endif; else: echo "" ;endif; ?>
+        </ul>
+      </div>
+      </div>
+      <div class="tab-con-item">
+      <div class="numlist" id="numtext">
+        <ul>
+          <?php if(is_array($rankingY)): $i = 0; $__LIST__ = array_slice($rankingY,0,1,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="first">
+              <em class="bg1">1</em>
+                  <img src="<?php echo ($vo["Goods_img"]); ?>" style="display: block; ">
+              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />        
+              <span class="f1" style="display: inline; ">￥</span><span class="f2" style="display: inline; "><?php echo ($vo["Goods_Price"]); ?></span>
+            </li><?php endforeach; endif; else: echo "" ;endif; ?>
+         
+          <?php if(is_array($rankingY)): $i = 0; $__LIST__ = array_slice($rankingY,1,1,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="">
+              <em class="bg2">2</em>
+              <img src="<?php echo ($vo["Goods_img"]); ?>" style="display: none; ">
+              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a>  <br />      
+              <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><?php echo ($vo["Goods_Price"]); ?></span>
+            </li><?php endforeach; endif; else: echo "" ;endif; ?>
+         
+          <?php if(is_array($rankingY)): $i = 0; $__LIST__ = array_slice($rankingY,2,1,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="">
+              <em class="bg3">3</em>
+              <img src="<?php echo ($vo["Goods_img"]); ?>"  style="display: none; ">
+              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />       
+              <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><?php echo ($vo["Goods_Price"]); ?></span>
+            </li><?php endforeach; endif; else: echo "" ;endif; ?>
+         
+          <?php if(is_array($rankingY)): $i = 0; $__LIST__ = array_slice($rankingY,3,null,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="">
+              <em><?php echo ($key+1); ?></em>
+              <img src="<?php echo ($vo["Goods_img"]); ?>" style="display: none; ">
+              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />        
+              <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><?php echo ($vo["Goods_Price"]); ?></span>
+            </li><?php endforeach; endif; else: echo "" ;endif; ?>
+        </ul>
+      </div>
+      </div>
+      </div>
           </div>
         </div>
      </div>
@@ -779,102 +616,13 @@ $.get("/teaShop/index.php/Reg/checkEmail",{'email':emailstr},function(data,statu
         </article>
         <article class="goods_list"> 
           <ul>
-              <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="__PUBLIC__/images/白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+            <?php if(is_array($lv)): $i = 0; $__LIST__ = $lv;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> 
+                   <a class="img" target="_blank" href="#" title="<?php echo ($vo["Goods_Name"]); ?>"> 
+                      <img src="<?php echo ($vo["Goods_img"]); ?>" alt="<?php echo ($vo["Goods_Name"]); ?>"> 
                     </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="__PUBLIC__/images/白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="__ROOT__/Uploads/白茶4.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
+                    <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong> </p>
+                    <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>               
+              </li><?php endforeach; endif; else: echo "" ;endif; ?>    
             </ul>
         </article>
       </section>
@@ -915,108 +663,19 @@ $.get("/teaShop/index.php/Reg/checkEmail",{'email':emailstr},function(data,statu
         </article>
         <article class="goods_list"> 
           <ul>
-              <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+            <?php if(is_array($hong)): $i = 0; $__LIST__ = $hong;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> 
+                   <a class="img" target="_blank" href="#" title="<?php echo ($vo["Goods_Name"]); ?>"> 
+                      <img src="<?php echo ($vo["Goods_img"]); ?>" alt="<?php echo ($vo["Goods_Name"]); ?>"> 
                     </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-            </ul>
+                    <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong> </p>
+                    <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>               
+              </li><?php endforeach; endif; else: echo "" ;endif; ?>   
+          </ul>
         </article>
       </section>
     </section>
 <!-------------------------白茶-------------------------------------->
-<section>
+    <section>
       <header class="productAreaHead">
         <h1> 白茶 </h1>
           <div class="moreProduct">
@@ -1046,108 +705,19 @@ $.get("/teaShop/index.php/Reg/checkEmail",{'email':emailstr},function(data,statu
         </article>
         <article class="goods_list"> 
           <ul>
-              <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+            <?php if(is_array($bai)): $i = 0; $__LIST__ = $bai;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> 
+                   <a class="img" target="_blank" href="#" title="<?php echo ($vo["Goods_Name"]); ?>"> 
+                      <img src="<?php echo ($vo["Goods_img"]); ?>" alt="<?php echo ($vo["Goods_Name"]); ?>"> 
                     </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-            </ul>
+                    <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong> </p>
+                    <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>               
+              </li><?php endforeach; endif; else: echo "" ;endif; ?>  
+          </ul>
         </article>
       </section>
     </section>
 <!-------------------------黑茶-------------------------------------->
-<section>
+    <section>
       <header class="productAreaHead">
         <h1> 黑茶 </h1>
           <div class="moreProduct">
@@ -1179,108 +749,19 @@ $.get("/teaShop/index.php/Reg/checkEmail",{'email':emailstr},function(data,statu
         </article>
         <article class="goods_list"> 
           <ul>
-              <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+            <?php if(is_array($hei)): $i = 0; $__LIST__ = $hei;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> 
+                   <a class="img" target="_blank" href="#" title="<?php echo ($vo["Goods_Name"]); ?>"> 
+                      <img src="<?php echo ($vo["Goods_img"]); ?>" alt="<?php echo ($vo["Goods_Name"]); ?>"> 
                     </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-            </ul>
+                    <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong> </p>
+                    <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>               
+              </li><?php endforeach; endif; else: echo "" ;endif; ?>   
+          </ul>
         </article>
       </section>
     </section>
 <!-------------------------乌龙茶-------------------------------------->
-<section>
+    <section>
       <header class="productAreaHead">
         <h1> 乌龙茶 </h1>
           <div class="moreProduct">
@@ -1312,108 +793,19 @@ $.get("/teaShop/index.php/Reg/checkEmail",{'email':emailstr},function(data,statu
         </article>
         <article class="goods_list"> 
           <ul>
-              <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+            <?php if(is_array($wu)): $i = 0; $__LIST__ = $wu;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> 
+                   <a class="img" target="_blank" href="#" title="<?php echo ($vo["Goods_Name"]); ?>"> 
+                      <img src="<?php echo ($vo["Goods_img"]); ?>" alt="<?php echo ($vo["Goods_Name"]); ?>"> 
                     </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-            </ul>
+                    <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong> </p>
+                    <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>               
+              </li><?php endforeach; endif; else: echo "" ;endif; ?>     
+          </ul>
         </article>
       </section>
     </section>
 <!--------------------------花草茶-------------------------------------->
-<section>
+    <section>
       <header class="productAreaHead">
         <h1> 花草茶 </h1>
           <div class="moreProduct">
@@ -1443,108 +835,19 @@ $.get("/teaShop/index.php/Reg/checkEmail",{'email':emailstr},function(data,statu
         </article>
         <article class="goods_list"> 
           <ul>
-              <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+            <?php if(is_array($hua)): $i = 0; $__LIST__ = $hua;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> 
+                   <a class="img" target="_blank" href="#" title="<?php echo ($vo["Goods_Name"]); ?>"> 
+                      <img src="<?php echo ($vo["Goods_img"]); ?>" alt="<?php echo ($vo["Goods_Name"]); ?>"> 
                     </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-            </ul>
+                    <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong> </p>
+                    <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>               
+              </li><?php endforeach; endif; else: echo "" ;endif; ?>     
+          </ul>
         </article>
       </section>
     </section>
 <!---------------------------茶具------------------------------------>
-<section>
+    <section>
       <header class="productAreaHead">
         <h1> 茶具 </h1>
           <div class="moreProduct">
@@ -1574,103 +877,14 @@ $.get("/teaShop/index.php/Reg/checkEmail",{'email':emailstr},function(data,statu
         </article>
         <article class="goods_list"> 
           <ul>
-              <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
+            <?php if(is_array($chaju)): $i = 0; $__LIST__ = $chaju;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> 
+                   <a class="img" target="_blank" href="#" title="<?php echo ($vo["Goods_Name"]); ?>"> 
+                      <img src="<?php echo ($vo["Goods_img"]); ?>" alt="<?php echo ($vo["Goods_Name"]); ?>"> 
                     </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶10.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-                 <li class="onegoods"> 
-                   <a class="img" target="_blank" href="goods-1004.html" title="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                      <img src="白茶6.png" alt="【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶"> 
-                    </a>                             
-                    <p class="price"><strong>￥588元</strong> </p>
-                    <p><a href="#">【谢裕大】太平猴魁一级200克礼盒装 茶道人生系列 悟 2012年新茶</a></p>         
-                          
-                 </li>
-            </ul>
+                    <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong> </p>
+                    <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>               
+              </li><?php endforeach; endif; else: echo "" ;endif; ?>     
+          </ul>
         </article>
       </section>
     </section>

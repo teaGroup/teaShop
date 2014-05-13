@@ -209,8 +209,8 @@ PADDING-TOP: 0px;
 }
 /************************登录**********************************/
 
-#userlogin { width:60px; position:absolute; margin-top:-35px; right:110px; z-index:100;}
-#topnav { padding:10px 0px 12px; font-size:11px; line-height:23px; text-align:right; }
+#userlogin { width:60px; position:absolute; margin-top:-35px; right:80px; z-index:100;}
+#topnav { padding:10px 0px 12px; font-size:11px; line-height:23px; text-align:right;}
 #topnav a.signin { background:#C8C8C8; padding:4px 6px 6px; text-decoration:none; font-weight:bold; color:#fff; -webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px; *background:transparent url("../images/signin-nav-bg-ie.png") no-repeat 0 0; *padding:4px 12px 6px;}
 #topnav a.signin:hover { background:#969696;  *background:transparent url("../images/signin-nav-bg-hover-ie.png") no-repeat 0 0; *padding:4px 12px 6px;}
 #topnav a.signin, #topnav a.signin:hover {  *background-position:0 3px!important;}

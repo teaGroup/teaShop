@@ -6,7 +6,7 @@
 	{
 		Public function _initialize(){
 			if(!isset($_SESSION['username']) || $_SESSION['username']==""){
-				$this->redirect('Login/login');
+				$this->error("请先登录");
 			}
 		}
 	}

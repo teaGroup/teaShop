@@ -1,10 +1,10 @@
-<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
+<?php if (!defined('THINK_PATH')) exit();?>﻿<!doctype html>
 <html>
      <head>
-	      <title>浮生若茶</title>
+	      <title>商品类别浏览</title>
 	</head>
 	<body>
-		﻿		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/reset.css" />
+         ﻿		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/reset.css" />
 		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css" />
 		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/invalid.css" />
 
@@ -21,7 +21,7 @@
 			<div id="profile-links">
 				Welcome, <a href="浏览自己的信息中心" title="Edit your profile">John Doe</a>!
 				<br />
-				<a href="__ROOT__/index.php/Index/index" title="View the Site">网站首页</a> | <a href="__APP__/Login/logout" title="Sign Out">注销登录</a>
+				<a href="#" title="View the Site">网站首页</a> | <a href="__APP__/Login/logout" title="Sign Out">注销登录</a>
 			</div>
 			<ul id="main-nav"> 
 				
@@ -90,8 +90,31 @@
 				
 			</ul>
 		</div></div>
-		<div id="content">
-			
-		</div>
-	</body>
+	    <div>
+           <center>
+               <nav id="nav">
+                    <a href="__APP__/Classifi/index">浏览商品类别</a> |
+                    <a href="__APP__/Classifi/add">添加商品类别</a>
+               </nav>
+               <hr>
+               <table id="table">
+                       <tr> 
+	                      <th>分类id</th>
+	                      <th>类别名称</th>
+	                      <th>类别等级</th>
+	                      <th>所属父级id</th>
+	                      <th>操作</th>
+	                 </tr>
+	                 <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr align="center">
+		                  <td><?php echo ($vo["pk_Classifi_Id"]); ?></td>
+		                  <td><?php echo ($vo["Classifi_Name"]); ?></td>
+		                  <td><?php echo ($vo["Classifi_Level"]); ?></td>
+		                  <td><?php echo ($vo["fk_Classifi_ParentId"]); ?></td>
+		                  <td><a href="__APP__/Classifi/del/id/<?php echo ($vo["pk_Classifi_Id"]); ?>">删除</a></td>
+		            </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+               </table>
+              <div id="div"><div id="black"><?php echo ($show); ?></div></div>
+           </center>
+		 </div>
+     </body>
 </html>

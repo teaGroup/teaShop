@@ -1,10 +1,10 @@
-<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
+<?php if (!defined('THINK_PATH')) exit();?>﻿<!doctype html>
 <html>
-     <head>
-	      <title>浮生若茶</title>
-	</head>
-	<body>
-		﻿		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/reset.css" />
+      <head>
+            <title>商品类别管理</title>
+      </head>
+	 <body>
+           ﻿		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/reset.css" />
 		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css" />
 		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/invalid.css" />
 
@@ -21,7 +21,7 @@
 			<div id="profile-links">
 				Welcome, <a href="浏览自己的信息中心" title="Edit your profile">John Doe</a>!
 				<br />
-				<a href="__ROOT__/index.php/Index/index" title="View the Site">网站首页</a> | <a href="__APP__/Login/logout" title="Sign Out">注销登录</a>
+				<a href="#" title="View the Site">网站首页</a> | <a href="__APP__/Login/logout" title="Sign Out">注销登录</a>
 			</div>
 			<ul id="main-nav"> 
 				
@@ -90,8 +90,29 @@
 				
 			</ul>
 		</div></div>
-		<div id="content">
-			
-		</div>
-	</body>
+		 <div>
+               <center>
+                     <nav id="nav">
+                          <a href="__APP__/Classifi/index">浏览商品类别</a> |
+                          <a href="__APP__/Classifi/add">添加商品类别</a>
+                     </nav>
+                     <hr>
+                     <form action="__APP__/Classifi/insert" method="post">
+                           <label for="name" id="one">类别名称：<input type="text" name="name"/></label><br/>
+	                      <label for="level" id="two">类别等级：<select name="level" size="1">
+	                               <option value="1" selected>1</option>
+	                               <option value="2">2</option>
+	                               <option value="3">3</option>
+	                               <option value="4">4</option>
+	                              </select></label><br/>
+	                      <label for="p_level" id="three">所属父级别：
+	                      <select name="p_level" size="1">
+		                 <option value="0" selected>0</option>
+	                      <?php if(is_array($list)): foreach($list as $key=>$vo): ?><option value="<?php echo ($vo['pk_Classifi_Id']); ?>"><?php echo ($vo["pk_Classifi_Id"]); ?></option><?php endforeach; endif; ?>
+	                      </select></label><br/>
+                           <nav id="four"><input type="submit" value="提交"/>&nbsp;&nbsp;<input type="reset" value="重置"/></nav>
+                     </form>
+                </center>
+	      </div>
+      </body>
 </html>
