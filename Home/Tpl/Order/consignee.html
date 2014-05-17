@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>浮生若茶</title>
+<load href="__PUBLIC__/css/homepublic.css" />
+<load href="__PUBLIC__/css/order.css" />
+<load href="__PUBLIC__/js/jquery.min.js" />
+<script>
+$(function(){
+
+		$.get("__URL__/check",function(data){
+			if(data.status==1){
+				//alert(1);	
+				$("#oldaddr").attr("checked",'true');
+				$("input[name='addr[]']").eq(0).attr("checked",'true');
+				$("div#old").show();
+			}else{
+				$("#newaddr").attr("checked",'true');
+			}	
+		});	
+
+});
+</script>
+</head>
+
+<body>
+<!----------------头部-------------------------------->
+<div id="head"> <include file="Public:header" /> </div>
+<!------------------主体--------------------->
+<div id="container">
+	<div id="main-content">
+    	<div class="content-box">
+    		<div class="content-box-header">
+        		<h3>收获人地址</h3>
+	        	<div class="clear"></div>
+            </div>
+            
+            <div class="content-box-content">
+        		<div class="tab-content default-tab" id="tab1"> 
+          			<div class="notification attention png_bg"></div>
+                    <div id="address">
+                    <form action="__URL__/index/add" method="post">
+                    <div id="old" style="display:none;">
+                    	<p><input type="radio" name="method[]" value="old" id="oldaddr"/>选择收获地址
+                    	<ul>
+                        	<volist name="oldaddr" id="vo">
+                    			<li>
+                                	<input type="radio" name="addr[]" value="<{$vo.pk_ConsiInfo_Id}>" />
+                                	<{$vo.Consi_Addr}>(<{$vo.Consi_Name}> 收),<{$vo.Consi_Tel}>,<{$vo.Consi_PostCode}>
+                                </li>
+                            </volist>
+                    	</ul></p><br />
+                    </div>
+                    <p><input type="radio" name="method[]" value="new" id="newaddr" />使用新地址</p>
+                    <table width="930" border="1" cellpadding="0">
+					    <tr>
+						    <td width="90">收货人姓名：</td>
+						    <td><input type="text" name="Consi_Name" size="20" /></td>
+						    <td width="90">详细地址：</td>
+						    <td><input type="text" name="Consi_Addr" size="20" /></td>
+					    </tr>
+                        <tr>
+						    <td>手机/电话：</td>
+						    <td><input type="tel" name="Consi_Tel" /></td>
+						    <td>邮政编码：</td>
+						    <td><input type="text" name="Consi_PostCode"  size="20"/></td>
+					    </tr>
+					</table>
+					</div>
+                </div>
+            </div>
+            <div class="content-box-header">
+        		<h3>确认订单信息</h3>
+	        	<div class="clear"></div>
+            </div>
+            <div class="content-box-content">
+        <div class="tab-content default-tab" id="tab1"> 
+          
+          <div class="notification attention png_bg"></div>
+          <table>
+            <thead>
+              <tr>
+                <th width="500">商品名称</th>
+                <th width="95">单价</th>
+                <th width="110">数量</th>
+                <th width="95">小计</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <td colspan="3" style="text-align:right; font-size:14px;">
+                        <span id="total-pallets" style="color:#900; font-family:Georgia,'Times New Roman'; font-size:30px;" id="selectnum"><{$goodsnum}></span>
+                        <strong>&nbsp;&nbsp;件商品&nbsp;&nbsp;&nbsp;&nbsp;</strong>    
+                        <strong>合计：</strong>
+                        <span style="font-size:20px; color:#999;">￥</span>
+                        <span id="product-total" style="color:#900; font-family:Georgia,'Times New Roman'; font-size:30px;"><{$total}></span>
+                        <strong>元</strong>      
+                 </td>
+                 <td>
+                 	<input type="hidden" name="sum" value="<{$total}>" />
+                    <input type="hidden" name="userid" value="<{$userid}>" />
+                    <input type="image" src="__PUBLIC__/images/tjdd.jpg" onClick="this.form.action='__URL__/add'"/>
+                 </td>
+               </tr>
+            </tfoot>
+             </form>
+            <tbody>
+              <volist name="cartlist" id="vo">
+              <tr>
+                <td font_color="black" style="text-align:left;">
+                    <img class="goodsimg" src="<{$vo.Goods_img}>" />
+                    <{$vo.Goods_Name}>
+                </td>
+                <td font_color="black"> $<span><{$vo.Goods_Price}></span>元</td>
+                <td font_color="black"><{$vo.Num}></td>
+                </form>
+                <td font_color="black"><{$vo.Sum}></span>元</td>
+              </tr>
+            </volist>
+            </tbody>
+          </table>
+        </div>
+        <!-- End #tab1 --> 
+        
+      </div>
+        </div>
+      </div>
+    </div>
+</div>
+<!------------------------尾部-------------------------->
+<div id="foot"><include file="Public:footer" /> </div>
+</body>
+</html>

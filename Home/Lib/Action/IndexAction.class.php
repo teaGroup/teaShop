@@ -2,14 +2,23 @@
 // 本类由系统自动生成，仅供测试用途
 class IndexAction extends Action {
     public function index(){
+        $model = M();
         if(!isset($_SESSION['username']) || $_SESSION['username']==""){
             $url ="Public:top1";
+            $goodsnum = 0;
         }else{
+            $userid = $_SESSION['id'];
+            $sql="select count(*) num from t_vcart where User_Id=$userid";
+            $list = $model->query($sql);
+            $goodsnum = $list[0][num];
             $url ="Public:top2";
          }
          $username =  $_SESSION['username'];
 
-         $model = M();
+         $this->assign("url",$url);
+         $this->assign("username",$username);
+         $this->assign("goodsnum",$goodsnum);
+
     	//新品
         $sql = "select Goods_Name,Goods_Price,Goods_img from simpleginfo order by Goods_SellTime limit 10";
         $newgoods = $model->query($sql);
@@ -54,9 +63,8 @@ class IndexAction extends Action {
     	//茶具
         $sql = "call QHsgoods('茶具')";
         $chaju = $model->query($sql);
-        
-        $this->assign("url",$url);
-        $this->assign("username",$username);
+        //购物车
+
 
         $this->assign('newgoods',$newgoods);
         $this->assign('hotgoods',$hotgoods);

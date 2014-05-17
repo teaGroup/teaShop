@@ -1,14 +1,10 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>浮生若茶</title>
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/homepublic.css" />
 <script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/JS/autocal.js"></script>
-
 </head>
 
 <body>
@@ -319,7 +315,7 @@
     </div>
     <div class="navCon-menu fl">
       <ul>
-        <li><a href="__APP__/Index/index">首页</a></li>
+        <li><a href="http://www.jq-school.com">首页</a></li>
         <li><a href="http://www.jq-school.com">企业文化</a></li>
       </ul>
     </div>
@@ -328,90 +324,52 @@
 <div id="topcart" style="top: 111px;">
   <div class="cartinfo" id="cartinfo" style="left: 926px;">
     <div class="cartleft">
-      <div class="cart" id="ECS_CARTINFO"> <a href="__APP__/Cart/index" title="查看购物车">购物车 <b class="corg"><?php echo ($goodsnum); ?></b> 件</a> </div>
+      <div class="cart" id="ECS_CARTINFO"> <a href="" title="查看购物车">购物车 <b class="corg"><?php echo ($goodsnum); ?></b> 件</a> </div>
     </div>
-    <div class="cartright"> <a href="__APP__/Order/consignee"></a> </div>
+    <div class="cartright"> <a href=""></a> </div>
   </div>
 </div>
  </div>
 <!------------------主体--------------------->
 <div id="container">
-  <div id="main-content">
-    <div class="content-box"><!-- Start Content Box -->
-      
-      <div class="content-box-header">
-        <h3>商品列表</h3>
-        <div class="clear"></div>
-      </div>
-      <!-- End .content-box-header -->
-      
-      <div class="content-box-content">
-        <div class="tab-content default-tab" id="tab1"> <!-- This is the 
-
-target div. id must match the href of this div's tab -->
-          
-          <div class="notification attention png_bg"></div>
-          <table>
-            <thead>
-              <tr>
-                <th width="500">商品名称</th>
-                <th width="95">单价</th>
-                <th width="110">数量</th>
-                <th width="95">小计</th>
-                <th width="100">操作</th>
-              </tr>
-            </thead>
-            <tfoot>
-              <tr>
-                <td colspan="4" style="text-align:right; font-size:14px;">
-                        <span id="total-pallets" style="color:#900; font-family:Georgia,'Times New Roman'; font-size:30px;" id="selectnum"><?php echo ($goodsnum); ?></span>
-                        <strong>&nbsp;&nbsp;件商品&nbsp;&nbsp;&nbsp;&nbsp;</strong>    
-                        <strong>合计：</strong>
-                        <span style="font-size:20px; color:#999;">￥</span>
-                        <span id="product-total" style="color:#900; font-family:Georgia,'Times New Roman'; font-size:30px;"><?php echo ($total); ?></span>
-                        <strong>元</strong>      
-                 </td>
-                 <td>
-                    <a href="__APP__/Order/consignee/userid/<?php echo ($userid); ?>/username/<?php echo ($username); ?>"><img src="__PUBLIC__/images/jies.jpg" alt="去结算" /></a>
-                 </td>
-               </tr>
-            </tfoot>
-            <tbody>
-              <?php if(is_array($cartlist)): $i = 0; $__LIST__ = $cartlist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-                <td font_color="black" style="text-align:left;">
-                    <img class="goodsimg" src="<?php echo ($vo["Goods_img"]); ?>" />
-                    <?php echo ($vo["Goods_Name"]); ?>
-                </td>
-                <td font_color="black" class="price-per-pallet">
-                    $<span><?php echo ($vo["Goods_Price"]); ?></span>元
-                </td>
-                <form name="cart['<?php echo ($vo["Cart_Id"]); ?>']" action="__URL__/modifyNum" method="post">
-                <td font_color="black"  class="num-pallets">
-                  
-                    <input type=number class="num-pallets-input" name="num" min=1 value="<?php echo ($vo["Num"]); ?>" style="width:40px;">
-                    <input type="submit" value="更改数量"/>
-                    <input type="hidden" value="<?php echo ($vo["Cart_Id"]); ?>" name="cartid" />
-                    <input type="hidden" value="<?php echo ($vo["Goods_Id"]); ?>"name="goodsid" />
-                  
-                </td>
-                </form>
-                <td font_color="black" class="row-total">
-                    <span class="rowtotal"><?php echo ($vo["Sum"]); ?></span>元
-                </td>
-                <td width="84"><!-- Icons --> 
-                    <a href="__URL__/delete/cartid/<?php echo ($vo["Cart_Id"]); ?>" title="Delete"><img src="__PUBLIC__/images/icons/cross.png" alt="Delete" /></a>
-                </td>
-              </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-            </tbody>
-          </table>
+	<div id="main-content">
+    	<div class="content-box">
+    		<div class="content-box-header">
+        		<h3>收获人地址</h3>
+	        	<div class="clear"></div>
+            </div>
+            
+            <div class="content-box-content">
+        		<div class="tab-content default-tab" id="tab1"> 
+          			<div class="notification attention png_bg"></div>
+                    <div id="address">
+                    <form action="__URL__/index/add" method="post">
+                    <table width="930" border="1" cellpadding="0">
+					    <tr>
+						    <td width="90">收货人姓名：</td>
+						    <td><input type="text" name="Consi_Name" size="20" /></td>
+						    <td width="90">详细地址：</td>
+						    <td><input type="text" name="Consi_Addr" size="20" /></td>
+					    </tr>
+                        <tr>
+						    <td>手机/电话：</td>
+						    <td><input type="tel" name="Consi_Tel" /></td>
+						    <td>邮政编码：</td>
+						    <td><input type="text" name="Consi_PostCode"  size="20"/></td>
+					    </tr>
+                        <tr>
+						    <td colspan="4" style="text-align:center;">
+                            	<input type="image" src="__PUBLIC__/images/tjdd.jpg" onClick="this.form.action='__URL__/add'"/>
+                            </td>
+					    </tr>
+					</table>
+                    </form>
+					</div>
+                </div>
+            </div>
         </div>
-        <!-- End #tab1 --> 
-        
       </div>
-      <!-- End .content-box-content --> 
-      
     </div>
-  </div>
 </div>
 <!------------------------尾部-------------------------->
 <div id="foot">

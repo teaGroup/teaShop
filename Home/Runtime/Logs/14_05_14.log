@@ -1,0 +1,148 @@
+[ 2014-05-14T21:56:05+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkName?username=qin
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000621s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000680s ]
+SQL: DESCRIBE t_user [ RunTime:0.004257s ]
+SQL: SELECT * FROM `t_user` WHERE ( `User_Name` = 'qin' ) LIMIT 1   [ RunTime:0.000524s ]
+
+[ 2014-05-14T21:56:21+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkEmail?email=123%40qq.com
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000691s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000754s ]
+SQL: DESCRIBE t_user [ RunTime:0.004212s ]
+SQL: SELECT * FROM `t_user` WHERE ( `User_Email` = '123@qq.com' ) LIMIT 1   [ RunTime:0.000394s ]
+
+[ 2014-05-14T21:56:26+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkCode?code=2512
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000683s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000747s ]
+
+[ 2014-05-14T21:56:31+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkCode?code=2517
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000587s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000650s ]
+
+[ 2014-05-14T22:00:54+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkName?username=qin
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000745s ]
+SQL: DESCRIBE t_user [ RunTime:0.003967s ]
+SQL: SELECT * FROM `t_user` WHERE ( `User_Name` = 'qin' ) LIMIT 1   [ RunTime:0.000371s ]
+
+[ 2014-05-14T22:01:06+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkEmail?email=123%40qq.com
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000792s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000856s ]
+SQL: DESCRIBE t_user [ RunTime:0.004035s ]
+SQL: SELECT * FROM `t_user` WHERE ( `User_Email` = '123@qq.com' ) LIMIT 1   [ RunTime:0.000422s ]
+
+[ 2014-05-14T22:01:10+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkCode?code=6889
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000783s ]
+
+[ 2014-05-14T22:02:17+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkName?username=qin
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000787s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000854s ]
+SQL: DESCRIBE t_user [ RunTime:0.003955s ]
+SQL: SELECT * FROM `t_user` WHERE ( `User_Name` = 'qin' ) LIMIT 1   [ RunTime:0.000395s ]
+
+[ 2014-05-14T22:02:31+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkEmail?email=123%40qq.com
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000603s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000659s ]
+SQL: DESCRIBE t_user [ RunTime:0.004109s ]
+SQL: SELECT * FROM `t_user` WHERE ( `User_Email` = '123@qq.com' ) LIMIT 1   [ RunTime:0.000446s ]
+
+[ 2014-05-14T22:02:35+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkCode?code=7651
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000639s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000731s ]
+
+[ 2014-05-14T22:02:38+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkCode?code=7651
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000601s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000658s ]
+
+[ 2014-05-14T22:05:03+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkName?username=qin
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000612s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000671s ]
+SQL: DESCRIBE t_user [ RunTime:0.003950s ]
+SQL: SELECT * FROM `t_user` WHERE ( `User_Name` = 'qin' ) LIMIT 1   [ RunTime:0.002373s ]
+
+[ 2014-05-14T22:05:12+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkEmail?email=123%40qq.com
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000798s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000860s ]
+SQL: DESCRIBE t_user [ RunTime:0.004495s ]
+SQL: SELECT * FROM `t_user` WHERE ( `User_Email` = '123@qq.com' ) LIMIT 1   [ RunTime:0.000635s ]
+
+[ 2014-05-14T22:05:16+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkCode?code=0309
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000610s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000667s ]
+
+[ 2014-05-14T22:06:55+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkName?username=qin
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000650s ]
+SQL: DESCRIBE t_user [ RunTime:0.004568s ]
+SQL: SELECT * FROM `t_user` WHERE ( `User_Name` = 'qin' ) LIMIT 1   [ RunTime:0.000409s ]
+
+[ 2014-05-14T22:07:17+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkEmail?email=123%40qq.com
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000682s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000739s ]
+SQL: DESCRIBE t_user [ RunTime:0.003961s ]
+SQL: SELECT * FROM `t_user` WHERE ( `User_Email` = '123@qq.com' ) LIMIT 1   [ RunTime:0.000360s ]
+
+[ 2014-05-14T22:07:22+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkCode?code=8019
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000612s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000670s ]
+
+[ 2014-05-14T22:08:31+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkName?username=qin
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000598s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000663s ]
+SQL: DESCRIBE t_user [ RunTime:0.003839s ]
+SQL: SELECT * FROM `t_user` WHERE ( `User_Name` = 'qin' ) LIMIT 1   [ RunTime:0.000770s ]
+
+[ 2014-05-14T22:08:42+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkEmail?email=123%40qq.com
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000708s ]
+SQL: DESCRIBE t_user [ RunTime:0.003859s ]
+SQL: SELECT * FROM `t_user` WHERE ( `User_Email` = '123@qq.com' ) LIMIT 1   [ RunTime:0.000331s ]
+
+[ 2014-05-14T22:08:46+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkCode?code=9942
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+
+[ 2014-05-14T22:14:34+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkName?username=%E7%90%B4
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000618s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000674s ]
+SQL: DESCRIBE t_user [ RunTime:0.004285s ]
+SQL: SELECT * FROM `t_user` WHERE ( `User_Name` = '琴' ) LIMIT 1   [ RunTime:0.000381s ]
+
+[ 2014-05-14T22:14:47+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkEmail?email=234%40qq.com
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001177s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001239s ]
+SQL: DESCRIBE t_user [ RunTime:0.004266s ]
+SQL: SELECT * FROM `t_user` WHERE ( `User_Email` = '234@qq.com' ) LIMIT 1   [ RunTime:0.000411s ]
+
+[ 2014-05-14T22:14:51+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkCode?code=1692
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000661s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000721s ]
+
+[ 2014-05-14T22:14:57+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkCode?code=0437
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000663s ]
+

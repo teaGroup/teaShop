@@ -1,11 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>浮生若茶</title>
-<load href="__PUBLIC__/css/cart.css" />
-
+<load href="__PUBLIC__/css/homepublic.css" />
 <load href="__PUBLIC__/js/jquery.min.js" />
+<load href="__PUBLIC__/JS/autocal.js" />
+
 </head>
 
 <body>
@@ -13,38 +16,86 @@
 <div id="head"> <include file="Public:header" /> </div>
 <!------------------主体--------------------->
 <div id="container">
-	<div id="content">
-    	<form action="#" method="post">
-    		<table border="1px">
-        		<tr bgcolor="#99FF99">
-            		<th width="60">全选</th>
-                	<th width="500">商品名称</th>
-                	<th width="95">单价</th>
-                	<th width="110">数量</th>
-                	<th width="95">小计</th>
-                	<th width="100">操作</th>
-            	</tr>
-                <tr>
-                	<td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td style="text-align:center;"><a href="#">删除</a></td>
-                </tr>
-                <tr>
-                	<td colspan="2">全选   <a href="#">删除</a></td>
-                    <td colspan="4" style="text-align:right;">
-                    	已选几件     合计：<span style="font-size:20px; color:#999;">￥</span>元   
-                        
-                    </td>
-                </tr>
-        	</table>
-          </form>
+  <div id="main-content">
+    <div class="content-box"><!-- Start Content Box -->
+      
+      <div class="content-box-header">
+        <h3>商品列表</h3>
+        <div class="clear"></div>
+      </div>
+      <!-- End .content-box-header -->
+      
+      <div class="content-box-content">
+        <div class="tab-content default-tab" id="tab1"> <!-- This is the 
+
+target div. id must match the href of this div's tab -->
+          
+          <div class="notification attention png_bg"></div>
+          <table>
+            <thead>
+              <tr>
+                <th width="500">商品名称</th>
+                <th width="95">单价</th>
+                <th width="110">数量</th>
+                <th width="95">小计</th>
+                <th width="100">操作</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <td colspan="4" style="text-align:right; font-size:14px;">
+                        <span id="total-pallets" style="color:#900; font-family:Georgia,'Times New Roman'; font-size:30px;" id="selectnum"><{$goodsnum}></span>
+                        <strong>&nbsp;&nbsp;件商品&nbsp;&nbsp;&nbsp;&nbsp;</strong>    
+                        <strong>合计：</strong>
+                        <span style="font-size:20px; color:#999;">￥</span>
+                        <span id="product-total" style="color:#900; font-family:Georgia,'Times New Roman'; font-size:30px;"><{$total}></span>
+                        <strong>元</strong>      
+                 </td>
+                 <td>
+                    <a href="__APP__/Order/consignee/userid/<{$userid}>/username/<{$username}>"><img src="__PUBLIC__/images/jies.jpg" alt="去结算" /></a>
+                 </td>
+               </tr>
+            </tfoot>
+            <tbody>
+              <volist name="cartlist" id="vo">
+              <tr>
+                <td font_color="black" style="text-align:left;">
+                    <img class="goodsimg" src="<{$vo.Goods_img}>" />
+                    <{$vo.Goods_Name}>
+                </td>
+                <td font_color="black" class="price-per-pallet">
+                    $<span><{$vo.Goods_Price}></span>元
+                </td>
+                <form name="cart['<{$vo.Cart_Id}>']" action="__URL__/modifyNum" method="post">
+                <td font_color="black"  class="num-pallets">
+                  
+                    <input type=number class="num-pallets-input" name="num" min=1 value="<{$vo.Num}>" style="width:40px;">
+                    <input type="submit" value="更改数量"/>
+                    <input type="hidden" value="<{$vo.Cart_Id}>" name="cartid" />
+                    <input type="hidden" value="<{$vo.Goods_Id}>"name="goodsid" />
+                  
+                </td>
+                </form>
+                <td font_color="black" class="row-total">
+                    <span class="rowtotal"><{$vo.Sum}></span>元
+                </td>
+                <td width="84"><!-- Icons --> 
+                    <a href="__URL__/delete/cartid/<{$vo.Cart_Id}>" title="Delete"><img src="__PUBLIC__/images/icons/cross.png" alt="Delete" /></a>
+                </td>
+              </tr>
+            </volist>
+            </tbody>
+          </table>
+        </div>
+        <!-- End #tab1 --> 
+        
+      </div>
+      <!-- End .content-box-content --> 
+      
     </div>
+  </div>
 </div>
-<!------------------------尾部------------------------->
-<div id="foot"><include file="Public:footer" />
-</div>
+<!------------------------尾部-------------------------->
+<div id="foot"><include file="Public:footer" /> </div>
 </body>
 </html>

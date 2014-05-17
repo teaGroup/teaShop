@@ -45,12 +45,14 @@
 		//注册
 		public function doReg(){
 			$pwd =md5($_POST['User_Pwd']);
-			$user = D('User');
+			$user = M('User');
 			$user->create();
 
 			$user->User_Pwd = $pwd;
 			$user->User_JoinDate = date("Y-m-d H:i:s");
 			$user->User_LastLogTime = date("Y-m-d H:i:s");
+			//dump($user);
+			//exit();
 			$lastId = $user->add();
 
 			if($lastId){

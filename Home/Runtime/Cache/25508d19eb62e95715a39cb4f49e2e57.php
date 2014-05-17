@@ -1,14 +1,27 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>浮生若茶</title>
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/homepublic.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/order.css" />
 <script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/JS/autocal.js"></script>
+<script>
+$(function(){
 
+		$.get("__URL__/check",function(data){
+			if(data.status==1){
+				//alert(1);	
+				$("#oldaddr").attr("checked",'true');
+				$("input[name='addr[]']").eq(0).attr("checked",'true');
+				$("div#old").show();
+			}else{
+				$("#newaddr").attr("checked",'true');
+			}	
+		});	
+
+});
+</script>
 </head>
 
 <body>
@@ -336,19 +349,51 @@
  </div>
 <!------------------主体--------------------->
 <div id="container">
-  <div id="main-content">
-    <div class="content-box"><!-- Start Content Box -->
-      
-      <div class="content-box-header">
-        <h3>商品列表</h3>
-        <div class="clear"></div>
-      </div>
-      <!-- End .content-box-header -->
-      
-      <div class="content-box-content">
-        <div class="tab-content default-tab" id="tab1"> <!-- This is the 
-
-target div. id must match the href of this div's tab -->
+	<div id="main-content">
+    	<div class="content-box">
+    		<div class="content-box-header">
+        		<h3>收获人地址</h3>
+	        	<div class="clear"></div>
+            </div>
+            
+            <div class="content-box-content">
+        		<div class="tab-content default-tab" id="tab1"> 
+          			<div class="notification attention png_bg"></div>
+                    <div id="address">
+                    <form action="__URL__/index/add" method="post">
+                    <div id="old" style="display:none;">
+                    	<p><input type="radio" name="method[]" value="old" id="oldaddr"/>选择收获地址
+                    	<ul>
+                        	<?php if(is_array($oldaddr)): $i = 0; $__LIST__ = $oldaddr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
+                                	<input type="radio" name="addr[]" value="<?php echo ($vo["pk_ConsiInfo_Id"]); ?>" />
+                                	<?php echo ($vo["Consi_Addr"]); ?>(<?php echo ($vo["Consi_Name"]); ?> 收),<?php echo ($vo["Consi_Tel"]); ?>,<?php echo ($vo["Consi_PostCode"]); ?>
+                                </li><?php endforeach; endif; else: echo "" ;endif; ?>
+                    	</ul></p><br />
+                    </div>
+                    <p><input type="radio" name="method[]" value="new" id="newaddr" />使用新地址</p>
+                    <table width="930" border="1" cellpadding="0">
+					    <tr>
+						    <td width="90">收货人姓名：</td>
+						    <td><input type="text" name="Consi_Name" size="20" /></td>
+						    <td width="90">详细地址：</td>
+						    <td><input type="text" name="Consi_Addr" size="20" /></td>
+					    </tr>
+                        <tr>
+						    <td>手机/电话：</td>
+						    <td><input type="tel" name="Consi_Tel" /></td>
+						    <td>邮政编码：</td>
+						    <td><input type="text" name="Consi_PostCode"  size="20"/></td>
+					    </tr>
+					</table>
+					</div>
+                </div>
+            </div>
+            <div class="content-box-header">
+        		<h3>确认订单信息</h3>
+	        	<div class="clear"></div>
+            </div>
+            <div class="content-box-content">
+        <div class="tab-content default-tab" id="tab1"> 
           
           <div class="notification attention png_bg"></div>
           <table>
@@ -358,12 +403,11 @@ target div. id must match the href of this div's tab -->
                 <th width="95">单价</th>
                 <th width="110">数量</th>
                 <th width="95">小计</th>
-                <th width="100">操作</th>
               </tr>
             </thead>
             <tfoot>
               <tr>
-                <td colspan="4" style="text-align:right; font-size:14px;">
+                <td colspan="3" style="text-align:right; font-size:14px;">
                         <span id="total-pallets" style="color:#900; font-family:Georgia,'Times New Roman'; font-size:30px;" id="selectnum"><?php echo ($goodsnum); ?></span>
                         <strong>&nbsp;&nbsp;件商品&nbsp;&nbsp;&nbsp;&nbsp;</strong>    
                         <strong>合计：</strong>
@@ -372,35 +416,23 @@ target div. id must match the href of this div's tab -->
                         <strong>元</strong>      
                  </td>
                  <td>
-                    <a href="__APP__/Order/consignee/userid/<?php echo ($userid); ?>/username/<?php echo ($username); ?>"><img src="__PUBLIC__/images/jies.jpg" alt="去结算" /></a>
+                 	<input type="hidden" name="sum" value="<?php echo ($total); ?>" />
+                    <input type="hidden" name="userid" value="<?php echo ($userid); ?>" />
+                    <input type="image" src="__PUBLIC__/images/tjdd.jpg" onClick="this.form.action='__URL__/add'"/>
                  </td>
                </tr>
             </tfoot>
+             </form>
             <tbody>
               <?php if(is_array($cartlist)): $i = 0; $__LIST__ = $cartlist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
                 <td font_color="black" style="text-align:left;">
                     <img class="goodsimg" src="<?php echo ($vo["Goods_img"]); ?>" />
                     <?php echo ($vo["Goods_Name"]); ?>
                 </td>
-                <td font_color="black" class="price-per-pallet">
-                    $<span><?php echo ($vo["Goods_Price"]); ?></span>元
-                </td>
-                <form name="cart['<?php echo ($vo["Cart_Id"]); ?>']" action="__URL__/modifyNum" method="post">
-                <td font_color="black"  class="num-pallets">
-                  
-                    <input type=number class="num-pallets-input" name="num" min=1 value="<?php echo ($vo["Num"]); ?>" style="width:40px;">
-                    <input type="submit" value="更改数量"/>
-                    <input type="hidden" value="<?php echo ($vo["Cart_Id"]); ?>" name="cartid" />
-                    <input type="hidden" value="<?php echo ($vo["Goods_Id"]); ?>"name="goodsid" />
-                  
-                </td>
+                <td font_color="black"> $<span><?php echo ($vo["Goods_Price"]); ?></span>元</td>
+                <td font_color="black"><?php echo ($vo["Num"]); ?></td>
                 </form>
-                <td font_color="black" class="row-total">
-                    <span class="rowtotal"><?php echo ($vo["Sum"]); ?></span>元
-                </td>
-                <td width="84"><!-- Icons --> 
-                    <a href="__URL__/delete/cartid/<?php echo ($vo["Cart_Id"]); ?>" title="Delete"><img src="__PUBLIC__/images/icons/cross.png" alt="Delete" /></a>
-                </td>
+                <td font_color="black"><?php echo ($vo["Sum"]); ?></span>元</td>
               </tr><?php endforeach; endif; else: echo "" ;endif; ?>
             </tbody>
           </table>
@@ -408,10 +440,9 @@ target div. id must match the href of this div's tab -->
         <!-- End #tab1 --> 
         
       </div>
-      <!-- End .content-box-content --> 
-      
+        </div>
+      </div>
     </div>
-  </div>
 </div>
 <!------------------------尾部-------------------------->
 <div id="foot">

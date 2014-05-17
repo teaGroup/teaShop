@@ -3,9 +3,7 @@
 $(function(){
      //建立全局变量，确保点击提交时是经过验证的正确的数据
      var flag1=false,flag2=false,flag3=false,flag4=false,flag5=false;
-	//开始验证表单
-	//失去焦点时，验证用户的输入
-	//对邮箱地址的验证
+
 	$("#username").bind("focusout",function(e){
 		var userNstr=$.trim($(this).val());   //去除首尾空格
 		if(userNstr=="")   //如果用户没有输入

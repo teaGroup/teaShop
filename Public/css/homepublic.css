@@ -1,0 +1,104 @@
+/* CSS Document */
+#head {
+	/*background-color: #6F6;*/
+	height: 143px;
+	width: 100%;
+}
+#foot {
+	height: 270px;
+	width: 100%;
+	margin-top:5px;
+}
+#container {
+	background-color: #f6f6f6;
+	height: auto;
+	width: 100%;
+}
+#main-content{
+	background:#FFC;
+	height:auto;
+	width:1000px;
+	padding-top:5px;
+	margin:0 auto;
+}
+table th{
+	font-size:14px;
+}
+table td{
+	font-size:12px;
+}
+
+
+.content-box {
+                border: 1px solid #ccc;
+                margin: 0 0 5px 0;
+                background: #fff;
+                }
+
+.content-box-header {
+                background: #e5e5e5;
+                margin-top: 1px;
+                height: 35px;
+                }
+
+.content-box-header h3 {
+                padding-top:6px;
+				padding-left:8px;
+				margin:0px;
+                float: left;
+                }
+.content-box-content {
+                padding: 20px;
+                font-size: 13px;
+                border-top: 1px solid #ccc;
+                }
+                
+/************ Table ************/
+
+#main-content table {
+                width: 100%;
+                border-collapse: collapse;
+                }
+#main-content table img.goodsimg{
+        width: 80px;
+        height: 80px;
+}
+                
+#main-content table thead th {
+                font-weight: bold;
+                font-size: 15px;
+                border-bottom: 1px solid #ddd;
+                }
+                
+#main-content tbody {
+                border-bottom: 1px solid #ddd;
+                }
+                
+#main-content tbody tr {
+                background: #fff;
+                }
+              
+#main-content tbody tr.alt-row {
+                background: #f3f3f3;
+                }
+                
+#main-content table td,
+#main-content table th {
+                padding: 10px;
+                line-height: 1.3em;
+				text-align:center;
+                } 				
+#main-content table tfoot{
+	height:10px;
+}
+				
+.clear {
+                clear: both;
+                }
+/*********************收货人***********************/
+#address table{
+	border:1px #DDDDDD solid;
+}
+#address table td{
+	text-align:left;
+}
