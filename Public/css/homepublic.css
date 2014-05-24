@@ -8,6 +8,7 @@
 	height: 270px;
 	width: 100%;
 	margin-top:5px;
+	float:left;
 }
 #container {
 	background-color: #f6f6f6;

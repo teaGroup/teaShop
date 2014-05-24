@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>浮生若茶</title>
+<load href="__PUBLIC__/css/homepublic.css" />
+<load href="__PUBLIC__/css/order.css" />
+<load href="__PUBLIC__/js/jquery.min.js" />
+<load href="__PUBLIC__/js/Public.js" />
+<load href="__PUBLIC__/JS/autocal.js" />
+<style>
+#container {
+	background-color: #f6f6f6;
+	height:auto;
+	float:left;
+	width: 100%;
+}
+.content-box {
+	width:1025px;
+	height:auto;
+	float:left;	
+   	margin: 5px 0px 5px 0;
+    background: #fff;
+}
+.content-box-content {
+    padding: 20px;
+    font-size: 13px;
+    border-top: 1px solid #ccc;
+	height:auto;
+}
+.nav{
+	background:#f6f6f6;
+	float:left;
+	width:205;
+	float:left;
+	height:auto;
+}
+table td{
+	text-align:center;
+	font-size:14px;
+}
+.search{
+	/*background:#CF6;*/
+	width:300px;
+	height:30px;
+	position: absolute;
+	top:190px;
+	left:270px;
+}
+.content-box ul{
+	/*background:#06F;*/
+	position:absolute;
+	right:60px;
+	top:190px;
+}
+ul li{
+	float:left;
+	list-style-type:none;
+}
+</style>
+</head>
+
+<body>
+<!----------------头部-------------------------------->
+<div id="head"> <include file="Public:header" /> </div>
+<!------------------主体--------------------->
+<div id="container">
+	<div class="nav">
+		<ul id="nav"> 
+			<li class="active"><a href="#">订单查询</a></li> 
+			<li><a href="#">个人信息管理</a></li> 
+			<li id="bar"></li> 
+		</ul> 
+	</div>
+	<div class="content-box"> 
+    	<div class="content-box-header">
+        	<h3>商品列表</h3>
+        	<div class="clear"></div>
+      	</div>
+    	<div class="content-box-content">
+        <div class="tab-content default-tab" id="tab1"> 
+          
+          <div class="notification attention png_bg"></div>
+          <div class="search">
+          <form action="__URL__/query" method="post">
+         	 <h4>商品名称:
+             <input type="text" size="20" name="goodsname" />
+             <input type="submit" value="搜索" />
+             </h4>
+          </form>
+          </div>
+          <ul>
+          	<li><a href="__URL__/index">全部订单</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+          	<li><a href="__URL__/query/state/0">未处理</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+            <li><a href="__URL__/query/state/1">正在处理</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+            <li><a href="__URL__/query/state/2">已处理</a></li>
+          </ul>
+          <br />
+          <table border="1">
+            <thead>
+              <tr>
+                <th width="560">商品名称</th>
+                <th width="90">单价</th>
+                <th width="70">数量</th>
+                <th width="80">重量</th>
+                <th width="90">小计</th>
+                <th width="120">订单状态</th>
+              </tr>
+            </thead>
+
+            <tbody>
+           <volist name="orderlist1" id="vo1">
+              <volist name="orderlist2" id="vo2">
+              <if condition="$vo2['Order_Id'] eq $vo1['pk_Order_Id']">
+              <if condition="$loop eq '1'">
+               <tr>
+              	<td colspan="7" style="background:#F3F3F3; text-align:left; height:35px;">
+                	<strong>订单编号：</strong><{$vo2.Order_Id}>&nbsp;&nbsp;&nbsp;&nbsp;   
+                    <strong>成交时间:</strong><{$vo2.Order_Time}>&nbsp;&nbsp;&nbsp;&nbsp;   
+                    <strong>总额:&nbsp;&nbsp; </strong>
+                    <span style="color:#900; font-family:Georgia; font-size:18px;"><{$vo2.Order_Sum}></span>
+                </td>
+              </tr>
+              </if>
+              
+              <tr>
+                <td font_color="black" style="text-align:left;">
+                  <img src="<{$vo2.Goods_img}>" width='80' height='80' /><{$vo2.Goods_Name}>
+                </td>             
+                <td font_color="black"><span><{$vo2.Goods_Price}></span>元</td>
+                <td font_color="black"><{$vo2.OrderIt_Num}> </td>
+                <td font_color="black"><{$vo2.Goods_NetContent}><{$vo2.Goods_Unit}></td>
+                <td font_color="black"><{$vo2.Order_SubSum}>元</td>
+                 <if condition="$loop eq '1'">
+                <td font_color="black"><{$vo2.Order_State}></td>
+                <php>$loop++;</php>
+                </if>
+              </tr>
+              </if>
+              </volist>
+              <php>$loop=1;</php>
+            </volist>
+            </tbody>
+          </table>
+          <br />
+          <div id="div" align="center"><div id="black"><{$show}></div></div>
+        </div>
+        
+      </div>
+    </div>
+</div>
+<!------------------------尾部-------------------------->
+<div id="foot"><include file="Public:footer" /> </div>
+
+</body>
+</html>

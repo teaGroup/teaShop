@@ -20,7 +20,55 @@ $(function(){
 			}	
 		});	
 
+$("input[name=Consi_Name]").bind("focusout",function(e){
+	var username=$.trim($(this).val());
+	if(username==""){
+		$("#username").html("收货人不能为空");	
+	}else{
+		$("#username").html("");	
+	}	
+	
 });
+$("input[name=Consi_Addr]").bind("focusout",function(e){
+	var addr=$.trim($(this).val());
+	if(addr==""){
+		$("#addr").html("收货人地址不能为空");	
+	}else{
+		$("#addr").html("");	
+	}	
+});
+$("input[name=Consi_Tel]").bind("focusout",function(e){
+		var tel=$.trim($(this).val());
+		if(tel==""){
+			$("#tel").html("手机/电话不能为空");	
+		}else{
+			reg=/^(\d{3,4}\-)?[1-9]\d{6,7}$/;
+			reg2=/^(\+\d{2,3}\-)?\d{11}$/;
+			if(!reg.test(tel)){
+				if(!reg2.test(tel)){
+					$("#tel").html("请输入正确的电话号码");		
+				}	
+			}else{
+				$("#tel").html("");		
+			}	
+		}
+	});
+$("input[name=Consi_PostCode]").bind("focusout",function(e){
+		var postcode=$.trim($(this).val());
+		if(postcode==""){
+			$("#postcode").html("");	
+		}else{
+			reg=/^[1-9]\d{5}$/;	
+			if(!reg.test(postcode)){
+				$("#postcode").html("请输入正确的邮政编码");
+			}else{
+				$("#postcode").html("");	
+			}
+		}
+	});
+
+});
+
 </script>
 </head>
 
@@ -56,15 +104,27 @@ $(function(){
                     <table width="930" border="1" cellpadding="0">
 					    <tr>
 						    <td width="90">收货人姓名：</td>
-						    <td><input type="text" name="Consi_Name" size="20" /></td>
+						    <td>
+                            	<input type="text" name="Consi_Name" size="20" />&nbsp;&nbsp;&nbsp;
+                            	<span style="color:#900;" id="username">(必填)</span>
+                            </td>
 						    <td width="90">详细地址：</td>
-						    <td><input type="text" name="Consi_Addr" size="20" /></td>
+						    <td>
+                            	<input type="text" name="Consi_Addr" size="20" />&nbsp;&nbsp;&nbsp;
+                                <span style="color:#900;" id="addr">(必填)</span>
+                            </td>
 					    </tr>
                         <tr>
 						    <td>手机/电话：</td>
-						    <td><input type="tel" name="Consi_Tel" /></td>
+						    <td>
+                            	<input type="tel" name="Consi_Tel" />&nbsp;&nbsp;&nbsp;
+                                <span style="color:#900;" id="tel">(必填)</span>
+                            </td>
 						    <td>邮政编码：</td>
-						    <td><input type="text" name="Consi_PostCode"  size="20"/></td>
+						    <td>
+                            	<input type="text" name="Consi_PostCode"  size="20" onblur="isPostcode(this.value)" />&nbsp;&nbsp;&nbsp;
+                                <span style="color:#900;" id="postcode"></span>
+                            </td>
 					    </tr>
 					</table>
 					</div>
@@ -112,7 +172,7 @@ $(function(){
                     <img class="goodsimg" src="<{$vo.Goods_img}>" />
                     <{$vo.Goods_Name}>
                 </td>
-                <td font_color="black"> $<span><{$vo.Goods_Price}></span>元</td>
+                <td font_color="black"><span><{$vo.Goods_Price}></span>元</td>
                 <td font_color="black"><{$vo.Num}></td>
                 </form>
                 <td font_color="black"><{$vo.Sum}></span>元</td>

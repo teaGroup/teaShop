@@ -1,0 +1,120 @@
+<!DOCTYPE>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>订单浏览</title>
+<style>
+.content-box{
+	position:relative;
+	top:-40px;
+}
+table td{
+	text-align:center;
+	font-size:14px;
+	background:#FFF;
+}
+table tr th{
+	text-align:center;
+}
+.content-box ul{
+	position:absolute;
+	right:60px;
+	top:60px;
+}
+.content-box ul li{
+	float:left;
+}
+
+</style>
+</head>
+
+<body>
+	<include file="Header:header"/>
+	<div id="main-content"> 
+    	<div class="content-box">
+        	<div class="content-box-header">
+					<h3>订单列表</h3>
+					<div class="clear"></div>
+			</div>
+            <div class="content-box-content">
+				<div class="tab-content default-tab" id="tab1">
+                	<div class="search">
+         	 			<form action="__URL__/query" method="post">
+         	 			<h4>商品名称:
+             				<input type="text" size="20" name="goodsname" />
+             				<input type="submit" value="搜索" />
+             			</h4>
+          				</form>
+          			</div>
+          			<ul>
+          				<li><a href="__URL__/index">全部订单</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+          				<li><a href="__URL__/query/state/0">未处理</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+            			<li><a href="__URL__/query/state/1">正在处理</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+            			<li><a href="__URL__/query/state/2">已处理</a></li>
+          			</ul>
+          			<br />
+                	<div class="notification attention png_bg"></div>
+                    
+                    <table>
+                    	<thead>
+              				<tr>
+               					<th width="50">订单号</th>
+               					<th width="50">下单用户</th>
+                				<th width="50">收货人</th>
+                				<th width="50">总额</th>
+               			 		<th width="50">订单状态</th>
+                				<th width="120">下单时间</th>
+                                <th width="50">操作</th>
+              				</tr>
+            			</thead>
+                    	<tbody>
+          				 <volist name="orderlist1" id="vo1">
+              			 <volist name="orderlist2" id="vo2">
+              				<if condition="$vo2['Order_Id'] eq $vo1['pk_Order_Id']">
+              				<if condition="$loop eq '1'">
+               				<tr>
+              					<!--<td colspan="7" style="background:#F3F3F3; text-align:left; height:35px;">
+                					<strong>订单编号：</strong>&nbsp;&nbsp;&nbsp;&nbsp;   
+                   	 				<strong>成交时间:</strong><{$vo2.Order_Time}>&nbsp;&nbsp;&nbsp;&nbsp;   
+                    				<strong>总额:&nbsp;&nbsp; </strong>
+                    				<span style="color:#900; font-family:Georgia; font-size:18px;"><{$vo2.Order_Sum}></span>
+                                    <span style="float:right; margin-right:6px;"><a href="#">删除</a></span>
+                				</td>-->
+                                <td><strong><{$vo2.Order_Id}></strong></td>
+                                <td><strong><{$vo2.Order_Owner}></strong></td>
+                                <td><strong><{$vo2.Consi_Name}></strong></td>
+                                <td><span style="color:#900; font-family:Georgia; font-size:18px;"><{$vo2.Order_Sum}></span></td>
+                                <td><strong><{$vo2.Order_State}></strong></td>
+                                <td><strong><{$vo2.Order_Time}></strong></td>
+                                <td><a href="#">删除</a></td>
+             			 	</tr>
+              				</if>
+              
+              				<tr>
+                				<td font_color="black" style="text-align:left;">
+                  					<img src="<{$vo2.Goods_img}>" width='80' height='80' /><{$vo2.Goods_Name}>
+                				</td>             
+                				<td font_color="black"><span><{$vo2.Goods_Price}></span>元</td>
+                				<td font_color="black"><{$vo2.OrderIt_Num}> </td>
+                				<td font_color="black"><{$vo2.Goods_NetContent}><{$vo2.Goods_Unit}></td>
+                				<td font_color="black"><{$vo2.Order_SubSum}>元</td>
+                 				<if condition="$loop eq '1'">
+                				<td font_color="black"><{$vo2.Order_State}></td>
+                				<php>$loop++;</php>
+                                <else /><td>&nbsp;</td>
+                				</if>
+                                <td><a href="#">删除</a></td>
+              				</tr>
+              				</if>
+              				</volist>
+              				<php>$loop=1;</php>
+            				</volist>
+            			</tbody>
+                    </table>
+                    <br />
+          			<div id="div" align="center"><div id="black"><{$show}></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

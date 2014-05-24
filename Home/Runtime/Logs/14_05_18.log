@@ -1,0 +1,10 @@
+[ 2014-05-18T21:43:43+08:00 ] ERR: (ThinkException) Model:filed您所请求的方法不存在！
+[ 2014-05-18T22:13:21+08:00 ] ERR: (ThinkException) XML标签语法错误 : condition="<{$user}
+[ 2014-05-18T22:13:21+08:00 ] ERR: (ThinkException) 非法操作:__PUBLIC__
+[ 2014-05-18T22:13:21+08:00 ] ERR: (ThinkException) 非法操作:__PUBLIC__
+[ 2014-05-18T22:13:21+08:00 ] ERR: (ThinkException) 非法操作:__PUBLIC__
+[ 2014-05-18T22:13:21+08:00 ] ERR: (ThinkException) 非法操作:__PUBLIC__
+[ 2014-05-18T23:06:58+08:00 ] ERR: (ThinkException) 非法操作:delete
+[ 2014-05-18T23:22:39+08:00 ] ERR: (ThinkException) 非法操作:Order
+[ 2014-05-18T23:28:36+08:00 ] ERR: (ThinkException) 非法操作:query
+[ 2014-05-18T23:29:15+08:00 ] ERR: (ThinkException) 非法操作:queryOrder

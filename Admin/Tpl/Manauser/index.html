@@ -5,9 +5,20 @@
 	</head>
 	<body>
            <include file="Header:header"/>
-		 <div>
-<center>
-       <form action="__APP__/Manauser/serach" method="post">
+		 <div id="main-content">
+           <div class="content-box"><!-- Start Content Box -->
+           <div class="content-box-header">
+					
+					<h3>会员信息管理</h3>
+					
+					<div class="clear"></div>
+					
+				</div> <!-- End .content-box-header -->
+				<div class="content-box-content">
+				<div class="tab-content default-tab" id="tab1"> <!-- This is the target div. id must match the href of this div's tab -->
+						
+						<div class="notification attention png_bg"></div>
+       <form action="__APP__/Manauser/search" method="post">
 	        <label for="tiaojian">
 		          <select name="tiaojian">
 				        <option value="User_Name">会员名称</option>
@@ -16,12 +27,12 @@
 				        <option value="User_JoinDate">注册时间</option>
 				        <option value="UserL_level">等级</option>
 				</select>
-				<input type="text" name="keyword"/>&nbsp;&nbsp;<input type="submit" value="提交"/>
+				<input type="text" name="keyword"/>&nbsp;&nbsp;<input type="submit" class="button" value="搜索"/>
 		   </label>
 	  </form>
-       <table id="Tuser">
+       <table>
 	        <tr>
-		       <th>会员ID</th>
+		       <th><input class="check-all" type="checkbox" name="Ids[]"/>会员ID</th>
 		       <th>会员名称</th>
 		       <th>密码</th>
 		       <th>邮箱</th>
@@ -30,12 +41,12 @@
 		       <th>最后登录时间</th>
 		       <th>积分</th>
 		       <th>登录次数</th>
-		       <th>积分</th>
+		       <th>会员等级</th>
 			  <th>操作</th>
 		   </tr>
 		   <volist name="user" id="vo">
 		   <tr>
-		       <td><{$vo.pk_User_Id}></td>
+		       <td><input type="checkbox" name="Ids" value="<{$vo.pk_User_Id}>"/><{$vo.pk_User_Id}></td>
 		       <td><{$vo.User_Name}></td>
 			  <td><{$vo.User_Pwd}></td>
 		       <td><{$vo.User_Email}></td>
@@ -45,12 +56,26 @@
 		       <td><{$vo.User_Credit}></td>
 			  <td><{$vo.User_LoginNum}></td>
 		       <td><{$vo.UserL_level}></td>
-		       <td><a href="__APP__/Manauser/id/<{$vo.pk_User_Id}>">删除</a></td>
+		       <td><a href="__APP__/Manauser/del/id/<{$vo.pk_User_Id}>"><img src="__PUBLIC__/images/icons/cross.png" alt="Delete" /></a></td>
 		   </tr>
 		   </volist>
+		   <tr>
+		      <td colspan="12">
+			     <div class="bulk-actions align-left">
+			           <a class="button" href="##">DELETE</a>
+				</div>
+			 </td>
+		   </tr>
 	  </table>
-	  <div id="div"><div id="black"><{$show}></div></div>
-</center>
+	  <div id="div" align="center"><div id="black"><{$show}></div></div>
+	  <div class="clear"></div>
+        </div> <!-- End #tab1 -->
+					
+					        
+					
+				</div> <!-- End .content-box-content -->
+				
+			</div>
        </div>
 </body>
 </html>

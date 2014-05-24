@@ -2,16 +2,36 @@
 <html>
      <head>
 	     <title>商品信息浏览</title>
+		<style>
+              table{width:900px;margin-top:auto;border:1px solid #000;}
+              table #img{width:40px;height:60px;}
+		</style>
 	</head>
 	<body>
          <include file="Header:header"/>
-	    <div>
+	    <div id="main-content"> 
             <center>
                    <nav id="nav1">
 	              <a href="__APP__/Goodsinfo/index">浏览商品</a> |
 	              <a href="__APP__/Goodsinfo/add">添加商品</a>
 	              </nav>
 	       <hr/>
+		  </center>
+		  <div class="content-box"><!-- Start Content Box -->
+				
+				<div class="content-box-header">
+					
+					<h3>商品信息浏览</h3>
+					
+					<div class="clear"></div>
+					
+				</div> <!-- End .content-box-header -->
+				<div class="content-box-content">
+					
+					<div class="tab-content default-tab" id="tab1"> <!-- This is the target div. id must match the href of this div's tab -->
+						
+						<div class="notification attention png_bg"></div>
+						
 	             <form action="__APP__/Goodsinfo/search" method="post" id="fom">
 	                      <select name="tiaojian">
 		                        <option value="Goods_Name">商品名称</option>
@@ -20,15 +40,14 @@
 		                        <option value="Classifi_Name">商品类别</option>
 				              <option value="Goods_SellNum">销售量</option>
 		                 </select>
-		                 <input type="text" name="keyword"/><input type="submit" value="提交"/>
+		                 <input type="text" name="keyword"/><input type="submit" class="button" value="提交"/>
 	             </form>
-                  <table id="table1">
+                  <table>
 	                     <tr>
 		                    <th>商品ID号</th>
 		                    <th>商品名称</th>
 		                    <th>商品图片</th>
 		                    <th>商品价格</th>
-		                    <th>商品简介</th>
 		                    <th>商品类别</th>
 		                    <th>是否上架</th>
 		                    <th>上市时间</th>
@@ -42,10 +61,9 @@
 		                 <volist name="list" id="vo">
 		                 <tr align="center">
 		                      <td><{$vo.pk_GoodsInfo_Id}></td>
-		                      <td><{$vo.Goods_Name}></td>
-		                      <td><img src="<{$vo.Goods_img}>" style="width:80px; height:80px;"/></td>
+		                      <td><a href="__APP__/Goodsinfo/modify/id/<{$vo.pk_GoodsInfo_Id}>"><{$vo.Goods_Name}></a></td>
+		                      <td><img src="<{$vo.Goods_img}>" id="img"/></td>
 		                      <td><{$vo.Goods_Price}></td>
-		                      <td id="text"><{$vo.Goods_Intro}></td>
 		                      <td><{$vo.Classifi_Name}></td>
 		                      <td><{$vo.Goods_IsSell}></td>
 		                      <td><{$vo.Goods_SellTime}></td>
@@ -54,11 +72,11 @@
 		                      <td><{$vo.Goods_NetContent}></td>
 		                      <td><{$vo.Goods_Unit}></td>
 		                      <td><{$vo.Goods_SellNum}></td>
-		                      <td><a href="__APP__/Goodsinfo/del/id/<{$vo.pk_GoodsInfo_Id}>">删除</a> | <a href="__APP__/Goodsinfo/modify/id/<{$vo.pk_GoodsInfo_Id}>">修改</a></td>
+		                      <td><a href="__APP__/Goodsinfo/del/id/<{$vo.pk_GoodsInfo_Id}>"><img src="__PUBLIC__/images/icons/cross.png" alt="Delete" /></a><a href="__APP__/Goodsinfo/modify/id/<{$vo.pk_GoodsInfo_Id}>"><img src="__PUBLIC__/images/icons/pencil.png" alt="Edit" /></a></td>
 		                 </tr>
 		                 </volist>
 	             </table>
-	            <div id="div"><div id="black"><{$show}></div></div>
+	            <div id="div" align="center"><div id="black"><{$show}></div></div>
              </center>
 		   </div>
       </body>

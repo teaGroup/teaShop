@@ -23,7 +23,7 @@
     <div class="login-info"> <font>欢迎光临！&nbsp;&nbsp;</font> </div>
     <div class="quick-menu2">
       <ul>
-        <li><a title="我的帐户" href="#">我的帐户</a> </li>
+        <li><a title="我的帐户" href="__APP__/Order/query">我的帐户</a> </li>
         <li><a title="帮助中心" href="#">帮助中心</a> </li>
         <li>欢迎你，<font style="color:#B10A04;"><?php echo ($username); ?></font></li>
         <li><a href="__APP__/Public/logout">退出</a></li>
@@ -317,22 +317,24 @@
         </ul>
       </div>
     </div>
-    <div class="navCon-menu fl">
+    <div class="navCon-menu fl" style="z-index:50;">
       <ul>
         <li><a href="__APP__/Index/index">首页</a></li>
         <li><a href="http://www.jq-school.com">企业文化</a></li>
       </ul>
     </div>
   </div>
+  
 </div>
 <div id="topcart" style="top: 111px;">
-  <div class="cartinfo" id="cartinfo" style="left: 926px;">
+  <div class="cartinfo" id="cartinfo" style="left: 326px;">
     <div class="cartleft">
       <div class="cart" id="ECS_CARTINFO"> <a href="__APP__/Cart/index" title="查看购物车">购物车 <b class="corg"><?php echo ($goodsnum); ?></b> 件</a> </div>
     </div>
     <div class="cartright"> <a href="__APP__/Order/consignee"></a> </div>
   </div>
 </div>
+
  </div>
 <!------------------主体--------------------->
 <div id="container">
@@ -388,7 +390,7 @@ target div. id must match the href of this div's tab -->
                 <form name="cart['<?php echo ($vo["Cart_Id"]); ?>']" action="__URL__/modifyNum" method="post">
                 <td font_color="black"  class="num-pallets">
                   
-                    <input type=number class="num-pallets-input" name="num" min=1 value="<?php echo ($vo["Num"]); ?>" style="width:40px;">
+                    <input type=number class="num-pallets-input" name="num" min=1 max='<?php echo ($vo["Goods_Num"]); ?>' value="<?php echo ($vo["Num"]); ?>" style="width:40px;">
                     <input type="submit" value="更改数量"/>
                     <input type="hidden" value="<?php echo ($vo["Cart_Id"]); ?>" name="cartid" />
                     <input type="hidden" value="<?php echo ($vo["Goods_Id"]); ?>"name="goodsid" />

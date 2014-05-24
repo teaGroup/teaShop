@@ -172,12 +172,13 @@ PADDING-TOP: 0px;
 #topcart
 {
 	position:absolute;
+	right:50px;
 	overflow:hidden;
 	display:block;
 	height:24px;
 	line-height:24px;
-	width:100%;
-	z-index:100;
+	width:50%;
+	z-index:50;
 }
 .cartinfo
 {
@@ -189,7 +190,7 @@ PADDING-TOP: 0px;
 {
 	background:url(../images/cart_left.gif) no-repeat left;
 	overflow:hidden;
-	padding-left:28px;
+	padding-left:25px;
 	float:left;
 }
 

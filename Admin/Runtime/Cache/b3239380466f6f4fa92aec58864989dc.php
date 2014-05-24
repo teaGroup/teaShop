@@ -2,6 +2,10 @@
 <html>
      <head>
 	     <title>商品信息浏览</title>
+		<style>
+              table{width:900px;margin-top:auto;border:1px solid #000;}
+              table #img{width:40px;height:60px;}
+		</style>
 	</head>
 	<body>
          ﻿		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/reset.css" />
@@ -19,9 +23,9 @@
 			<h1 id="sidebar-title"><a href="#">Admin Login</a></h1>
 			<a href="#"><img id="logo" src="__PUBLIC__/images/logo.png" alt="Simpla Admin logo" /></a>
 			<div id="profile-links">
-				Welcome, <a href="浏览自己的信息中心" title="Edit your profile">John Doe</a>!
+				Welcome, <a href="#" title="Edit your profile"><?php echo ($adminname); ?></a>!
 				<br />
-				<a href="#" title="View the Site">网站首页</a> | <a href="__APP__/Login/logout" title="Sign Out">注销登录</a>
+				<a href="__ROOT__/index.php/Index/index" title="View the Site">网站首页</a> | <a href="__APP__/Login/logout" title="Sign Out">注销登录</a>
 			</div>
 			<ul id="main-nav"> 
 				
@@ -90,13 +94,29 @@
 				
 			</ul>
 		</div></div>
-	    <div>
+	    <div id="main-content"> 
             <center>
                    <nav id="nav1">
 	              <a href="__APP__/Goodsinfo/index">浏览商品</a> |
 	              <a href="__APP__/Goodsinfo/add">添加商品</a>
 	              </nav>
 	       <hr/>
+		  </center>
+		  <div class="content-box"><!-- Start Content Box -->
+				
+				<div class="content-box-header">
+					
+					<h3>商品信息浏览</h3>
+					
+					<div class="clear"></div>
+					
+				</div> <!-- End .content-box-header -->
+				<div class="content-box-content">
+					
+					<div class="tab-content default-tab" id="tab1"> <!-- This is the target div. id must match the href of this div's tab -->
+						
+						<div class="notification attention png_bg"></div>
+						
 	             <form action="__APP__/Goodsinfo/search" method="post" id="fom">
 	                      <select name="tiaojian">
 		                        <option value="Goods_Name">商品名称</option>
@@ -105,15 +125,14 @@
 		                        <option value="Classifi_Name">商品类别</option>
 				              <option value="Goods_SellNum">销售量</option>
 		                 </select>
-		                 <input type="text" name="keyword"/><input type="submit" value="提交"/>
+		                 <input type="text" name="keyword"/><input type="submit" class="button" value="提交"/>
 	             </form>
-                  <table id="table1">
+                  <table>
 	                     <tr>
 		                    <th>商品ID号</th>
 		                    <th>商品名称</th>
 		                    <th>商品图片</th>
 		                    <th>商品价格</th>
-		                    <th>商品简介</th>
 		                    <th>商品类别</th>
 		                    <th>是否上架</th>
 		                    <th>上市时间</th>
@@ -126,10 +145,9 @@
 		                 </tr>
 		                 <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr align="center">
 		                      <td><?php echo ($vo["pk_GoodsInfo_Id"]); ?></td>
-		                      <td><?php echo ($vo["Goods_Name"]); ?></td>
-		                      <td><img src="<?php echo ($vo["Goods_img"]); ?>" style="width:80px; height:80px;"/></td>
+		                      <td><a href="__APP__/Goodsinfo/modify/id/<?php echo ($vo["pk_GoodsInfo_Id"]); ?>"><?php echo ($vo["Goods_Name"]); ?></a></td>
+		                      <td><img src="<?php echo ($vo["Goods_img"]); ?>" id="img"/></td>
 		                      <td><?php echo ($vo["Goods_Price"]); ?></td>
-		                      <td id="text"><?php echo ($vo["Goods_Intro"]); ?></td>
 		                      <td><?php echo ($vo["Classifi_Name"]); ?></td>
 		                      <td><?php echo ($vo["Goods_IsSell"]); ?></td>
 		                      <td><?php echo ($vo["Goods_SellTime"]); ?></td>
@@ -138,10 +156,10 @@
 		                      <td><?php echo ($vo["Goods_NetContent"]); ?></td>
 		                      <td><?php echo ($vo["Goods_Unit"]); ?></td>
 		                      <td><?php echo ($vo["Goods_SellNum"]); ?></td>
-		                      <td><a href="__APP__/Goodsinfo/del/id/<?php echo ($vo["pk_GoodsInfo_Id"]); ?>">删除</a> | <a href="__APP__/Goodsinfo/modify/id/<?php echo ($vo["pk_GoodsInfo_Id"]); ?>">修改</a></td>
+		                      <td><a href="__APP__/Goodsinfo/del/id/<?php echo ($vo["pk_GoodsInfo_Id"]); ?>"><img src="__PUBLIC__/images/icons/cross.png" alt="Delete" /></a><a href="__APP__/Goodsinfo/modify/id/<?php echo ($vo["pk_GoodsInfo_Id"]); ?>"><img src="__PUBLIC__/images/icons/pencil.png" alt="Edit" /></a></td>
 		                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>
 	             </table>
-	            <div id="div"><div id="black"><?php echo ($show); ?></div></div>
+	            <div id="div" align="center"><div id="black"><?php echo ($show); ?></div></div>
              </center>
 		   </div>
       </body>

@@ -2,16 +2,38 @@
 <html>
       <head>
             <title>商品类别管理</title>
+		   <style>
+		     nav{
+			    font-size:20px;
+			    font-weight:bold;
+			}
+		 </style>
       </head>
 	 <body>
            <include file="Header:header"/>
-		 <div>
+		<div id="main-content">
                <center>
-                     <nav id="nav">
+                     <nav>
                           <a href="__APP__/Classifi/index">浏览商品类别</a> |
                           <a href="__APP__/Classifi/add">添加商品类别</a>
                      </nav>
                      <hr>
+			</center>
+			<div class="content-box"><!-- Start Content Box -->
+				
+				<div class="content-box-header">
+					
+					<h3>商品类别添加</h3>
+					
+					<div class="clear"></div>
+					
+				</div> <!-- End .content-box-header -->
+				<div class="content-box-content">
+					
+					<div class="tab-content default-tab" id="tab1"> <!-- This is the target div. id must match the href of this div's tab -->
+						
+						<div class="notification attention png_bg"></div>
+				<center>		
                      <form action="__APP__/Classifi/insert" method="post">
                            <label for="name" id="one">类别名称：<input type="text" name="name"/></label><br/>
 	                      <label for="level" id="two">类别等级：<select name="level" size="1">
@@ -27,9 +49,10 @@
 	                      <option value="<{$vo['pk_Classifi_Id']}>"><{$vo.pk_Classifi_Id}></option>
 		                 </foreach>
 	                      </select></label><br/>
-                           <nav id="four"><input type="submit" value="提交"/>&nbsp;&nbsp;<input type="reset" value="重置"/></nav>
+                           <nav id="four"><input type="submit" class="button" value="提交"/>&nbsp;&nbsp;<input type="reset" class="button" value="重置"/></nav>
                      </form>
                 </center>
 	      </div>
+		 </div>
       </body>
 </html>

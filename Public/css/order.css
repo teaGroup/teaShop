@@ -1,5 +1,18 @@
 /* CSS Document */
-
+* { padding: 0; margin: 0; } 
 #address ul{
 	margin-left:15px;
 }
+
+/*用户后台*/
+.nav{
+	background:#CF6;
+	width:20%;
+	float:left;
+	height:auto;
+}
+.nav ul { width: 202px; margin: 60px auto 0; position: relative; } 
+.nav li { width: 200px; height: 30px; line-height: 30px; padding-left: 10px; border: 1px solid #ccc; border-left: 3px solid #666; font-size: 14px; color: #333; margin-bottom: 5px; position: relative; z-index: 2;   list-style: none; } 
+.nav a { color: #333; text-decoration: none; } 
+.nav .active { font-weight: bold; background: #C8F284; } 
+#bar { width: 10px; padding-left: 0; background: #2D591A; border: 1px solid #2D591A; position: absolute; top: 0; left: -14px; z-index: 3; } 

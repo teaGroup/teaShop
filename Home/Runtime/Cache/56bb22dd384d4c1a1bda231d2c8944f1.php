@@ -6,70 +6,58 @@
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/homepublic.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/order.css" />
 <script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
-<script>
-$(function(){
-
-		$.get("__URL__/check",function(data){
-			if(data.status==1){
-				//alert(1);	
-				$("#oldaddr").attr("checked",'true');
-				$("input[name='addr[]']").eq(0).attr("checked",'true');
-				$("div#old").show();
-			}else{
-				$("#newaddr").attr("checked",'true');
-			}	
-		});	
-
-$("input[name=Consi_Name]").bind("focusout",function(e){
-	var username=$.trim($(this).val());
-	if(username==""){
-		$("#username").html("收货人不能为空");	
-	}else{
-		$("#username").html("");	
-	}	
-	
-});
-$("input[name=Consi_Addr]").bind("focusout",function(e){
-	var addr=$.trim($(this).val());
-	if(addr==""){
-		$("#addr").html("收货人地址不能为空");	
-	}else{
-		$("#addr").html("");	
-	}	
-});
-$("input[name=Consi_Tel]").bind("focusout",function(e){
-		var tel=$.trim($(this).val());
-		if(tel==""){
-			$("#tel").html("手机/电话不能为空");	
-		}else{
-			reg=/^(\d{3,4}\-)?[1-9]\d{6,7}$/;
-			reg2=/^(\+\d{2,3}\-)?\d{11}$/;
-			if(!reg.test(tel)){
-				if(!reg2.test(tel)){
-					$("#tel").html("请输入正确的电话号码");		
-				}	
-			}else{
-				$("#tel").html("");		
-			}	
-		}
-	});
-$("input[name=Consi_PostCode]").bind("focusout",function(e){
-		var postcode=$.trim($(this).val());
-		if(postcode==""){
-			$("#postcode").html("");	
-		}else{
-			reg=/^[1-9]\d{5}$/;	
-			if(!reg.test(postcode)){
-				$("#postcode").html("请输入正确的邮政编码");
-			}else{
-				$("#postcode").html("");	
-			}
-		}
-	});
-
-});
-
-</script>
+<script type="text/javascript" src="__PUBLIC__/js/Public.js"></script>
+<script type="text/javascript" src="__PUBLIC__/JS/autocal.js"></script>
+<style>
+#container {
+	background-color: #f6f6f6;
+	height:auto;
+	float:left;
+	width: 100%;
+}
+.content-box {
+	width:1025px;
+	height:auto;
+	float:left;	
+   	margin: 5px 0px 5px 0;
+    background: #fff;
+}
+.content-box-content {
+    padding: 20px;
+    font-size: 13px;
+    border-top: 1px solid #ccc;
+	height:auto;
+}
+.nav{
+	background:#f6f6f6;
+	float:left;
+	width:205;
+	float:left;
+	height:auto;
+}
+table td{
+	text-align:center;
+	font-size:14px;
+}
+.search{
+	/*background:#CF6;*/
+	width:300px;
+	height:30px;
+	position: absolute;
+	top:190px;
+	left:270px;
+}
+.content-box ul{
+	/*background:#06F;*/
+	position:absolute;
+	right:60px;
+	top:190px;
+}
+ul li{
+	float:left;
+	list-style-type:none;
+}
+</style>
 </head>
 
 <body>
@@ -399,110 +387,77 @@ $("input[name=Consi_PostCode]").bind("focusout",function(e){
  </div>
 <!------------------主体--------------------->
 <div id="container">
-	<div id="main-content">
-    	<div class="content-box">
-    		<div class="content-box-header">
-        		<h3>收获人地址</h3>
-	        	<div class="clear"></div>
-            </div>
-            
-            <div class="content-box-content">
-        		<div class="tab-content default-tab" id="tab1"> 
-          			<div class="notification attention png_bg"></div>
-                    <div id="address">
-                    <form action="__URL__/index/add" method="post">
-                    <div id="old" style="display:none;">
-                    	<p><input type="radio" name="method[]" value="old" id="oldaddr"/>选择收获地址
-                    	<ul>
-                        	<?php if(is_array($oldaddr)): $i = 0; $__LIST__ = $oldaddr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
-                                	<input type="radio" name="addr[]" value="<?php echo ($vo["pk_ConsiInfo_Id"]); ?>" />
-                                	<?php echo ($vo["Consi_Addr"]); ?>(<?php echo ($vo["Consi_Name"]); ?> 收),<?php echo ($vo["Consi_Tel"]); ?>,<?php echo ($vo["Consi_PostCode"]); ?>
-                                </li><?php endforeach; endif; else: echo "" ;endif; ?>
-                    	</ul></p><br />
-                    </div>
-                    <p><input type="radio" name="method[]" value="new" id="newaddr" />使用新地址</p>
-                    <table width="930" border="1" cellpadding="0">
-					    <tr>
-						    <td width="90">收货人姓名：</td>
-						    <td>
-                            	<input type="text" name="Consi_Name" size="20" />&nbsp;&nbsp;&nbsp;
-                            	<span style="color:#900;" id="username">(必填)</span>
-                            </td>
-						    <td width="90">详细地址：</td>
-						    <td>
-                            	<input type="text" name="Consi_Addr" size="20" />&nbsp;&nbsp;&nbsp;
-                                <span style="color:#900;" id="addr">(必填)</span>
-                            </td>
-					    </tr>
-                        <tr>
-						    <td>手机/电话：</td>
-						    <td>
-                            	<input type="tel" name="Consi_Tel" />&nbsp;&nbsp;&nbsp;
-                                <span style="color:#900;" id="tel">(必填)</span>
-                            </td>
-						    <td>邮政编码：</td>
-						    <td>
-                            	<input type="text" name="Consi_PostCode"  size="20" onblur="isPostcode(this.value)" />&nbsp;&nbsp;&nbsp;
-                                <span style="color:#900;" id="postcode"></span>
-                            </td>
-					    </tr>
-					</table>
-					</div>
-                </div>
-            </div>
-            <div class="content-box-header">
-        		<h3>确认订单信息</h3>
-	        	<div class="clear"></div>
-            </div>
-            <div class="content-box-content">
+	<div class="nav">
+		<ul id="nav"> 
+			<li class="active"><a href="#">订单查询</a></li> 
+			<li><a href="#">个人信息管理</a></li> 
+			<li id="bar"></li> 
+		</ul> 
+	</div>
+	<div class="content-box"> 
+    	<div class="content-box-header">
+        	<h3>商品列表</h3>
+        	<div class="clear"></div>
+      	</div>
+    	<div class="content-box-content">
         <div class="tab-content default-tab" id="tab1"> 
           
           <div class="notification attention png_bg"></div>
-          <table>
+          <div class="search">
+          <form action="__URL__/query" method="post">
+         	 <h4>商品名称:
+             <input type="text" size="20" name="goodsname" />
+             <input type="submit" value="搜索" />
+             </h4>
+          </form>
+          </div>
+          <ul>
+          	<li><a href="__URL__/index">全部订单</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+          	<li><a href="__URL__/query/state/0">未处理</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+            <li><a href="__URL__/query/state/1">正在处理</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+            <li><a href="__URL__/query/state/2">已处理</a></li>
+          </ul>
+          <br />
+          <table border="1">
             <thead>
               <tr>
-                <th width="500">商品名称</th>
-                <th width="95">单价</th>
-                <th width="110">数量</th>
-                <th width="95">小计</th>
+                <th width="560">商品名称</th>
+                <th width="90">单价</th>
+                <th width="70">数量</th>
+                <th width="80">重量</th>
+                <th width="90">小计</th>
+                <th width="120">订单状态</th>
               </tr>
             </thead>
-            <tfoot>
-              <tr>
-                <td colspan="3" style="text-align:right; font-size:14px;">
-                        <span id="total-pallets" style="color:#900; font-family:Georgia,'Times New Roman'; font-size:30px;" id="selectnum"><?php echo ($goodsnum); ?></span>
-                        <strong>&nbsp;&nbsp;件商品&nbsp;&nbsp;&nbsp;&nbsp;</strong>    
-                        <strong>合计：</strong>
-                        <span style="font-size:20px; color:#999;">￥</span>
-                        <span id="product-total" style="color:#900; font-family:Georgia,'Times New Roman'; font-size:30px;"><?php echo ($total); ?></span>
-                        <strong>元</strong>      
-                 </td>
-                 <td>
-                 	<input type="hidden" name="sum" value="<?php echo ($total); ?>" />
-                    <input type="hidden" name="userid" value="<?php echo ($userid); ?>" />
-                    <input type="image" src="__PUBLIC__/images/tjdd.jpg" onClick="this.form.action='__URL__/add'"/>
-                 </td>
-               </tr>
-            </tfoot>
-             </form>
+
             <tbody>
-              <?php if(is_array($cartlist)): $i = 0; $__LIST__ = $cartlist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-                <td font_color="black" style="text-align:left;">
-                    <img class="goodsimg" src="<?php echo ($vo["Goods_img"]); ?>" />
-                    <?php echo ($vo["Goods_Name"]); ?>
+           <?php if(is_array($orderlist1)): $i = 0; $__LIST__ = $orderlist1;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo1): $mod = ($i % 2 );++$i; if(is_array($orderlist2)): $i = 0; $__LIST__ = $orderlist2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo2): $mod = ($i % 2 );++$i; if($vo2['Order_Id'] == $vo1['pk_Order_Id']): if($loop == '1'): ?><tr>
+              	<td colspan="7" style="background:#F3F3F3; text-align:left; height:35px;">
+                	<strong>订单编号：</strong><?php echo ($vo2["Order_Id"]); ?>&nbsp;&nbsp;&nbsp;&nbsp;   
+                    <strong>成交时间:</strong><?php echo ($vo2["Order_Time"]); ?>&nbsp;&nbsp;&nbsp;&nbsp;   
+                    <strong>总额:&nbsp;&nbsp; </strong>
+                    <span style="color:#900; font-family:Georgia; font-size:18px;"><?php echo ($vo2["Order_Sum"]); ?></span>
                 </td>
-                <td font_color="black"><span><?php echo ($vo["Goods_Price"]); ?></span>元</td>
-                <td font_color="black"><?php echo ($vo["Num"]); ?></td>
-                </form>
-                <td font_color="black"><?php echo ($vo["Sum"]); ?></span>元</td>
-              </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+              </tr><?php endif; ?>
+              
+              <tr>
+                <td font_color="black" style="text-align:left;">
+                  <img src="<?php echo ($vo2["Goods_img"]); ?>" width='80' height='80' /><?php echo ($vo2["Goods_Name"]); ?>
+                </td>             
+                <td font_color="black"><span><?php echo ($vo2["Goods_Price"]); ?></span>元</td>
+                <td font_color="black"><?php echo ($vo2["OrderIt_Num"]); ?> </td>
+                <td font_color="black"><?php echo ($vo2["Goods_NetContent"]); echo ($vo2["Goods_Unit"]); ?></td>
+                <td font_color="black"><?php echo ($vo2["Order_SubSum"]); ?>元</td>
+                 <?php if($loop == '1'): ?><td font_color="black"><?php echo ($vo2["Order_State"]); ?></td>
+                <?php $loop++; endif; ?>
+              </tr><?php endif; endforeach; endif; else: echo "" ;endif; ?>
+              <?php $loop=1; endforeach; endif; else: echo "" ;endif; ?>
             </tbody>
           </table>
+          <br />
+          <div id="div" align="center"><div id="black"><?php echo ($show); ?></div></div>
         </div>
-        <!-- End #tab1 --> 
         
-      </div>
-        </div>
       </div>
     </div>
 </div>
@@ -556,5 +511,6 @@ $("input[name=Consi_PostCode]").bind("focusout",function(e){
 </div>
 </div>
  </div>
+
 </body>
 </html>

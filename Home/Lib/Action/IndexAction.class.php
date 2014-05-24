@@ -26,7 +26,7 @@ class IndexAction extends Action {
         $sql = "select Goods_Name,Goods_Price,Goods_img from simpleginfo order by Goods_SellNum limit 10";
         $hotgoods = $model->query($sql);
     	//茶具
-        $sql = "select Goods_Name,Goods_Price,Goods_img from simpleginfo where Classifi_Name='茶具' limit 10";
+        $sql = "select Goods_Name,Goods_Price,Goods_img from simpleginfo where Classifi_Name='茶具' order by rand() limit 10";
         $jbchaju = $model->query($sql);
     	//热销礼品
         $sql = "select Goods_Name,Goods_Price,Goods_img from simpleginfo 

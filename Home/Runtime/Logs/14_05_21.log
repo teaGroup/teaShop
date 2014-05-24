@@ -1,0 +1,21 @@
+[ 2014-05-21T15:10:47+08:00 ] ERR: (ThinkException) 非法操作:queryOrder
+[ 2014-05-21T15:11:09+08:00 ] ERR: (ThinkException) 非法操作:queryOrder
+[ 2014-05-21T15:19:57+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkName?username=%E5%9D%8A
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001837s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002005s ]
+SQL: DESCRIBE t_user [ RunTime:0.007691s ]
+SQL: SELECT * FROM `t_user` WHERE ( `User_Name` = '坊' ) LIMIT 1   [ RunTime:0.000926s ]
+
+[ 2014-05-21T15:20:22+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkEmail?email=344%40qq.com
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.002038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002207s ]
+SQL: DESCRIBE t_user [ RunTime:0.007716s ]
+SQL: SELECT * FROM `t_user` WHERE ( `User_Email` = '344@qq.com' ) LIMIT 1   [ RunTime:0.001043s ]
+
+[ 2014-05-21T15:20:24+08:00 ] 127.0.0.1 /teaShop/index.php/Reg/checkCode?code=1201
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001825s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001991s ]
+

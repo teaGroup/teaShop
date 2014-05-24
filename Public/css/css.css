@@ -33,7 +33,7 @@ a:hover{color:#FF6600;}
 }
 /*************************************新品展示***********************************************/
 .indexhot {
-	background-color: #3FF;
+	/*background-color: #3FF;*/
 	height: 618px;
 	margin-top: 5px;
 }
