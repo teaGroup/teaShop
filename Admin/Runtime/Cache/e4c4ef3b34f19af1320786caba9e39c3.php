@@ -1,6 +1,7 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
 <title>订单浏览</title>
 <style>
 .content-box{
@@ -16,15 +17,32 @@ table tr th{
 	text-align:center;
 }
 .content-box ul{
-	position:absolute;
-	right:60px;
-	top:60px;
+	float:right;
+	margin-right:40px;
 }
 .content-box ul li{
 	float:left;
 }
-
+/*.search{
+	position: absolute;
+	margin-top:50px;
+}*/
+.list{
+	position:relative;
+	height:50px;
+	width:100%;
+	/*background:#9F3;*/
+}
+.search{
+	position:relative;
+	height:30px;
+	width:100%;
+	/*background:#906;*/
+}
 </style>
+<script>
+
+</script>
 </head>
 
 <body>
@@ -122,51 +140,67 @@ table tr th{
 			</div>
             <div class="content-box-content">
 				<div class="tab-content default-tab" id="tab1">
-                	<div class="search">
-         	 			<form action="__URL__/query" method="post">
-         	 			<h4>商品名称:
-             				<input type="text" size="20" name="goodsname" />
-             				<input type="submit" value="搜索" />
-             			</h4>
-          				</form>
-          			</div>
-          			<ul>
-          				<li><a href="__URL__/index">全部订单</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+                	<div class="list">
+                    <ul style="float:left;">
+                    	<li><a href="__URL__/index">全部订单</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+          				<li><a href="__URL__/query/date/day">今日订单</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+          				<li><a href="__URL__/query/date/week">本周订单</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+            			<li><a href="__URL__/query/date/month">本月订单</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+            			<li><a href="__URL__/query/date/year">今年订单</a></li>
+          			</ul>
+                    <ul>
           				<li><a href="__URL__/query/state/0">未处理</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
             			<li><a href="__URL__/query/state/1">正在处理</a>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
             			<li><a href="__URL__/query/state/2">已处理</a></li>
           			</ul>
+                    </div>
+                    <div class="search">
+                    	<form action="__URL__/query" method="get">
+         	 			<h4>
+                        	<select name="option">
+                            	<option value="goodsname">商品名称</option>
+                                <option value="order">订单编号</option>
+                                <option value="orderOwner">下单用户</option>
+                            </select>
+             				<input type="text" size="20" name="condition" />
+             				<input type="submit" name="search" value="搜索" />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            开始时间：<input type="date" name="first">
+                            结束时间：<input type="date" name="end">
+                            <input type="submit" name="query" value="查询">
+             			</h4>
+          				</form>
+                    </div>
+                	
+         	 			
+          			 <?php echo ($date); ?>
+          			
           			<br />
                 	<div class="notification attention png_bg"></div>
                     
                     <table>
                     	<thead>
               				<tr>
-               					<th width="50">订单号</th>
-               					<th width="50">下单用户</th>
-                				<th width="50">收货人</th>
-                				<th width="50">总额</th>
-               			 		<th width="50">订单状态</th>
-                				<th width="120">下单时间</th>
-                                <th width="50">操作</th>
+               					<th width="560">商品名称</th>
+                				<th width="90">单价</th>
+                				<th width="70">数量</th>
+                				<th width="80">重量</th>
+                				<th width="90">小计</th>
+                				<th width="120">订单状态</th>
+                                <th width="60">操作</th>
               				</tr>
             			</thead>
                     	<tbody>
           				 <?php if(is_array($orderlist1)): $i = 0; $__LIST__ = $orderlist1;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo1): $mod = ($i % 2 );++$i; if(is_array($orderlist2)): $i = 0; $__LIST__ = $orderlist2;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo2): $mod = ($i % 2 );++$i; if($vo2['Order_Id'] == $vo1['pk_Order_Id']): if($loop == '1'): ?><tr>
-              					<!--<td colspan="7" style="background:#F3F3F3; text-align:left; height:35px;">
-                					<strong>订单编号：</strong>&nbsp;&nbsp;&nbsp;&nbsp;   
-                   	 				<strong>成交时间:</strong><?php echo ($vo2["Order_Time"]); ?>&nbsp;&nbsp;&nbsp;&nbsp;   
+              					<td colspan="7" style="background:#F3F3F3; text-align:left; height:35px;">
+                					<strong>订单编号：</strong><a target="_blank" href="__URL__/modify/id/<?php echo ($vo2["Order_Id"]); ?>"><?php echo ($vo2["Order_Id"]); ?></a>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
+                                    <strong>下单用户：</strong><?php echo ($vo2["Order_Owner"]); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+                                    <strong>收货人：</strong><a href="__URL__/modify/id/<?php echo ($vo2["Order_Id"]); ?>" target="_blank"><?php echo ($vo2["Consi_Name"]); ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
                     				<strong>总额:&nbsp;&nbsp; </strong>
-                    				<span style="color:#900; font-family:Georgia; font-size:18px;"><?php echo ($vo2["Order_Sum"]); ?></span>
-                                    <span style="float:right; margin-right:6px;"><a href="#">删除</a></span>
-                				</td>-->
-                                <td><strong><?php echo ($vo2["Order_Id"]); ?></strong></td>
-                                <td><strong><?php echo ($vo2["Order_Owner"]); ?></strong></td>
-                                <td><strong><?php echo ($vo2["Consi_Name"]); ?></strong></td>
-                                <td><span style="color:#900; font-family:Georgia; font-size:18px;"><?php echo ($vo2["Order_Sum"]); ?></span></td>
-                                <td><strong><?php echo ($vo2["Order_State"]); ?></strong></td>
-                                <td><strong><?php echo ($vo2["Order_Time"]); ?></strong></td>
-                                <td><a href="#">删除</a></td>
+                    				<span style="color:#900; font-family:Georgia; font-size:18px;"><?php echo ($vo2["Order_Sum"]); ?></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  	
+                                    <strong>成交时间:</strong><?php echo ($vo2["Order_Time"]); ?>
+                                    <span style="float:right; margin-right:10px;"><a href="__URL__/deleteO/id/<?php echo ($vo2["Order_Id"]); ?>" onClick="return confirm('确定要删除吗？');">删除</a></span>
+                				</td>
              			 	</tr><?php endif; ?>
               
               				<tr>
@@ -180,7 +214,7 @@ table tr th{
                  				<?php if($loop == '1'): ?><td font_color="black"><?php echo ($vo2["Order_State"]); ?></td>
                 				<?php $loop++; ?>
                                 <?php else: ?><td>&nbsp;</td><?php endif; ?>
-                                <td><a href="#">删除</a></td>
+                                <td><a href="__URL__/deleteG/goodsid/<?php echo ($vo2["Goods_Id"]); ?>/orderid/<?php echo ($vo2["Order_Id"]); ?>" onClick="return confirm('确定要删除吗？');">删除</a></td>
               				</tr><?php endif; endforeach; endif; else: echo "" ;endif; ?>
               				<?php $loop=1; endforeach; endif; else: echo "" ;endif; ?>
             			</tbody>

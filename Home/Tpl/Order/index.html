@@ -82,9 +82,9 @@ ul li{
           
           <div class="notification attention png_bg"></div>
           <div class="search">
-          <form action="__URL__/query" method="post">
+          <form action="__URL__/query" method="get">
          	 <h4>商品名称:
-             <input type="text" size="20" name="goodsname" />
+             <input type="text" size="20" name="goodsname" value="<{$goodsname}>" />
              <input type="submit" value="搜索" />
              </h4>
           </form>
@@ -96,7 +96,7 @@ ul li{
             <li><a href="__URL__/query/state/2">已处理</a></li>
           </ul>
           <br />
-          <table border="1">
+          <table>
             <thead>
               <tr>
                 <th width="560">商品名称</th>
