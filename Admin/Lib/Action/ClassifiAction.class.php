@@ -24,14 +24,17 @@
 	       //获取表单传过来的值
 		    $name=$_POST["name"];
 		    $level=$_POST["level"];
-		    $p_level=$_POST["p_level"];
+		    $p_name=$_POST["p_name"];
 		  //创建一个表对象，将传来的数据插入到数据库中
 		    $m=M("Classifi");
 		    $m->Classifi_Name=$name;
 		    $m->Classifi_Level=$level;
-		    if(!empty($p_level)){
-		        $m->fk_Classifi_ParentId=$p_level;
-		    }
+		    if(!empty($p_name)){
+		        $model=M("Classifi");
+			   $pk['Classifi_Name']=$p_name;
+		        $sel=$model->where($pk)->select();
+		        $m->fk_Classifi_ParentId=$sel[0]['pk_Classifi_Id'];  
+		   }
 		    $count=$m->add();
 		  //判断操作是否成功
 		    if($count>0){

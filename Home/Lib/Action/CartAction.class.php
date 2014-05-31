@@ -46,6 +46,39 @@ class CartAction extends CommonAction{
             $this->success("更改数量成功!",U('Cart/index'));
         }
     }
+    //添加商品到购物车
+    public function add(){
+        $item_num = $_POST['item_number'];
+        $goodsid = $_POST['goodsid'];
+        $userid = $_SESSION['id'];
+
+        $goods = M('goodsinfo');
+        $result = $goods->field('Goods_Price')->where("pk_GoodsInfo_Id='$goodsid'")->find();
+        $price = $result['Goods_Price'];
+
+        $cart = M('cart');
+        $result = $cart->where("fk_Goods_Cart_Id='$goodsid' and fk_User_Cart_Id='$userid'")->find();
+        if(!empty($result)){
+            $num =  $cart->field('Cart_BuyNum')->where("fk_Goods_Cart_Id='$goodsid' and fk_User_Cart_Id='$userid'")->find();
+            $item_num = $item_num+$num['Cart_BuyNum'];
+            $sum = $price*$item_num;
+            $data['Cart_Sum'] = $sum;
+            $data['Cart_BuyNum'] = $item_num;
+            $result = $cart->where("fk_Goods_Cart_Id='$goodsid' and fk_User_Cart_Id='$userid'")->save($data);
+        }else{
+            $sum = $price*$item_num;
+            $data['fk_User_Cart_Id'] = $userid;
+            $data['fk_Goods_Cart_Id'] = $goodsid;
+            $data['Cart_Sum'] = $sum;
+            $data['Cart_BuyNum'] = $item_num;
+            $result = $cart->add($data);
+        }
+        if($result){
+            $this->success("商品添加成功");
+        }else{
+            $this->error("商品添加失败，请重试");
+        }
+    }
 	
 }
 

@@ -42,11 +42,11 @@
 	                               <option value="3">3</option>
 	                               <option value="4">4</option>
 	                              </select></label><br/>
-	                      <label for="p_level" id="three">所属父级别：
-	                      <select name="p_level" size="1">
-		                 <option value="0" selected>0</option>
+	                      <label for="p_name" id="three">所属父级类别名：
+	                      <select name="p_name" size="1">
+		                 <option value="0" selected> </option>
 	                      <foreach name="list" item="vo" empty="暂时没有数据" >
-	                      <option value="<{$vo['pk_Classifi_Id']}>"><{$vo.pk_Classifi_Id}></option>
+	                      <option value="<{$vo['Classifi_Name']}>"><{$vo.Classifi_Name}></option>
 		                 </foreach>
 	                      </select></label><br/>
                            <nav id="four"><input type="submit" class="button" value="提交"/>&nbsp;&nbsp;<input type="reset" class="button" value="重置"/></nav>

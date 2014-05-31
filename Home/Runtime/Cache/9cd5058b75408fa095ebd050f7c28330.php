@@ -1,18 +1,13 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>浮生若茶</title>
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/homepublic.css" />
-<script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/JS/autocal.js"></script>
-
+<meta charset="utf-8">
+<title>商品评价</title>
+<link href="__PUBLIC__/css/pinglun.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="__PUBLIC__/css/page.css" type="text/css" media="screen" />
 </head>
 
 <body>
-<!----------------头部-------------------------------->
 <div id="head"> <link href="__PUBLIC__/css/h_style.css" type="text/css" rel="stylesheet">
 <link rel="stylesheet" href="__PUBLIC__/css/base.css" />
 <script src="__PUBLIC__/js/head.js" type="text/javascript"></script>
@@ -21,17 +16,69 @@
   <div class="topbar2">
     <div class="add_fav"> <a onclick="" href="###">浮生若茶--名牌正品茶叶、茶礼商城！</a> </div>
     <div class="login-info"> <font>欢迎光临！&nbsp;&nbsp;</font> </div>
-    <div class="quick-menu2">
+    <div class="quick-menu">
       <ul>
-        <li><a title="我的帐户" href="__APP__/Order/query">我的帐户</a> </li>
         <li><a title="帮助中心" href="#">帮助中心</a> </li>
-        <li>欢迎你，<font style="color:#B10A04;"><?php echo ($username); ?></font></li>
-        <li><a href="__APP__/Public/logout">退出</a></li>
+        <li><a href="__APP__/Reg/reg">[免费注册]</a></li>
       </ul>
     </div>
   </div>
 </div>
+ <div id="userlogin">
+  <div id="topnav" class="topnav"><a href="login" class="signin"><span>登录</span></a> </div>
+  <fieldset id="signin_menu">
+    <form method="post" id="signin" action="__APP__/Public/doLogin">
+      <p>
+      <label for="username">用户名</label>
+      <input id="username" name="username" value="" title="username" tabindex="4" type="text">
+      </p>
+      <p>
+        <label for="password">密码</label>
+        <input id="password" name="password" value="" title="password" tabindex="5" type="password">
+      </p>
+      <p>
+        <label for="code">验证码</label>
+        <input id="code" type="text" style="width:70px;" class="text-input" name="code" required="required">
+      </p>
+      <div style="margin-left:90px; margin-top:-36px; width:100px;">
+        <p id="verify-code">
+          <img height=29 width=65 src="__APP__/Public/code" onclick='this.src=this.src+"?"+Math.random()'/>
+          <span id="log_code" class="code"></span>
+        </p>
+        <div class="clear"></div>
+      </div>
+          
 
+
+      <p class="remember">
+        <input id="signin_submit" value="登 录" tabindex="6" type="submit">
+        <!--<input id="remember" name="remember_me" value="1" tabindex="7" type="checkbox">
+        <label for="remember">记住密码</label>-->
+      </p>
+    </form>
+  </fieldset>
+</div>
+<script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".signin").click(function(e) {          
+				e.preventDefault();
+                $("fieldset#signin_menu").toggle();
+				$(".signin").toggleClass("menu-open");
+            });
+			
+			$("fieldset#signin_menu").mouseup(function() {
+				return false
+			});
+			$(document).mouseup(function(e) {
+				if($(e.target).parent("a.signin").length==0) {
+					$(".signin").removeClass("menu-open");
+					$("fieldset#signin_menu").hide();
+				}
+			});			
+			
+        });
+</script>
 
 <div class="headermid">
   <div class="blank"></div>
@@ -336,87 +383,42 @@
 </div>
 
  </div>
-<!------------------主体--------------------->
-<div id="container">
-  <div id="main-content">
-    <div class="content-box"><!-- Start Content Box -->
-      
-      <div class="content-box-header">
-        <h3>商品列表</h3>
-        <div class="clear"></div>
-      </div>
-      <!-- End .content-box-header -->
-      
-      <div class="content-box-content">
-        <div class="tab-content default-tab" id="tab1"> <!-- This is the 
-
-target div. id must match the href of this div's tab -->
-          
-          <div class="notification attention png_bg"></div>
-          <table>
-            <thead>
-              <tr>
-                <th width="500">商品名称</th>
-                <th width="95">单价</th>
-                <th width="110">数量</th>
-                <th width="95">小计</th>
-                <th width="100">操作</th>
-              </tr>
-            </thead>
-            <tfoot>
-              <tr>
-                <td colspan="4" style="text-align:right; font-size:14px;">
-                        <span id="total-pallets" style="color:#900; font-family:Georgia,'Times New Roman'; font-size:30px;" id="selectnum"><?php echo ($goodsnum); ?></span>
-                        <strong>&nbsp;&nbsp;件商品&nbsp;&nbsp;&nbsp;&nbsp;</strong>    
-                        <strong>合计：</strong>
-                        <span style="font-size:20px; color:#999;">￥</span>
-                        <span id="product-total" style="color:#900; font-family:Georgia,'Times New Roman'; font-size:30px;"><?php echo ($total); ?></span>
-                        <strong>元</strong>      
-                 </td>
-                 <td>
-                    <a href="__APP__/Order/consignee/userid/<?php echo ($userid); ?>/username/<?php echo ($username); ?>"><img src="__PUBLIC__/images/jies.jpg" alt="去结算" /></a>
-                 </td>
-               </tr>
-            </tfoot>
-            <tbody>
-              <?php if(is_array($cartlist)): $i = 0; $__LIST__ = $cartlist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-                <td font_color="black" style="text-align:left;">
-                    <img class="goodsimg" src="<?php echo ($vo["Goods_img"]); ?>" />
-                    <a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>"><?php echo ($vo["Goods_Name"]); ?></a>
-                </td>
-                <td font_color="black" class="price-per-pallet">
-                    $<span><?php echo ($vo["Goods_Price"]); ?></span>元
-                </td>
-                <form name="cart['<?php echo ($vo["Cart_Id"]); ?>']" action="__URL__/modifyNum" method="post">
-                <td font_color="black"  class="num-pallets">
-                  
-                    <input type=number class="num-pallets-input" name="num" min=1 max='<?php echo ($vo["Goods_Num"]); ?>' value="<?php echo ($vo["Num"]); ?>" style="width:40px;">
-                    <input type="submit" value="更改数量"/>
-                    <input type="hidden" value="<?php echo ($vo["Cart_Id"]); ?>" name="cartid" />
-                    <input type="hidden" value="<?php echo ($vo["Goods_Id"]); ?>"name="goodsid" />
-                  
-                </td>
-                </form>
-                <td font_color="black" class="row-total">
-                    <span class="rowtotal"><?php echo ($vo["Sum"]); ?></span>元
-                </td>
-                <td width="84"><!-- Icons --> 
-                    <a href="__URL__/delete/cartid/<?php echo ($vo["Cart_Id"]); ?>" title="Delete"><img src="__PUBLIC__/images/icons/cross.png" alt="Delete" /></a>
-                </td>
-              </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-            </tbody>
-          </table>
-        </div>
-        <!-- End #tab1 --> 
-        
-      </div>
-      <!-- End .content-box-content --> 
-      
-    </div>
-  </div>
+<div id="pinglun_main">
+     <div class="com">
+          <div id="common">
+                <div class="top"><a href="__APP__/Index/index">首页</a><span>></span>评论列表</div>
+                <div class="con">
+                      <ul>
+                             <li>
+                                  <div class="left">
+											<div class="pinglun_con">很好</div>
+						                       <div class="pinglun_bot">
+                                                    <span class="pinglun_time">[2014.04.29]</span>
+                                                    <span class="fl">评价得分：</span>（5分）
+                                             </div>
+				                   </div>
+								   <div class="right"><span class="user_name">Q友_笑看未来</span><br/><span class="member_glod"></span></div>
+								   <div class="cb"></div>
+                             </li>
+                             <li>
+                                  <div class="left">
+											<div class="pinglun_con">很好</div>
+						                       <div class="pinglun_bot">
+                                                    <span class="pinglun_time">[2014.04.29]</span>
+                                                    <span class="fl">评价得分：</span>（5分）
+                                             </div>
+				                   </div>
+								   <div class="right"><span class="user_name">Q友_笑看未来</span><br/><span class="member_glod"></span></div>
+								   <div class="cb"></div>
+                             </li>
+                      </ul>
+                </div>
+                <div id="div" align="center"><div id="black"><?php echo ($show); ?></div></div>
+          </div>
+     </div>
 </div>
-<!------------------------尾部-------------------------->
-<div id="foot">
+<div id="foot"> 
+
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/foot_public.css" />
 <div class="help">
 <div class="help_box">
@@ -464,6 +466,7 @@ target div. id must match the href of this div's tab -->
   <center>Copyright 2014 - 2015 浮生若茶  中山大学南方学院计算机（1）班出品  All Rights Reserved </center>
 </div>
 </div>
- </div>
+
+</div>
 </body>
 </html>

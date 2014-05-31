@@ -1,5 +1,5 @@
 <?php
-class OrderAction extends Action{
+class OrderAction extends CommonAction{
 	public function index(){
 		header("Content-type:text/html;charset=utf-8");
 		import("ORG.Util.Page");
@@ -13,8 +13,6 @@ class OrderAction extends Action{
 		$orderlist1 = $order->field('pk_Order_Id')->order('Order_Time desc')->select();
 		$orderlist2 = $orderv->limit($page->firstRow,$page->listRows)->order('Order_Time desc')->select();
 
-		$date = date("Y-m-d H:i:s");
-		$this->assign('date',$date);
 		$loop = 1;
 		$this->assign('orderlist1',$orderlist1);
 		$this->assign("orderlist2",$orderlist2);

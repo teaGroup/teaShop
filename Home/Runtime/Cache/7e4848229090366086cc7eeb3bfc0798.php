@@ -26,69 +26,17 @@
   <div class="topbar2">
     <div class="add_fav"> <a onclick="" href="###">浮生若茶--名牌正品茶叶、茶礼商城！</a> </div>
     <div class="login-info"> <font>欢迎光临！&nbsp;&nbsp;</font> </div>
-    <div class="quick-menu">
+    <div class="quick-menu2">
       <ul>
+        <li><a title="我的帐户" href="__APP__/Order/query">我的帐户</a> </li>
         <li><a title="帮助中心" href="#">帮助中心</a> </li>
-        <li><a href="__APP__/Reg/reg">[免费注册]</a></li>
+        <li>欢迎你，<font style="color:#B10A04;"><?php echo ($username); ?></font></li>
+        <li><a href="__APP__/Public/logout">退出</a></li>
       </ul>
     </div>
   </div>
 </div>
- <div id="userlogin">
-  <div id="topnav" class="topnav"><a href="login" class="signin"><span>登录</span></a> </div>
-  <fieldset id="signin_menu">
-    <form method="post" id="signin" action="__APP__/Public/doLogin">
-      <p>
-      <label for="username">用户名</label>
-      <input id="username" name="username" value="" title="username" tabindex="4" type="text">
-      </p>
-      <p>
-        <label for="password">密码</label>
-        <input id="password" name="password" value="" title="password" tabindex="5" type="password">
-      </p>
-      <p>
-        <label for="code">验证码</label>
-        <input id="code" type="text" style="width:70px;" class="text-input" name="code" required="required">
-      </p>
-      <div style="margin-left:90px; margin-top:-36px; width:100px;">
-        <p id="verify-code">
-          <img height=29 width=65 src="__APP__/Public/code" onclick='this.src=this.src+"?"+Math.random()'/>
-          <span id="log_code" class="code"></span>
-        </p>
-        <div class="clear"></div>
-      </div>
-          
 
-
-      <p class="remember">
-        <input id="signin_submit" value="登 录" tabindex="6" type="submit">
-        <!--<input id="remember" name="remember_me" value="1" tabindex="7" type="checkbox">
-        <label for="remember">记住密码</label>-->
-      </p>
-    </form>
-  </fieldset>
-</div>
-<script type="text/javascript">
-        $(document).ready(function() {
-
-            $(".signin").click(function(e) {          
-				e.preventDefault();
-                $("fieldset#signin_menu").toggle();
-				$(".signin").toggleClass("menu-open");
-            });
-			
-			$("fieldset#signin_menu").mouseup(function() {
-				return false
-			});
-			$(document).mouseup(function(e) {
-				if($(e.target).parent("a.signin").length==0) {
-					$(".signin").removeClass("menu-open");
-					$("fieldset#signin_menu").hide();
-				}
-			});			
-			
-        });
-</script>
 
 <div class="headermid">
   <div class="blank"></div>
@@ -431,27 +379,27 @@
         <div class="tab-con">
           <div class="j-tab-con">
             <div class="tab-con-item" style="display:block;">
-              <?php if(is_array($newgoods)): $i = 0; $__LIST__ = $newgoods;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> <a href="#"><img src="<?php echo ($vo["Goods_img"]); ?>"></a>
+              <?php if(is_array($newgoods)): $i = 0; $__LIST__ = $newgoods;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> <a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>"><img src="<?php echo ($vo["Goods_img"]); ?>"></a>
                   <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong></p>
-                  <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>
+                  <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>"><?php echo ($vo["Goods_Name"]); ?></a></p>
                 </li><?php endforeach; endif; else: echo "" ;endif; ?>
             </div>
             <div class="tab-con-item">
-              <?php if(is_array($hotgoods)): $i = 0; $__LIST__ = $hotgoods;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> <a href="#"><img src="<?php echo ($vo["Goods_img"]); ?>"></a>
+              <?php if(is_array($hotgoods)): $i = 0; $__LIST__ = $hotgoods;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> <a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>"><img src="<?php echo ($vo["Goods_img"]); ?>"></a>
                   <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong></p>
-                  <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>
+                  <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>"><?php echo ($vo["Goods_Name"]); ?></a></p>
                 </li><?php endforeach; endif; else: echo "" ;endif; ?>
             </div>
             <div class="tab-con-item">
-              <?php if(is_array($jbchaju)): $i = 0; $__LIST__ = $jbchaju;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> <a href="#"><img src="<?php echo ($vo["Goods_img"]); ?>"></a>
+              <?php if(is_array($jbchaju)): $i = 0; $__LIST__ = $jbchaju;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> <a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>"><img src="<?php echo ($vo["Goods_img"]); ?>"></a>
                   <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong></p>
-                  <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>
+                  <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>"><?php echo ($vo["Goods_Name"]); ?></a></p>
                 </li><?php endforeach; endif; else: echo "" ;endif; ?>
             </div>
             <div class="tab-con-item">
-              <?php if(is_array($gift)): $i = 0; $__LIST__ = $gift;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> <a href="#"><img src="<?php echo ($vo["Goods_img"]); ?>"></a>
+              <?php if(is_array($gift)): $i = 0; $__LIST__ = $gift;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> <a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>"><img src="<?php echo ($vo["Goods_img"]); ?>"></a>
                   <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong></p>
-                  <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>
+                  <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>"><?php echo ($vo["Goods_Name"]); ?></a></p>
                 </li><?php endforeach; endif; else: echo "" ;endif; ?>
             </div>
           </div>
@@ -474,28 +422,28 @@
           <?php if(is_array($rankingW)): $i = 0; $__LIST__ = array_slice($rankingW,0,1,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="first">
               <em class="bg1">1</em>
                   <img src="<?php echo ($vo["Goods_img"]); ?>" style="display: block; ">
-              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />        
+              <a  href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />        
               <span class="f1" style="display: inline; ">￥</span><span class="f2" style="display: inline; "><?php echo ($vo["Goods_Price"]); ?></span>
             </li><?php endforeach; endif; else: echo "" ;endif; ?>
          
           <?php if(is_array($rankingW)): $i = 0; $__LIST__ = array_slice($rankingW,1,1,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="">
               <em class="bg2">2</em>
               <img src="<?php echo ($vo["Goods_img"]); ?>" style="display: none; ">
-              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a>  <br />      
+              <a href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a>  <br />      
               <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><?php echo ($vo["Goods_Price"]); ?></span>
             </li><?php endforeach; endif; else: echo "" ;endif; ?>
          
           <?php if(is_array($rankingW)): $i = 0; $__LIST__ = array_slice($rankingW,2,1,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="">
               <em class="bg3">3</em>
               <img src="<?php echo ($vo["Goods_img"]); ?>"  style="display: none; ">
-              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />       
+              <a href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />       
               <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><?php echo ($vo["Goods_Price"]); ?></span>
             </li><?php endforeach; endif; else: echo "" ;endif; ?>
          
           <?php if(is_array($rankingW)): $i = 0; $__LIST__ = array_slice($rankingW,3,null,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="">
               <em><?php echo ($key+1); ?></em>
               <img src="<?php echo ($vo["Goods_img"]); ?>" style="display: none; ">
-              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />        
+              <a href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />        
               <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><?php echo ($vo["Goods_Price"]); ?></span>
             </li><?php endforeach; endif; else: echo "" ;endif; ?>
         </ul>
@@ -507,28 +455,28 @@
           <?php if(is_array($rankingM)): $i = 0; $__LIST__ = array_slice($rankingM,0,1,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="first">
               <em class="bg1">1</em>
                   <img src="<?php echo ($vo["Goods_img"]); ?>" style="display: block; ">
-              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />        
+              <a href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />        
               <span class="f1" style="display: inline; ">￥</span><span class="f2" style="display: inline; "><?php echo ($vo["Goods_Price"]); ?></span>
             </li><?php endforeach; endif; else: echo "" ;endif; ?>
          
           <?php if(is_array($rankingM)): $i = 0; $__LIST__ = array_slice($rankingM,1,1,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="">
               <em class="bg2">2</em>
               <img src="<?php echo ($vo["Goods_img"]); ?>" style="display: none; ">
-              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a>  <br />      
+              <a href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a>  <br />      
               <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><?php echo ($vo["Goods_Price"]); ?></span>
             </li><?php endforeach; endif; else: echo "" ;endif; ?>
          
           <?php if(is_array($rankingM)): $i = 0; $__LIST__ = array_slice($rankingM,2,1,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="">
               <em class="bg3">3</em>
               <img src="<?php echo ($vo["Goods_img"]); ?>"  style="display: none; ">
-              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />       
+              <a href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />       
               <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><?php echo ($vo["Goods_Price"]); ?></span>
             </li><?php endforeach; endif; else: echo "" ;endif; ?>
          
           <?php if(is_array($rankingM)): $i = 0; $__LIST__ = array_slice($rankingM,3,null,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="">
               <em><?php echo ($key+1); ?></em>
               <img src="<?php echo ($vo["Goods_img"]); ?>" style="display: none; ">
-              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />        
+              <a href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />        
               <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><?php echo ($vo["Goods_Price"]); ?></span>
             </li><?php endforeach; endif; else: echo "" ;endif; ?>
         </ul>
@@ -540,28 +488,28 @@
           <?php if(is_array($rankingY)): $i = 0; $__LIST__ = array_slice($rankingY,0,1,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="first">
               <em class="bg1">1</em>
                   <img src="<?php echo ($vo["Goods_img"]); ?>" style="display: block; ">
-              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />        
+              <a href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />        
               <span class="f1" style="display: inline; ">￥</span><span class="f2" style="display: inline; "><?php echo ($vo["Goods_Price"]); ?></span>
             </li><?php endforeach; endif; else: echo "" ;endif; ?>
          
           <?php if(is_array($rankingY)): $i = 0; $__LIST__ = array_slice($rankingY,1,1,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="">
               <em class="bg2">2</em>
               <img src="<?php echo ($vo["Goods_img"]); ?>" style="display: none; ">
-              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a>  <br />      
+              <a href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a>  <br />      
               <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><?php echo ($vo["Goods_Price"]); ?></span>
             </li><?php endforeach; endif; else: echo "" ;endif; ?>
          
           <?php if(is_array($rankingY)): $i = 0; $__LIST__ = array_slice($rankingY,2,1,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="">
               <em class="bg3">3</em>
               <img src="<?php echo ($vo["Goods_img"]); ?>"  style="display: none; ">
-              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />       
+              <a href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />       
               <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><?php echo ($vo["Goods_Price"]); ?></span>
             </li><?php endforeach; endif; else: echo "" ;endif; ?>
          
           <?php if(is_array($rankingY)): $i = 0; $__LIST__ = array_slice($rankingY,3,null,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="">
               <em><?php echo ($key+1); ?></em>
               <img src="<?php echo ($vo["Goods_img"]); ?>" style="display: none; ">
-              <a href="#" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />        
+              <a href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>" target="_blank"><?php echo ($vo["Goods_Name"]); ?></a><br />        
               <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><?php echo ($vo["Goods_Price"]); ?></span>
             </li><?php endforeach; endif; else: echo "" ;endif; ?>
         </ul>
@@ -610,11 +558,11 @@
         <article class="goods_list"> 
           <ul>
             <?php if(is_array($lv)): $i = 0; $__LIST__ = $lv;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> 
-                   <a class="img" target="_blank" href="#" title="<?php echo ($vo["Goods_Name"]); ?>"> 
+                   <a class="img" target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>" title="<?php echo ($vo["Goods_Name"]); ?>"> 
                       <img src="<?php echo ($vo["Goods_img"]); ?>" alt="<?php echo ($vo["Goods_Name"]); ?>"> 
                     </a>                             
                     <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong> </p>
-                    <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>               
+                    <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>"><?php echo ($vo["Goods_Name"]); ?></a></p>               
               </li><?php endforeach; endif; else: echo "" ;endif; ?>    
             </ul>
         </article>
@@ -657,11 +605,11 @@
         <article class="goods_list"> 
           <ul>
             <?php if(is_array($hong)): $i = 0; $__LIST__ = $hong;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> 
-                   <a class="img" target="_blank" href="#" title="<?php echo ($vo["Goods_Name"]); ?>"> 
+                   <a class="img" target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>" title="<?php echo ($vo["Goods_Name"]); ?>"> 
                       <img src="<?php echo ($vo["Goods_img"]); ?>" alt="<?php echo ($vo["Goods_Name"]); ?>"> 
                     </a>                             
                     <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong> </p>
-                    <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>               
+                    <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>"><?php echo ($vo["Goods_Name"]); ?></a></p>               
               </li><?php endforeach; endif; else: echo "" ;endif; ?>   
           </ul>
         </article>
@@ -699,11 +647,11 @@
         <article class="goods_list"> 
           <ul>
             <?php if(is_array($bai)): $i = 0; $__LIST__ = $bai;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> 
-                   <a class="img" target="_blank" href="#" title="<?php echo ($vo["Goods_Name"]); ?>"> 
+                   <a class="img" target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>" title="<?php echo ($vo["Goods_Name"]); ?>"> 
                       <img src="<?php echo ($vo["Goods_img"]); ?>" alt="<?php echo ($vo["Goods_Name"]); ?>"> 
                     </a>                             
                     <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong> </p>
-                    <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>               
+                    <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>"><?php echo ($vo["Goods_Name"]); ?></a></p>               
               </li><?php endforeach; endif; else: echo "" ;endif; ?>  
           </ul>
         </article>
@@ -743,11 +691,11 @@
         <article class="goods_list"> 
           <ul>
             <?php if(is_array($hei)): $i = 0; $__LIST__ = $hei;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> 
-                   <a class="img" target="_blank" href="#" title="<?php echo ($vo["Goods_Name"]); ?>"> 
+                   <a class="img" target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>" title="<?php echo ($vo["Goods_Name"]); ?>"> 
                       <img src="<?php echo ($vo["Goods_img"]); ?>" alt="<?php echo ($vo["Goods_Name"]); ?>"> 
                     </a>                             
                     <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong> </p>
-                    <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>               
+                    <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>"><?php echo ($vo["Goods_Name"]); ?></a></p>               
               </li><?php endforeach; endif; else: echo "" ;endif; ?>   
           </ul>
         </article>
@@ -787,11 +735,11 @@
         <article class="goods_list"> 
           <ul>
             <?php if(is_array($wu)): $i = 0; $__LIST__ = $wu;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> 
-                   <a class="img" target="_blank" href="#" title="<?php echo ($vo["Goods_Name"]); ?>"> 
+                   <a class="img" target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>" title="<?php echo ($vo["Goods_Name"]); ?>"> 
                       <img src="<?php echo ($vo["Goods_img"]); ?>" alt="<?php echo ($vo["Goods_Name"]); ?>"> 
                     </a>                             
                     <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong> </p>
-                    <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>               
+                    <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>"><?php echo ($vo["Goods_Name"]); ?></a></p>               
               </li><?php endforeach; endif; else: echo "" ;endif; ?>     
           </ul>
         </article>
@@ -829,11 +777,11 @@
         <article class="goods_list"> 
           <ul>
             <?php if(is_array($hua)): $i = 0; $__LIST__ = $hua;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> 
-                   <a class="img" target="_blank" href="#" title="<?php echo ($vo["Goods_Name"]); ?>"> 
+                   <a class="img" target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>" title="<?php echo ($vo["Goods_Name"]); ?>"> 
                       <img src="<?php echo ($vo["Goods_img"]); ?>" alt="<?php echo ($vo["Goods_Name"]); ?>"> 
                     </a>                             
                     <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong> </p>
-                    <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>               
+                    <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>"><?php echo ($vo["Goods_Name"]); ?></a></p>               
               </li><?php endforeach; endif; else: echo "" ;endif; ?>     
           </ul>
         </article>
@@ -871,11 +819,11 @@
         <article class="goods_list"> 
           <ul>
             <?php if(is_array($chaju)): $i = 0; $__LIST__ = $chaju;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> 
-                   <a class="img" target="_blank" href="#" title="<?php echo ($vo["Goods_Name"]); ?>"> 
+                   <a class="img" target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>" title="<?php echo ($vo["Goods_Name"]); ?>"> 
                       <img src="<?php echo ($vo["Goods_img"]); ?>" alt="<?php echo ($vo["Goods_Name"]); ?>"> 
                     </a>                             
                     <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong> </p>
-                    <p><a href="#"><?php echo ($vo["Goods_Name"]); ?></a></p>               
+                    <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>"><?php echo ($vo["Goods_Name"]); ?></a></p>               
               </li><?php endforeach; endif; else: echo "" ;endif; ?>     
           </ul>
         </article>

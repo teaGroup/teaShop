@@ -39,7 +39,9 @@
 				if($arr){
 					$_SESSION['username'] = $username;
 					$_SESSION['id'] = $arr['pk_User_Id'];
-				
+					$data['User_LastLogTime'] = date("Y-m-d H:i:s");
+					$data['User_LoginNum'] = $arr['User_LoginNum']+1;
+					$user->where($where)->save($data);
 					$this->success('登录成功',U('Index/index'));
 				}else{
 					$this->error('用户名或密码错误');
@@ -52,7 +54,7 @@
 		function logout(){
 			if(!empty($_SESSION[username])){
 				session('username',null);
-				$_SESSION=array();
+				//$_SESSION=array();
 				session_destroy();
 				$this->redirect('Index/index');
 			}

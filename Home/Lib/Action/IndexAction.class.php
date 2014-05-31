@@ -20,16 +20,16 @@ class IndexAction extends Action {
          $this->assign("goodsnum",$goodsnum);
 
     	//新品
-        $sql = "select Goods_Name,Goods_Price,Goods_img from simpleginfo order by Goods_SellTime limit 10";
+        $sql = "select Goods_Id,Goods_Name,Goods_Price,Goods_img from simpleginfo order by Goods_SellTime limit 10";
         $newgoods = $model->query($sql);
     	//热卖
-        $sql = "select Goods_Name,Goods_Price,Goods_img from simpleginfo order by Goods_SellNum limit 10";
+        $sql = "select Goods_Id,Goods_Name,Goods_Price,Goods_img from simpleginfo order by Goods_SellNum limit 10";
         $hotgoods = $model->query($sql);
     	//茶具
-        $sql = "select Goods_Name,Goods_Price,Goods_img from simpleginfo where Classifi_Name='茶具' order by rand() limit 10";
+        $sql = "select Goods_Id,Goods_Name,Goods_Price,Goods_img from simpleginfo where Classifi_Name='茶具' order by rand() limit 10";
         $jbchaju = $model->query($sql);
     	//热销礼品
-        $sql = "select Goods_Name,Goods_Price,Goods_img from simpleginfo 
+        $sql = "select Goods_Id,Goods_Name,Goods_Price,Goods_img from simpleginfo 
                         where Goods_Name like '%礼盒%' order by Goods_SellNum  limit 10";
         $gift = $model->query($sql);
     	//排行榜周

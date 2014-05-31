@@ -61,7 +61,7 @@ target div. id must match the href of this div's tab -->
               <tr>
                 <td font_color="black" style="text-align:left;">
                     <img class="goodsimg" src="<{$vo.Goods_img}>" />
-                    <{$vo.Goods_Name}>
+                    <a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>"><{$vo.Goods_Name}></a>
                 </td>
                 <td font_color="black" class="price-per-pallet">
                     $<span><{$vo.Goods_Price}></span>元

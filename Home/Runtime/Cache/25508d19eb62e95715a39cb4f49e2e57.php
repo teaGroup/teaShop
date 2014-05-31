@@ -493,7 +493,6 @@ $("input[name=Consi_PostCode]").bind("focusout",function(e){
                 </td>
                 <td font_color="black"><span><?php echo ($vo["Goods_Price"]); ?></span>元</td>
                 <td font_color="black"><?php echo ($vo["Num"]); ?></td>
-                </form>
                 <td font_color="black"><?php echo ($vo["Sum"]); ?></span>元</td>
               </tr><?php endforeach; endif; else: echo "" ;endif; ?>
             </tbody>

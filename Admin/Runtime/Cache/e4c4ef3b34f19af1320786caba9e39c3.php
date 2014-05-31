@@ -40,8 +40,8 @@ table tr th{
 	/*background:#906;*/
 }
 </style>
-<script>
-
+<script language="javascript">
+setTimeout("self.location.reload();",5000);
 </script>
 </head>
 
@@ -49,6 +49,8 @@ table tr th{
 	﻿		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/reset.css" />
 		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css" />
 		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/invalid.css" />
+		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/public.css" />
+		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/page.css" />
 
 		 <script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
 		 <script type="text/javascript" src="__PUBLIC__/js/simpla.jquery.configuration.js"></script>
@@ -79,13 +81,13 @@ table tr th{
 				</li>
 				
 				<li> 
-					<a href="#" class="nav-top-item current">
+					<a href="__APP__/Goodsinfo/index" class="nav-top-item">
 					商品管理
 					</a>
 					<ul>
-						<li><a href="#">商品分类管理</a></li>
-						<li><a class="current" href="#">商品信息管理</a></li>
-						<li><a href="#">商品订单管理</a></li>
+						<li><a href="__APP__/Classifi/index">商品分类管理</a></li>
+						<li><a href="__APP__/Goodsinfo/index">商品信息管理</a></li>
+						<li><a href="__APP__/Order/index">商品订单管理</a></li>
 						<li><a href="#">商品评价管理</a></li>
 					</ul>
 				</li>
@@ -135,7 +137,7 @@ table tr th{
 	<div id="main-content"> 
     	<div class="content-box">
         	<div class="content-box-header">
-					<h3>订单列表</h3>
+					<h3 style="margin-top:13px; margin-left:10px;"><b>订单列表</b></h3>
 					<div class="clear"></div>
 			</div>
             <div class="content-box-content">
@@ -171,10 +173,6 @@ table tr th{
              			</h4>
           				</form>
                     </div>
-                	
-         	 			
-          			 <?php echo ($date); ?>
-          			
           			<br />
                 	<div class="notification attention png_bg"></div>
                     

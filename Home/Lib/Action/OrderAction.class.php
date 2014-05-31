@@ -75,7 +75,6 @@ class OrderAction extends CommonAction{
 				$orderid = $order->add();
 				//订单判断
 				if($orderid){
-
 					$orderIt = M('orderitem');
 					$orderIt->startTrans();
 					$data['pk_OrderOrderIt_id'] = $orderid;
@@ -94,6 +93,7 @@ class OrderAction extends CommonAction{
 						$this->success("提交订单成功",U('Order/query'));
 						$orderIt->commit();
 					}else{
+						$order->where("pk_Order_Id='$orderid'")->delete();
 						$this->error("提交订单失败，请重新提交!!!");
 					}
 				}else{

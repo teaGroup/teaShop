@@ -58,33 +58,33 @@
           <div class="j-tab-con">
             <div class="tab-con-item" style="display:block;">
               <volist name="newgoods" id="vo">
-                <li class="onegoods"> <a href="#"><img src="<{$vo.Goods_img}>"></a>
+                <li class="onegoods"> <a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>"><img src="<{$vo.Goods_img}>"></a>
                   <p class="price"><strong>￥<{$vo.Goods_Price}>元</strong></p>
-                  <p><a href="#"><{$vo.Goods_Name}></a></p>
+                  <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>"><{$vo.Goods_Name}></a></p>
                 </li>
               </volist>
             </div>
             <div class="tab-con-item">
               <volist name="hotgoods" id="vo">
-                <li class="onegoods"> <a href="#"><img src="<{$vo.Goods_img}>"></a>
+                <li class="onegoods"> <a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>"><img src="<{$vo.Goods_img}>"></a>
                   <p class="price"><strong>￥<{$vo.Goods_Price}>元</strong></p>
-                  <p><a href="#"><{$vo.Goods_Name}></a></p>
+                  <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>"><{$vo.Goods_Name}></a></p>
                 </li>
               </volist>
             </div>
             <div class="tab-con-item">
               <volist name="jbchaju" id="vo">
-                <li class="onegoods"> <a href="#"><img src="<{$vo.Goods_img}>"></a>
+                <li class="onegoods"> <a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>"><img src="<{$vo.Goods_img}>"></a>
                   <p class="price"><strong>￥<{$vo.Goods_Price}>元</strong></p>
-                  <p><a href="#"><{$vo.Goods_Name}></a></p>
+                  <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>"><{$vo.Goods_Name}></a></p>
                 </li>
               </volist>
             </div>
             <div class="tab-con-item">
               <volist name="gift" id="vo">
-                <li class="onegoods"> <a href="#"><img src="<{$vo.Goods_img}>"></a>
+                <li class="onegoods"> <a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>"><img src="<{$vo.Goods_img}>"></a>
                   <p class="price"><strong>￥<{$vo.Goods_Price}>元</strong></p>
-                  <p><a href="#"><{$vo.Goods_Name}></a></p>
+                  <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>"><{$vo.Goods_Name}></a></p>
                 </li>
               </volist>
             </div>
@@ -109,7 +109,7 @@
             <li class="first">
               <em class="bg1">1</em>
                   <img src="<{$vo.Goods_img}>" style="display: block; ">
-              <a href="#" target="_blank"><{$vo.Goods_Name}></a><br />        
+              <a  href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>" target="_blank"><{$vo.Goods_Name}></a><br />        
               <span class="f1" style="display: inline; ">￥</span><span class="f2" style="display: inline; "><{$vo.Goods_Price}></span>
             </li>
           </volist>
@@ -118,7 +118,7 @@
             <li class="">
               <em class="bg2">2</em>
               <img src="<{$vo.Goods_img}>" style="display: none; ">
-              <a href="#" target="_blank"><{$vo.Goods_Name}></a>  <br />      
+              <a href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>" target="_blank"><{$vo.Goods_Name}></a>  <br />      
               <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><{$vo.Goods_Price}></span>
             </li>
           </volist>
@@ -127,7 +127,7 @@
             <li class="">
               <em class="bg3">3</em>
               <img src="<{$vo.Goods_img}>"  style="display: none; ">
-              <a href="#" target="_blank"><{$vo.Goods_Name}></a><br />       
+              <a href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>" target="_blank"><{$vo.Goods_Name}></a><br />       
               <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><{$vo.Goods_Price}></span>
             </li>
           </volist>
@@ -136,7 +136,7 @@
             <li class="">
               <em><{$key+1}></em>
               <img src="<{$vo.Goods_img}>" style="display: none; ">
-              <a href="#" target="_blank"><{$vo.Goods_Name}></a><br />        
+              <a href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>" target="_blank"><{$vo.Goods_Name}></a><br />        
               <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><{$vo.Goods_Price}></span>
             </li>
          </volist>
@@ -150,7 +150,7 @@
             <li class="first">
               <em class="bg1">1</em>
                   <img src="<{$vo.Goods_img}>" style="display: block; ">
-              <a href="#" target="_blank"><{$vo.Goods_Name}></a><br />        
+              <a href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>" target="_blank"><{$vo.Goods_Name}></a><br />        
               <span class="f1" style="display: inline; ">￥</span><span class="f2" style="display: inline; "><{$vo.Goods_Price}></span>
             </li>
           </volist>
@@ -159,7 +159,7 @@
             <li class="">
               <em class="bg2">2</em>
               <img src="<{$vo.Goods_img}>" style="display: none; ">
-              <a href="#" target="_blank"><{$vo.Goods_Name}></a>  <br />      
+              <a href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>" target="_blank"><{$vo.Goods_Name}></a>  <br />      
               <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><{$vo.Goods_Price}></span>
             </li>
           </volist>
@@ -168,7 +168,7 @@
             <li class="">
               <em class="bg3">3</em>
               <img src="<{$vo.Goods_img}>"  style="display: none; ">
-              <a href="#" target="_blank"><{$vo.Goods_Name}></a><br />       
+              <a href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>" target="_blank"><{$vo.Goods_Name}></a><br />       
               <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><{$vo.Goods_Price}></span>
             </li>
           </volist>
@@ -177,7 +177,7 @@
             <li class="">
               <em><{$key+1}></em>
               <img src="<{$vo.Goods_img}>" style="display: none; ">
-              <a href="#" target="_blank"><{$vo.Goods_Name}></a><br />        
+              <a href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>" target="_blank"><{$vo.Goods_Name}></a><br />        
               <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><{$vo.Goods_Price}></span>
             </li>
          </volist>
@@ -191,7 +191,7 @@
             <li class="first">
               <em class="bg1">1</em>
                   <img src="<{$vo.Goods_img}>" style="display: block; ">
-              <a href="#" target="_blank"><{$vo.Goods_Name}></a><br />        
+              <a href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>" target="_blank"><{$vo.Goods_Name}></a><br />        
               <span class="f1" style="display: inline; ">￥</span><span class="f2" style="display: inline; "><{$vo.Goods_Price}></span>
             </li>
           </volist>
@@ -200,7 +200,7 @@
             <li class="">
               <em class="bg2">2</em>
               <img src="<{$vo.Goods_img}>" style="display: none; ">
-              <a href="#" target="_blank"><{$vo.Goods_Name}></a>  <br />      
+              <a href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>" target="_blank"><{$vo.Goods_Name}></a>  <br />      
               <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><{$vo.Goods_Price}></span>
             </li>
           </volist>
@@ -209,7 +209,7 @@
             <li class="">
               <em class="bg3">3</em>
               <img src="<{$vo.Goods_img}>"  style="display: none; ">
-              <a href="#" target="_blank"><{$vo.Goods_Name}></a><br />       
+              <a href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>" target="_blank"><{$vo.Goods_Name}></a><br />       
               <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><{$vo.Goods_Price}></span>
             </li>
           </volist>
@@ -218,7 +218,7 @@
             <li class="">
               <em><{$key+1}></em>
               <img src="<{$vo.Goods_img}>" style="display: none; ">
-              <a href="#" target="_blank"><{$vo.Goods_Name}></a><br />        
+              <a href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>" target="_blank"><{$vo.Goods_Name}></a><br />        
               <span class="f1" style="display: none; ">￥</span><span class="f2" style="display: none; "><{$vo.Goods_Price}></span>
             </li>
          </volist>
@@ -269,11 +269,11 @@
           <ul>
             <volist name="lv" id="vo">
               <li class="onegoods"> 
-                   <a class="img" target="_blank" href="#" title="<{$vo.Goods_Name}>"> 
+                   <a class="img" target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>" title="<{$vo.Goods_Name}>"> 
                       <img src="<{$vo.Goods_img}>" alt="<{$vo.Goods_Name}>"> 
                     </a>                             
                     <p class="price"><strong>￥<{$vo.Goods_Price}>元</strong> </p>
-                    <p><a href="#"><{$vo.Goods_Name}></a></p>               
+                    <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>"><{$vo.Goods_Name}></a></p>               
               </li>
              </volist>    
             </ul>
@@ -318,11 +318,11 @@
           <ul>
             <volist name="hong" id="vo">
               <li class="onegoods"> 
-                   <a class="img" target="_blank" href="#" title="<{$vo.Goods_Name}>"> 
+                   <a class="img" target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>" title="<{$vo.Goods_Name}>"> 
                       <img src="<{$vo.Goods_img}>" alt="<{$vo.Goods_Name}>"> 
                     </a>                             
                     <p class="price"><strong>￥<{$vo.Goods_Price}>元</strong> </p>
-                    <p><a href="#"><{$vo.Goods_Name}></a></p>               
+                    <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>"><{$vo.Goods_Name}></a></p>               
               </li>
              </volist>   
           </ul>
@@ -362,11 +362,11 @@
           <ul>
             <volist name="bai" id="vo">
               <li class="onegoods"> 
-                   <a class="img" target="_blank" href="#" title="<{$vo.Goods_Name}>"> 
+                   <a class="img" target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>" title="<{$vo.Goods_Name}>"> 
                       <img src="<{$vo.Goods_img}>" alt="<{$vo.Goods_Name}>"> 
                     </a>                             
                     <p class="price"><strong>￥<{$vo.Goods_Price}>元</strong> </p>
-                    <p><a href="#"><{$vo.Goods_Name}></a></p>               
+                    <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>"><{$vo.Goods_Name}></a></p>               
               </li>
              </volist>  
           </ul>
@@ -408,11 +408,11 @@
           <ul>
             <volist name="hei" id="vo">
               <li class="onegoods"> 
-                   <a class="img" target="_blank" href="#" title="<{$vo.Goods_Name}>"> 
+                   <a class="img" target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>" title="<{$vo.Goods_Name}>"> 
                       <img src="<{$vo.Goods_img}>" alt="<{$vo.Goods_Name}>"> 
                     </a>                             
                     <p class="price"><strong>￥<{$vo.Goods_Price}>元</strong> </p>
-                    <p><a href="#"><{$vo.Goods_Name}></a></p>               
+                    <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>"><{$vo.Goods_Name}></a></p>               
               </li>
              </volist>   
           </ul>
@@ -454,11 +454,11 @@
           <ul>
             <volist name="wu" id="vo">
               <li class="onegoods"> 
-                   <a class="img" target="_blank" href="#" title="<{$vo.Goods_Name}>"> 
+                   <a class="img" target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>" title="<{$vo.Goods_Name}>"> 
                       <img src="<{$vo.Goods_img}>" alt="<{$vo.Goods_Name}>"> 
                     </a>                             
                     <p class="price"><strong>￥<{$vo.Goods_Price}>元</strong> </p>
-                    <p><a href="#"><{$vo.Goods_Name}></a></p>               
+                    <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>"><{$vo.Goods_Name}></a></p>               
               </li>
              </volist>     
           </ul>
@@ -498,11 +498,11 @@
           <ul>
             <volist name="hua" id="vo">
               <li class="onegoods"> 
-                   <a class="img" target="_blank" href="#" title="<{$vo.Goods_Name}>"> 
+                   <a class="img" target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>" title="<{$vo.Goods_Name}>"> 
                       <img src="<{$vo.Goods_img}>" alt="<{$vo.Goods_Name}>"> 
                     </a>                             
                     <p class="price"><strong>￥<{$vo.Goods_Price}>元</strong> </p>
-                    <p><a href="#"><{$vo.Goods_Name}></a></p>               
+                    <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>"><{$vo.Goods_Name}></a></p>               
               </li>
              </volist>     
           </ul>
@@ -542,11 +542,11 @@
           <ul>
             <volist name="chaju" id="vo">
               <li class="onegoods"> 
-                   <a class="img" target="_blank" href="#" title="<{$vo.Goods_Name}>"> 
+                   <a class="img" target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>" title="<{$vo.Goods_Name}>"> 
                       <img src="<{$vo.Goods_img}>" alt="<{$vo.Goods_Name}>"> 
                     </a>                             
                     <p class="price"><strong>￥<{$vo.Goods_Price}>元</strong> </p>
-                    <p><a href="#"><{$vo.Goods_Name}></a></p>               
+                    <p><a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.Goods_Id}>"><{$vo.Goods_Name}></a></p>               
               </li>
              </volist>     
           </ul>

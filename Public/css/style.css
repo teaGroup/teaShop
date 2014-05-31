@@ -808,9 +808,10 @@ div.wysiwyg iframe { border: 0; margin: 5px 0 0 0; clear: left; width: 97.5% !im
 
 #content{
 
-        background: #00F;
+        /*background: #00F;*/
         width: 82%;
         height: 500px;
-        margin-right: 5px;
+		margin-top:-15px;
+        margin-right: 2px;
         float: right;
 }

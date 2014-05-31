@@ -58,7 +58,10 @@
                       $info =  $upload->getUploadFileInfo();
                }
 			if(!empty($info)){
-			     $model->Goods_img='__ROOT__/Uploads/'.$info[0]['savename']; 
+			     $model->Goods_img='__ROOT__/Uploads/'.$info[0]['savename'];
+				$model->Goods_img1='__ROOT__/Uploads/'.$info[1]['savename'];
+				$model->Goods_img2='__ROOT__/Uploads/'.$info[2]['savename'];
+				$model->Goods_img3='__ROOT__/Uploads/'.$info[3]['savename'];
 		     }
 			if(!empty($unit)){
 			    $model->Goods_Unit=$unit;

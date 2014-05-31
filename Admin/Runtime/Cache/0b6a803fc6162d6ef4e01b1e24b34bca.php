@@ -18,6 +18,8 @@
           ﻿		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/reset.css" />
 		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css" />
 		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/invalid.css" />
+		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/public.css" />
+		 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/page.css" />
 
 		 <script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
 		 <script type="text/javascript" src="__PUBLIC__/js/simpla.jquery.configuration.js"></script>
@@ -48,13 +50,13 @@
 				</li>
 				
 				<li> 
-					<a href="#" class="nav-top-item current">
+					<a href="__APP__/Goodsinfo/index" class="nav-top-item">
 					商品管理
 					</a>
 					<ul>
-						<li><a href="#">商品分类管理</a></li>
-						<li><a class="current" href="#">商品信息管理</a></li>
-						<li><a href="#">商品订单管理</a></li>
+						<li><a href="__APP__/Classifi/index">商品分类管理</a></li>
+						<li><a href="__APP__/Goodsinfo/index">商品信息管理</a></li>
+						<li><a href="__APP__/Order/index">商品订单管理</a></li>
 						<li><a href="#">商品评价管理</a></li>
 					</ul>
 				</li>

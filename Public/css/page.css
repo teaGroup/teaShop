@@ -1,0 +1,10 @@
+/*css black style pagination*/
+#div{width:500px;position:relative;margin:0px auto;}
+#div #black{    font-family: Verdana, Arial, Helvetica, sans-serif;
+                font-size: 10px;padding: 20px 0 5px 0;;margin:3px;color:#57A000;text-align:right;}
+#div #black a{border: 1px solid #ddd;padding:2px 5px;color:#57A000;margin:0 3px 0 0;text-decoration:none;}
+#div #black a:hover{color:black;}
+#div #black a:active{color:black;}
+#div #black span.current{border:#459300 !important;padding:2px 5px;color:#fff !important;margin:0 3px 0 0;background: #469400 url('../images/bg-button-green.gif') top left repeat-x !important;}
+#div #black span.disabled{border:#459300 !important;padding:2px 5px;color:#fff !important;margin:0 3px 0 0;}
+#div #black span.current:hover {text-decoration: underline;}

@@ -1,18 +1,21 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>浮生若茶</title>
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/homepublic.css" />
-<script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/JS/autocal.js"></script>
-
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>商品详情</title>
+<link href="__PUBLIC__/css/goodsinfo.css" rel="stylesheet" media="screen" type="text/css" />
+<SCRIPT src="__PUBLIC__/js/picBig/jquery-1.2.6.pack.js" type='text/javascript'></SCRIPT>
+<SCRIPT src="__PUBLIC__/js/picBig/js/base.js" type='text/javascript'></SCRIPT>
+<SCRIPT src="__PUBLIC__/js/picBig/lib.js" type='text/javascript'></SCRIPT>
+<SCRIPT src="__PUBLIC__/js/picBig/163css.js" type='text/javascript'></SCRIPT>
+<style>
+.btnbuy{
+	background-image:__PUBLIC__/images/btnbuy.jpg;
+}
+</style>
 </head>
 
 <body>
-<!----------------头部-------------------------------->
 <div id="head"> <link href="__PUBLIC__/css/h_style.css" type="text/css" rel="stylesheet">
 <link rel="stylesheet" href="__PUBLIC__/css/base.css" />
 <script src="__PUBLIC__/js/head.js" type="text/javascript"></script>
@@ -335,88 +338,171 @@
   </div>
 </div>
 
- </div>
-<!------------------主体--------------------->
-<div id="container">
-  <div id="main-content">
-    <div class="content-box"><!-- Start Content Box -->
-      
-      <div class="content-box-header">
-        <h3>商品列表</h3>
-        <div class="clear"></div>
-      </div>
-      <!-- End .content-box-header -->
-      
-      <div class="content-box-content">
-        <div class="tab-content default-tab" id="tab1"> <!-- This is the 
-
-target div. id must match the href of this div's tab -->
-          
-          <div class="notification attention png_bg"></div>
-          <table>
-            <thead>
-              <tr>
-                <th width="500">商品名称</th>
-                <th width="95">单价</th>
-                <th width="110">数量</th>
-                <th width="95">小计</th>
-                <th width="100">操作</th>
-              </tr>
-            </thead>
-            <tfoot>
-              <tr>
-                <td colspan="4" style="text-align:right; font-size:14px;">
-                        <span id="total-pallets" style="color:#900; font-family:Georgia,'Times New Roman'; font-size:30px;" id="selectnum"><?php echo ($goodsnum); ?></span>
-                        <strong>&nbsp;&nbsp;件商品&nbsp;&nbsp;&nbsp;&nbsp;</strong>    
-                        <strong>合计：</strong>
-                        <span style="font-size:20px; color:#999;">￥</span>
-                        <span id="product-total" style="color:#900; font-family:Georgia,'Times New Roman'; font-size:30px;"><?php echo ($total); ?></span>
-                        <strong>元</strong>      
-                 </td>
-                 <td>
-                    <a href="__APP__/Order/consignee/userid/<?php echo ($userid); ?>/username/<?php echo ($username); ?>"><img src="__PUBLIC__/images/jies.jpg" alt="去结算" /></a>
-                 </td>
-               </tr>
-            </tfoot>
-            <tbody>
-              <?php if(is_array($cartlist)): $i = 0; $__LIST__ = $cartlist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-                <td font_color="black" style="text-align:left;">
-                    <img class="goodsimg" src="<?php echo ($vo["Goods_img"]); ?>" />
-                    <a target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["Goods_Id"]); ?>"><?php echo ($vo["Goods_Name"]); ?></a>
-                </td>
-                <td font_color="black" class="price-per-pallet">
-                    $<span><?php echo ($vo["Goods_Price"]); ?></span>元
-                </td>
-                <form name="cart['<?php echo ($vo["Cart_Id"]); ?>']" action="__URL__/modifyNum" method="post">
-                <td font_color="black"  class="num-pallets">
-                  
-                    <input type=number class="num-pallets-input" name="num" min=1 max='<?php echo ($vo["Goods_Num"]); ?>' value="<?php echo ($vo["Num"]); ?>" style="width:40px;">
-                    <input type="submit" value="更改数量"/>
-                    <input type="hidden" value="<?php echo ($vo["Cart_Id"]); ?>" name="cartid" />
-                    <input type="hidden" value="<?php echo ($vo["Goods_Id"]); ?>"name="goodsid" />
-                  
-                </td>
-                </form>
-                <td font_color="black" class="row-total">
-                    <span class="rowtotal"><?php echo ($vo["Sum"]); ?></span>元
-                </td>
-                <td width="84"><!-- Icons --> 
-                    <a href="__URL__/delete/cartid/<?php echo ($vo["Cart_Id"]); ?>" title="Delete"><img src="__PUBLIC__/images/icons/cross.png" alt="Delete" /></a>
-                </td>
-              </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-            </tbody>
-          </table>
-        </div>
-        <!-- End #tab1 --> 
-        
-      </div>
-      <!-- End .content-box-content --> 
-      
-    </div>
-  </div>
 </div>
-<!------------------------尾部-------------------------->
-<div id="foot">
+<div id="container">
+     <div class="inner">
+          <div id="good">
+               <div id="crumb">
+               	<a href="__APP__/Index/index">首页</a>
+				<span>»</span>
+				<a href=""><?php echo ($list[0][Classifi_Name]); ?></a>
+				<!--<span>»</span>
+				<a href="/" style="background-color:#0F0;">安吉白茶</a>
+				<span>»</span>
+				<a href="/" style="background-color:#0F0;">张家山</a>-->
+				<span>»</span>
+				<a href="/"><?php echo ($list[0][Goods_Name]); ?></a>									
+               </div><!--END crumb-->
+               <div class="images">
+				<div class="image_big"><img src="<?php echo ($list[0]["Goods_img"]); ?>" width="398" height="398"/></div>
+				<div class="images_small">
+				<div class="image_small"><img src="<?php echo ($list[0]["Goods_img"]); ?>" width="74" height="74"/></div>
+				<?php if($list[0][Goods_img1] != null): ?><div class="image_small"><img src="<?php echo ($list[0]["Goods_img1"]); ?>" width="74" height="74"/></div><?php endif; ?>
+				<?php if($list[0][Goods_img2] != null): ?><div class="image_small"><img src="<?php echo ($list[0]["Goods_img2"]); ?>" width="74" height="74"/></div><?php endif; ?>
+				<?php if($list[0][Goods_img3] != null): ?><div class="image_small"><img src="<?php echo ($list[0]["Goods_img3"]); ?>" width="74" height="74" /></div><?php endif; ?>
+				</div>
+				</div><!--END images-->
+                <div class="good_info">
+				<h1><span style="color:#F00;">【2014新茶】</span>
+				<?php if($list[0][Goods_Num] > 0): ?>【现货】
+				<?php else: ?>
+				【暂缺】<?php endif; echo ($list[0]["Goods_Name"]); ?>
+				</h1><br/>
+                	<dl>
+                        <dd>商品编号：<?php echo ($list[0]['pk_Goodsinfo_Id']); ?></dd>
+                        <dd id="ECS_G_PRICE">
+                          <span class="fl">现　　价：</span>
+                   		  <span class="yahei">￥<strong class="good_pri"><?php echo ($list[0][Goods_Price]); ?></strong></span></dd>
+                        <dd id="ECS_G_COMMENT">
+							<span class="fl">库　　存：</span>
+							<span><?php echo ($list[0][Goods_Num]); ?>件</span>
+							<span class="pinglun" style="display:none;">（<a href="#comment">已有237人评论</a>）</span>
+					</dd>
+                    </dl>
+                    <div class="good_pinpai">
+                    	  <ul>
+                    		<li>销售量：<?php echo ($list[0][Goods_SellNum]); ?>件</li>
+                    		<li>赠送积分：<?php echo ($list[0][Goods_RewardCred]); ?>分</li>
+                    		<li>产品单位：<?php echo ($list[0][Goods_Unit]); ?></li>
+                    		<li>净含量：<?php echo ($list[0][Goods_NetContent]); ?>克</li>
+                    	  </ul>
+                        <div class="cb"></div>
+				</div><!--good_pinpai-->
+                    <div class="good_tobuy">
+					<form action="__APP__/Cart/add" name="buybox" id="buybox" method="post">
+						<div class="buy_bum">
+							<span class="fl">我要买：</span>
+							<div class="good_numall">
+							    <!-- <a class="min"></a><input type="text" value="1" class="good_num" name="item_number"><a class="add"></a>-->
+                                <input type="number" value="1" class="good_num" name="item_number">
+							</div>
+							<div class="cb"></div>
+							<p class="p_buybtn">
+                            	<input type="hidden" name="goodsid" value="<?php echo ($list[0]['pk_Goodsinfo_Id']); ?>">
+						          <!--<input type="button" class="addtocart_btn" onclick="document.buybox.submit()">-->
+                                  <input type="image" src="__PUBLIC__/images/btnbuy.jpg" onClick="document.buybox.submit()" />	
+							</p>
+							<div class="cb"></div>
+						</div>
+					</form>
+					<p class="baoyou">购物提示：普通快递满200元包邮，顺丰快递款到发货满300元包邮 <a href="/" target="_blank">详情点击</a></p>
+				</div><!--good_tobuy-->
+                    <!-- Baidu Button BEGIN -->
+					<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+					<span class="bds_more">分享到：</span>
+					<a class="bds_tsina" title="分享到新浪微博" href="#">新浪微博</a>
+					<a class="bds_douban" title="分享到豆瓣网" href="#">豆瓣网</a>
+					<a class="bds_sqq" title="分享到QQ好友" href="#">QQ好友</a>
+					<a class="bds_qzone" title="分享到QQ空间" href="#">QQ空间</a>
+					<a class="bds_mshare" title="分享到一键分享" href="#">一键分享</a>
+					<a class="bds_copy" title="分享到复制网址" href="#">复制网址</a>
+					<a class="bds_print" title="分享到打印" href="#">打印</a>
+					</div>
+					<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=0" src="http://bdimg.share.baidu.com/static/js/bds_s_v2.js?cdnversion=388288"></script>
+					
+					<script type="text/javascript">
+					document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+					</script>
+					<!-- Baidu Button END -->
+					
+                    
+                </div><!--END good_info-->
+          </div><!--END good-->
+          <div class="cb"></div>
+          <div id="good_sidebar">
+				<div id="seealsobab" style="display: block;">
+                      <div><h3 class="title">买过该商品的茶友还买过</h3>
+                           <ul class="inner">
+                                <li class="good_small">
+                                     <a class="good_img fl" title="御牌" href="__APP__/GoodsInfo/index/name/<?php echo ($other[0][Goods_img]); ?>" target="_blank">
+                                          <img width="70" height="70" src="<?php echo ($other[0][Goods_img]); ?>" alt="御牌" style="border: 0 none;"></a> 
+                                     <a class="good_name" title="御牌" href="__APP__/GoodsInfo/index/name/<?php echo ($other[0][Goods_img]); ?>" target="_blank"><?php echo ($other[0][Goods_Name]); ?></a>                                     
+                                     <span class="good_price"> ￥<?php echo ($other[0][Goods_Price]); ?> </span>
+                                </li>
+                            </ul>
+                       </div>
+                </div><!--/#seealsobab-->
+				<div id="history">
+					<div class="title"><a href="#" onclick="return mcw_clear_history();" class="pr10">清空</a>浏览记录</div>
+					<div class="inner">
+												<div class="good_small">
+ 							<a href="##" class="good_img fl"><img src="<?php echo ($other[1][Goods_img]); ?>" height="70"></a>
+ 							<a href="__APP__/GoodsInfo/index/name/<?php echo ($other[1][Goods_Name]); ?>" class="good_name">
+							<?php if($other[1][Goods_Num] > 0): ?>【现货】
+				               <?php else: ?>
+				              【暂缺】<?php endif; echo ($other[1][Goods_Name]); ?></a>
+ 							<span class="good_price">￥<?php echo ($other[1][Goods_Price]); ?></span>
+ 						</div>
+ 											</div>
+				</div><!--/#history-->
+				<div id="seealsovav" style="display: block;">
+                       <div>
+                            <h3 class="title">看过该商品的茶友还看过</h3>
+                                 <ul class="inner">
+                                    <li class="good_small">
+                                       <a class="good_img fl" title="张家山" href="__APP__/GoodsInfo/index/name/<?php echo ($other[2][Goods_Name]); ?>" target="_blank">
+                                               <img width="70" height="70" src="<?php echo ($other[2][Goods_img]); ?>" alt="张家山" style="border: 0 none;"></a> 
+                                       <a class="good_name" title="张家山" href="__APP__/GoodsInfo/index/name/<?php echo ($other[2][Goods_Name]); ?>" target="_blank"><?php echo ($other[2][Goods_Name]); ?></a> 
+                                       <span class="good_price"> ￥<?php echo ($other[2][Goods_Price]); ?> </span>
+                                    </li>
+                                 </ul>
+                       </div>
+                </div><!--/#seealsovav-->
+			</div><!---END good_sidebar-->
+            <div id="good_detail">
+                  <div class="arrow_tabs"><a href="#" class="active">商品详情</a>
+			       <a href="__URL__/common_list" target="_blank">商品评论</a>
+			   </div>
+                  <div class="inner" style="display: block;background:#093;">
+					<div class="attrs clearfix mt10">
+                          <div id="zi">
+										<span style=" width:185px"><b>品牌：</b>张家山</span>
+										<span style=" width:185px"><b>库存：</b>盒</span>
+										<span style=" width:185px"><b>用途：</b>自饮</span>
+										<span style=" width:185px"><b>上/下架：</b><?php if($list[0][Goods_IsSell] == 1): ?>是<?php else: ?>否<?php endif; ?></span>
+										<span style=" width:185px"><b>类别：</b><?php echo ($list[0][Classifi_Name]); ?></span>
+										<span style=" width:185px"><b>等级：</b>特一级</span>
+										<span style=" width:185px"><b>赠送积分：</b><?php echo ($list[0][Goods_RewardCred]); ?>分</span>
+										<span style=" width:185px"><b>产品单位：</b><?php echo ($list[0][Goods_Unit]); ?></span>
+										<span style=" width:185px"><b>净重：</b><?php echo ($list[0][Goods_NetContent]); ?></span>
+										<span style=" width:185px"><b>上市时间：</b><?php echo ($list[0][Goods_SellTime]); ?></span>
+                           </div>
+					</div>
+					<div class="mt10 good_intro">
+						<div class="title"></div>
+						<div class="content">
+							<p><?php echo ($list[0][Goods_Intro]); ?></p>
+						</div><!--END content-->
+					</div><!--mt10 good_intro-->
+				</div><!---attrs clearfix mt10--->
+            
+            </div><!------inner---------->
+     </div> <!---END inner-->
+        
+</div><!---END container-->
+
+<div id="foot"> 
+
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/foot_public.css" />
 <div class="help">
 <div class="help_box">
@@ -464,6 +550,46 @@ target div. id must match the href of this div's tab -->
   <center>Copyright 2014 - 2015 浮生若茶  中山大学南方学院计算机（1）班出品  All Rights Reserved </center>
 </div>
 </div>
- </div>
+
+</div>
+<SCRIPT type=text/javascript>
+	$(function(){			
+	   $(".jqzoom").jqueryzoom({
+			xzoom:400,
+			yzoom:400,
+			offset:10,
+			position:"right",
+			preload:1,
+			lens:1
+		});
+		$("#spec-list").jdMarquee({
+			deriction:"left",
+			width:350,
+			height:56,
+			step:2,
+			speed:4,
+			delay:10,
+			control:true,
+			_front:"#spec-right",
+			_back:"#spec-left"
+		});
+		$("#spec-list img").bind("mouseover",function(){
+			var src=$(this).attr("src");
+			$("#spec-n1 img").eq(0).attr({
+				src:src.replace("\/n5\/","\/n1\/"),
+				jqimg:src.replace("\/n5\/","\/n0\/")
+			});
+			$(this).css({
+				"border":"2px solid #ff6600",
+				"padding":"1px"
+			});
+		}).bind("mouseout",function(){
+			$(this).css({
+				"border":"1px solid #ccc",
+				"padding":"2px"
+			});
+		});				
+	})
+	</SCRIPT>
 </body>
 </html>

@@ -65,7 +65,11 @@
 		                      <td><img src="<{$vo.Goods_img}>" id="img"/></td>
 		                      <td><{$vo.Goods_Price}></td>
 		                      <td><{$vo.Classifi_Name}></td>
-		                      <td><{$vo.Goods_IsSell}></td>
+		                      <if condition='$vo.Goods_IsSell eq 1'>
+			                           <td>是</td>
+			                     <else />
+			                           <td>否</td>
+		                      </if>
 		                      <td><{$vo.Goods_SellTime}></td>
 		                      <td><{$vo.Goods_Num}></td>
 		                      <td><{$vo.Goods_RewardCred}></td>
