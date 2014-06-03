@@ -1,5 +1,5 @@
 <?php
-    class ManauserAction extends Action{
+    class ManauserAction extends CommonAction{
            //浏览会员信息
 		 public function index(){
 		      $m=M("Userview");
@@ -25,8 +25,8 @@
 		 }
 		 //查询操作
 		 public function search(){
-		     $tiaojian=$_POST['tiaojian'];
-			$keyword=$_POST['keyword'];
+		     $tiaojian=$_GET['tiaojian'];
+			$keyword=$_GET['keyword'];
 			$m=M("Userview");
 			$data[$tiaojian]=array("like","%".$keyword."%");
 			import("ORG.Util.Page");//导入分页类

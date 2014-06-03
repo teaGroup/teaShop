@@ -20,7 +20,7 @@ class IndexAction extends Action {
          $this->assign("goodsnum",$goodsnum);
 
     	//新品
-        $sql = "select Goods_Id,Goods_Name,Goods_Price,Goods_img from simpleginfo order by Goods_SellTime limit 10";
+        $sql = "select Goods_Id,Goods_Name,Goods_Price,Goods_img from simpleginfo order by Goods_SellTime desc limit 10";
         $newgoods = $model->query($sql);
     	//热卖
         $sql = "select Goods_Id,Goods_Name,Goods_Price,Goods_img from simpleginfo order by Goods_SellNum limit 10";
@@ -33,14 +33,14 @@ class IndexAction extends Action {
                         where Goods_Name like '%礼盒%' order by Goods_SellNum  limit 10";
         $gift = $model->query($sql);
     	//排行榜周
-        $sql = "select * from simpleginfo where week(Goods_SellTime)=week(now()) order by Goods_SellNum desc limit 15";
+        $sql = "select * from simpleginfo where week(Goods_BuyTime)=week(now()) order by Goods_SellNum desc limit 15";
         $rankingW = $model->query($sql);
     	//排行榜月
-        $sql = "select * from simpleginfo where month(Goods_SellTime)=month(CURDATE()) and 
-                        year(Goods_SellTime)=year(CURDATE()) order by Goods_SellNum desc limit 15";
+        $sql = "select * from simpleginfo where month(Goods_BuyTime)=month(CURDATE()) and 
+                        year(Goods_BuyTime)=year(CURDATE()) order by Goods_SellNum desc limit 15";
         $rankingM = $model->query($sql);
     	//排行榜年
-        $sql = "select * from simpleginfo where year(Goods_SellTime)=year(curdate()) order by Goods_SellNum desc limit 15";
+        $sql = "select * from simpleginfo where year(Goods_BuyTime)=year(curdate()) order by Goods_SellNum desc limit 15";
         $rankingY = $model->query($sql);
     	//绿茶
         $sql = "call QHsgoods('绿茶')";
@@ -64,7 +64,15 @@ class IndexAction extends Action {
         $sql = "call QHsgoods('茶具')";
         $chaju = $model->query($sql);
         //购物车
-
+		
+		
+		$m=M("news");
+		$news=$m->select();
+		$n=M("notice");
+		$noti=$n->select();
+		$this->assign("news",$news);
+		$this->assign("notice",$noti);
+        $this->assign("username",$username);
 
         $this->assign('newgoods',$newgoods);
         $this->assign('hotgoods',$hotgoods);
@@ -81,5 +89,38 @@ class IndexAction extends Action {
         $this->assign('rankingM',$rankingM);
         $this->assign('rankingY',$rankingY);
     	$this->display();
+   }
+   
+   public function news(){
+        if(!isset($_SESSION['username']) || $_SESSION['username']==""){
+            $url ="Public:top1";
+        }else{
+            $url ="Public:top2";
+         }
+         $username =  $_SESSION['username'];
+		$id=$_GET["id"];
+		$m=M("News");
+		$data["pk_News_Id"]=$id;
+		$arr=$m->where($data)->find();
+        $this->assign("url",$url);
+		$this->assign("data",$arr);
+        $this->assign("username",$username);
+	    $this->display();
+   }
+   public function notice(){
+        if(!isset($_SESSION['username']) || $_SESSION['username']==""){
+            $url ="Public:top1";
+        }else{
+            $url ="Public:top2";
+         }
+         $username =  $_SESSION['username'];
+		$id=$_GET["id"];
+		$m=M("Notice");
+		$data["pk_Notice_Id"]=$id;
+		$arr=$m->where($data)->find();
+        $this->assign("url",$url);
+		$this->assign("data",$arr);
+        $this->assign("username",$username);
+	    $this->display();
    }
 }

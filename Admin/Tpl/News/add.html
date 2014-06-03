@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+     <head>
+             <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+	         <title>add</title>
+             <link rel="stylesheet" href="__PUBLIC__/css/hotnews_1.css" type="text/css" media="screen" />
+             <script src="__ROOT__/CKEditor/ckeditor.js"></script>
+     </head>
+
+<body>
+	 <include file="Header:header"/>
+     <div id="main-content">
+       <center>
+	     <nav id="nav">
+             <a href="__APP__/News/index">浏览热点新闻</a> |
+             <a href="__APP__/News/add">添加热点新闻</a>
+         </nav>
+         <hr>
+         </center>
+
+
+         <form action="__APP__/News/insert" method="post" enctype="multipart/form-data" name="form1">
+         <fieldset>
+             <p>
+             <label for="news_title">新闻标题</label>
+                 <input type="text" name="news_title" id="news_title">
+             <br/>
+           </p>
+
+             <p>
+             <label for="news_content">新闻内容</label>
+                  <textarea name="news_content" id="news_content"></textarea>
+             </p>
+             <p>
+                 <input type="submit" name="submit" id="submit" value="提交">
+                 　<input type="reset" name="reset" id="reset" value="重置">
+             </p>
+         </fieldset>
+       </form>
+
+</div>
+</body>
+<script type="text/javascript">
+
+   // Ǵԃ CKEitor քʏԫ٦Ŝìʹԃ CKFinder ӥݾ
+
+   CKEDITOR.replace( 'news_content', {
+
+   filebrowserBrowseUrl : '__ROOT__/CKFinder/ckfinder.html',
+
+   filebrowserImageBrowseUrl : '__ROOT__/CKFinder/ckfinder.html?Type=Images',
+
+   filebrowserFlashBrowseUrl : '__ROOT__/CKFinder/ckfinder.html?Type=Flash',
+
+   filebrowserUploadUrl : '__ROOT__/CKFinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+
+   filebrowserImageUploadUrl : '__ROOT__/CKFinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+
+   filebrowserFlashUploadUrl : '__ROOT__/CKFinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+
+   });
+
+</script>
+</html>

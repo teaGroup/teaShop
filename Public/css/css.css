@@ -352,4 +352,44 @@ a:hover{color:#FF6600;}
 	padding-left: 40px;
 	
 }
+/******************************公告$新闻********************************************/
+#con{
+	height: 425px;
+}
+.hot_news{
+	height:424px;
+	width:50%;
+	display:inline;
+	float:left;
+	border-right:1px solid #49932A;
+}
+.notice{
 
+	margin:0 0 0 600px;
+	height:424px;
+	width:50%;
+	border-left:2px solid #49932A;
+}
+.hn_head{
+	height:48px;
+}
+.hn_head h2{
+	font-family:"华文琥珀";
+	font-size:24px;
+	color:black;
+	background-color:#49932A;
+}
+.hot_news table,.notice table{
+	font-size:18px;
+	font-family:Candara;
+}
+#img{
+	width:24px;
+	height:auto;
+}
+#table{
+	margin-left:30px;
+}
+#td{
+	text-decoration:underline;
+}

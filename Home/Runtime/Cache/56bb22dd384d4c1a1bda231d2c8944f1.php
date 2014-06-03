@@ -389,8 +389,9 @@ ul li{
 <div id="container">
 	<div class="nav">
 		<ul id="nav"> 
-			<li class="active"><a href="#">订单查询</a></li> 
-			<li><a href="#">个人信息管理</a></li> 
+			<li class="active"><a href="__APP__/Order/index">订单查询</a></li> 
+			<li><a target="_blank" href="__APP__/UserInfo/index">个人信息管理</a></li> 
+            <li><a href="__APP__/Consi/index">管理收获地址</a></li> 
 			<li id="bar"></li> 
 		</ul> 
 	</div>

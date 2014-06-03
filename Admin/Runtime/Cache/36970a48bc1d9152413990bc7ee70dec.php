@@ -34,12 +34,12 @@
 			<ul id="main-nav"> 
 				
 				<li>
-					<a href="__APP__/Index/index/" class="nav-top-item no-submenu">
+					<a href="__APP__/AdminPwd/index" class="nav-top-item no-submenu">
 						修改密码
 					</a>       
 				</li>
 				<li>
-					<a href="__APP__/Index/index/" class="nav-top-item no-submenu">
+					<a href="__APP__/Manauser/index" class="nav-top-item no-submenu">
 						管理会员信息
 					</a>       
 				</li>
@@ -52,7 +52,7 @@
 						<li><a href="__APP__/Classifi/index">商品分类管理</a></li>
 						<li><a href="__APP__/Goodsinfo/index">商品信息管理</a></li>
 						<li><a href="__APP__/Order/index">商品订单管理</a></li>
-						<li><a href="#">商品评价管理</a></li>
+						<li><a href="__APP__/Review/index">商品评价管理</a></li>
 					</ul>
 				</li>
 				
@@ -61,8 +61,8 @@
 						热点新闻管理
 					</a>
 					<ul>
-						<li><a href="#">添加热点新闻</a></li>
-						<li><a href="#">浏览热点新闻</a></li>
+						<li><a href="__APP__/News/add">添加热点新闻</a></li>
+						<li><a href="__APP__/News/index">浏览热点新闻</a></li>
 					</ul>
 				</li>
 				
@@ -71,8 +71,8 @@
 						商城公告管理
 					</a>
 					<ul>
-						<li><a href="#">添加公告</a></li>
-						<li><a href="#">浏览公告</a></li>
+						<li><a href="__APP__/Notices/add">添加公告</a></li>
+						<li><a href="__APP__/Notices/index">浏览公告</a></li>
 					</ul>
 				</li>
 				
@@ -81,8 +81,8 @@
 						管理业务管理员管理
 					</a>
 					<ul>
-						<li><a href="#">添加业务管理员</a></li>
-						<li><a href="#">浏览管理员信息</a></li>
+						<li><a href="__APP__/ManageAdmin/add">添加业务管理员</a></li>
+						<li><a href="__APP__/ManageAdmin/index">浏览管理员信息</a></li>
 					</ul>
 				</li> 
 

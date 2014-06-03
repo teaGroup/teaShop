@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link href="__PUBLIC__/css/search.css" rel="stylesheet" media="screen" type="text/css" />
+<load href="__PUBLIC__/js/jquery.min.js" />
+<load href="__PUBLIC__/js/Tab.js" />
+</head>
+
+<body>
+<div id="head"> <include file="Public:header" /> </div>
+<div id="container">
+<div id="search_main">
+       <div class="top">
+       <div id="search_top">
+       <a href="__ROOT__">首页</a> <code>&gt;</code> 商品搜索_<{$_POST['keywords']}>
+       </div>
+       <div id="search_way">
+       <form action="__APP__/Search/sort" method="post">
+	   排序方式：
+	   <select name="sort">
+	   <option value="Goods_SellTime">按上架时间排序</option>
+       <option value="Goods_SellNum" selected>按销售量排序</option>
+       <option value="Goods_Price">按价格排序</option>
+	   <input id="img" type="image" name="imageField" src="__PUBLIC__/images/bnt_go.gif" alt="go"/>				
+       </form>
+       </div>
+       </div>
+       <div id="good_list">
+            <volist name="data" id="vo">
+            <div class="good_single">
+				<a href="/"><img src="" width="175" height="175"></a>
+		        <a href="/" class="good_name"><{$vo.Goods_Name}></a>
+		        <span class="good_price"><{$vo.Goods_Price}></span>
+		        <a href="/" class="good_comment">已有<?php echo $result;?>人评价</a>
+		        <p class="buy_panel"><a href="/" class="buy">购买</a></p>
+            </div>
+            </volist>
+       </div>
+<div id="div" align="center"><div id="black"><{$show}></div></div>
+</div>
+</div>
+
+<div class="clear"></div>
+<div id="foot"> 
+<include file="Public:footer" />
+</div>
+</body>
+</html>

@@ -22,7 +22,6 @@ class GoodsInfoAction extends Action{
 	   $model=M("Goodsview");
 	   $data['pk_Goodsinfo_Id']=$goodsid;
 	   $list=$model->where($data)->select();
-
 	   $other=$model->query("select * from t_Goodsview order by Goods_SellTime desc limit 0,3 ");
 	   $this->assign("other",$other);
 	   $this->assign("list",$list);

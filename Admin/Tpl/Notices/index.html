@@ -1,0 +1,99 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>index</title>
+		 <link rel="stylesheet" href="__PUBLIC__/css/hotnews_1.css" type="text/css" media="screen" />
+
+         <script type="text/javascript" src="__PUBLIC__/js/jquery-1.3.2.min.js"></script>
+
+</head>
+  
+<body>
+   <include file="Header:header"/>
+<div id="main-content">
+     <center>
+	 <nav id="nav">
+         <a href="__APP__/Notices/index">浏览商城公告</a> |
+         <a href="__APP__/Notices/add">添加商城公告</a>
+     </nav>
+     <br/>
+     </center>
+     <div class="content-box"><!-- Start Content Box -->
+				
+				<div class="content-box-header">
+					
+					<h3>Content box</h3>
+					
+					<div class="clear"></div>
+					
+				</div> <!-- End .content-box-header -->
+				
+				<div class="content-box-content">
+					
+					<div class="tab-content default-tab" id="tab1"> <!-- This is the target div. id must match the href of this div's tab -->
+						
+						<div class="notification attention png_bg"></div>
+						
+					  <table>
+							
+							<thead>
+								<tr>
+								   <th ><input class="check-all" type="checkbox" /></th>
+								   <th>公告标题</th>								  
+								   <th>公告内容</th>
+								   <th>发布时间</th>
+								</tr>
+								
+							</thead>
+						 
+							<tfoot>
+								<tr>
+									<td colspan="6">
+										<div class="bulk-actions align-left">
+											<select name="dropdown">
+												<option value="option1">Choose an action...</option>
+												<option value="option2">Edit</option>
+												<option value="option3">Delete</option>
+											</select>
+											<a class="button" href="#">Apply to selected</a>
+										</div>
+                                        
+										
+						               <div id="div" align="center"><div id="black"><{$show}></div></div>
+										<div class="clear"></div>
+									</td>
+								</tr>
+							</tfoot>
+						 
+							<tbody>
+				
+									
+                       <volist name="arr" id="vo">
+              <tr>
+                   <td><input type="checkbox" /></td>
+                  <td font_color="black"> <a href="__APP__/Notices/modify/id/<{$vo.pk_Notice_Id}>" title="Edit"><{$vo.Notice_Title|msubstr=0,10}><strong>...</strong></a></td>
+                  <td font_color="black"> <a href="__APP__/Notices/modify/id/<{$vo.pk_Notice_Id}>" title="Edit"><{$vo.Notice_Content|msubstr=0,34}><strong>...</strong></a></td>
+                  <td font_color="black"><{$vo.Notice_PubDate}></td>
+									<td width="84">
+										<!-- Icons -->
+										 <a href="__APP__/Notices/modify/id/<{$vo.pk_Notice_Id}>" title="Edit"><img src="__PUBLIC__/images/icons/pencil.png" alt="Edit" /></a>
+								    <a href="__APP__/Notices/del/id/<{$vo.pk_Notice_Id}>" title="Delete"><img src="__PUBLIC__/images/icons/cross.png" alt="Delete" /></a></td>
+              </tr>
+         </volist>
+							
+							</tbody>
+							
+						</table>
+						
+					</div> <!-- End #tab1 -->
+					
+					        
+					
+				</div> <!-- End .content-box-content -->
+				
+			</div>
+            </div>
+</body>
+</html>

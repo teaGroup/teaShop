@@ -18,7 +18,7 @@
 				<div class="tab-content default-tab" id="tab1"> <!-- This is the target div. id must match the href of this div's tab -->
 						
 						<div class="notification attention png_bg"></div>
-       <form action="__APP__/Manauser/search" method="post">
+       <form action="__APP__/Manauser/search" method="get">
 	        <label for="tiaojian">
 		          <select name="tiaojian">
 				        <option value="User_Name">会员名称</option>
@@ -32,9 +32,7 @@
 	  </form>
        <table>
 	        <tr>
-		       <th><input class="check-all" type="checkbox" name="Ids[]"/>会员ID</th>
 		       <th>会员名称</th>
-		       <th>密码</th>
 		       <th>邮箱</th>
 		       <th>性别</th>
 		       <th>注册时间</th>
@@ -46,9 +44,7 @@
 		   </tr>
 		   <volist name="user" id="vo">
 		   <tr>
-		       <td><input type="checkbox" name="Ids" value="<{$vo.pk_User_Id}>"/><{$vo.pk_User_Id}></td>
 		       <td><{$vo.User_Name}></td>
-			  <td><{$vo.User_Pwd}></td>
 		       <td><{$vo.User_Email}></td>
 		       <td><{$vo.User_Sex}></td>
 		       <td><{$vo.User_JoinDate}></td>
@@ -59,13 +55,6 @@
 		       <td><a href="__APP__/Manauser/del/id/<{$vo.pk_User_Id}>"><img src="__PUBLIC__/images/icons/cross.png" alt="Delete" /></a></td>
 		   </tr>
 		   </volist>
-		   <tr>
-		      <td colspan="12">
-			     <div class="bulk-actions align-left">
-			           <a class="button" href="##">DELETE</a>
-				</div>
-			 </td>
-		   </tr>
 	  </table>
 	  <div id="div" align="center"><div id="black"><{$show}></div></div>
 	  <div class="clear"></div>

@@ -1,0 +1,69 @@
+﻿<!doctype html>
+<html>
+     <head>
+	     <title>商品评价管理</title>
+		<script src="__ROOT__/ckeditor/ckeditor.js"></script>
+<script type="text/javascript">
+ CKEDITOR.replace('editor1', {
+ height : 200,
+ width : 500
+ });
+</script>
+	</head>
+	<body>
+         <include file="Header:header"/>
+	    <div id="main-content"> 
+		<div class="content-box"><!-- Start Content Box -->
+				<div class="content-box-header">
+					<h3>回复评价</h3>
+					<div class="clear"></div>
+				</div> <!-- End .content-box-header -->
+				<div class="content-box-content">
+					<div class="tab-content default-tab" id="tab1"> <!-- This is the target div. id must match the href of this div's tab -->
+						<div class="notification attention png_bg"></div>
+					     <form action="__APP__/Review/insert_rep/id/<{$id}>" method="post" enctype="multipart/form-data">	
+						     <label>评价序号：<{$list[0][pk_Review_Id]}></label><br/>
+						     <label>商品名称：<{$list[0][Goods_Name]}></label><br/>
+						     <label>商品图片：<img src="<{$list[0][Goods_img]}>"/></label><br/>
+						     <label>评价内容：<{$list[0][Revi_Content]}></label><br/>
+						     <label>评价人：<{$list[0][Revi_People]}></label><br/>
+						     <label>评价时间：<{$list[0][Revi_Time]}></label><br/>
+							回复：<textarea name="editor1"></textarea><br/>
+							<input type="submit" value="提交" />
+						</form>
+				     </div>
+				</div>
+		</div>
+		</div>
+		<script type="text/javascript">
+
+   // Ǵԃ CKEitor քʏԫ٦Ŝìʹԃ CKFinder ӥݾ
+
+   CKEDITOR.replace( 'editor1', {
+
+   filebrowserBrowseUrl : '__ROOT__/ckfinder/ckfinder.html',
+
+   filebrowserImageBrowseUrl : '__ROOT__/ckfinder/ckfinder.html?Type=Images',
+
+   filebrowserFlashBrowseUrl : '__ROOT__/ckfinder/ckfinder.html?Type=Flash',
+
+   filebrowserUploadUrl : '__ROOT__/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+
+   filebrowserImageUploadUrl : '__ROOT__/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+
+   filebrowserFlashUploadUrl : '__ROOT__/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+   toolbar :
+             [
+                ['Bold','Italic','Underline','Subscript','Superscript'],
+                ['JustifyLeft','JustifyCenter'],
+                ['Link','Unlink','Anchor'],
+                ['Image','Smiley','SpecialChar'],
+'/',
+                ['TextColor','BGColor'],
+             ]
+
+   });
+
+</script>
+	</body>
+</html>

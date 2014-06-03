@@ -357,6 +357,7 @@
 				<div class="image_big"><img src="<?php echo ($list[0]["Goods_img"]); ?>" width="398" height="398"/></div>
 				<div class="images_small">
 				<div class="image_small"><img src="<?php echo ($list[0]["Goods_img"]); ?>" width="74" height="74"/></div>
+                
 				<?php if($list[0][Goods_img1] != null): ?><div class="image_small"><img src="<?php echo ($list[0]["Goods_img1"]); ?>" width="74" height="74"/></div><?php endif; ?>
 				<?php if($list[0][Goods_img2] != null): ?><div class="image_small"><img src="<?php echo ($list[0]["Goods_img2"]); ?>" width="74" height="74"/></div><?php endif; ?>
 				<?php if($list[0][Goods_img3] != null): ?><div class="image_small"><img src="<?php echo ($list[0]["Goods_img3"]); ?>" width="74" height="74" /></div><?php endif; ?>

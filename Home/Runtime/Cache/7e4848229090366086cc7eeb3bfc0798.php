@@ -62,7 +62,7 @@
 					-->
 					
 					</script>
-        <form id="searchForm" name="searchForm" method="get" action="search.php" onsubmit="return checkSearchForm()" class="f_l" style="_position:relative; top:5px;">
+        <form id="searchForm" name="searchForm" method="get" action="__APP__/Search/search" onsubmit="return checkSearchForm()" class="f_l" style="_position:relative; top:5px;">
           <input name="keywords" type="text" id="keyword" value="" class="B_input" style="width:310px; height:22px; float:left;">
           <input name="imageField" type="submit" value="" class="go" style="cursor:pointer;">
         </form>
@@ -534,7 +534,7 @@
                     <li><a href="/category-135.html">竹叶青</a>|</li>
                     <li><a href="/category-140.html">安吉白茶</a>|</li>
                     <li><a href="/category-145.html">蒙顶甘露</a></li>
-                    <li class="more"><a target="_blank" href="/category-12.html">查看更多&gt;&gt;</a></li>
+                    <li class="more"><a target="_blank" href="__APP__/More/index/name/green">查看更多&gt;&gt;</a></li>
                 </ul>
             </div>
       </header>
@@ -581,7 +581,7 @@
                     <li><a href="/category-143.html">白琳功夫</a></li>
                     <li><a href="/category-43.html">坦洋工夫</a></li>
                     <li><a href="/category-167.html">川红工夫</a></li>
-                    <li class="more"><a target="_blank" href="/category-14.html">查看更多&gt;&gt;</a></li>
+                    <li class="more"><a target="_blank" href="__APP__/More/index/name/red">查看更多&gt;&gt;</a></li>
                 </ul>
             </div>
       </header>
@@ -623,7 +623,7 @@
                 <ul>
                     <li style="border-left:none;"><a href="/category-32.html">白毫银针</a></li>
                     <li><a href="/category-101.html">白牡丹</a></li>
-                    <li class="more"><a target="_blank" href="/category-25.html">查看更多&gt;&gt;</a></li>
+                    <li class="more"><a target="_blank" href="__APP__/More/index/name/white">查看更多&gt;&gt;</a></li>
                 </ul>
             </div>
       </header>
@@ -666,7 +666,7 @@
                     <li style="border-left:none;"><a href="/category-113.html">安化黑茶</a></li>
                     <li><a href="/category-156.html">泾渭茯茶</a></li>
                     <li><a href="/category-28.html">普洱茶</a></li>
-                    <li class="more"><a target="_blank" href="/category-27.html">查看更多&gt;&gt;</a></li>
+                    <li class="more"><a target="_blank" href="__APP__/More/index/name/black">查看更多&gt;&gt;</a></li>
                 </ul>
             </div>
       </header>
@@ -711,7 +711,7 @@
                     <li><a href="/category-19.html">武夷大红袍</a></li>
                     <li><a href="/category-162.html">凤凰单枞</a></li>
                     <li><a href="/category-138.html">台湾乌龙茶</a></li>
-                    <li class="more"><a target="_blank" href="/category-13.html">查看更多&gt;&gt;</a></li>
+                    <li class="more"><a target="_blank" href="__APP__/More/index/name/wulong">查看更多&gt;&gt;</a></li>
                 </ul>
             </div>
       </header>
@@ -753,7 +753,7 @@
                 <ul>
                     <li style="border-left:none;"><a href="/category-170.html">茉莉花茶</a></li>
                     <li><a href="/category-153.html">苦荞茶</a></li>
-                    <li class="more"><a target="_blank" href="/category-26.html">查看更多&gt;&gt;</a></li>
+                    <li class="more"><a target="_blank" href="__APP__/More/index/name/flower">查看更多&gt;&gt;</a></li>
                 </ul>
             </div>
       </header>
@@ -795,7 +795,7 @@
                 <ul>
                     <li style="border-left:none;"><a href="/category-102.html">玻璃茶具</a></li>
                     <li><a href="/category-157.html">陶瓷茶具</a></li>
-                    <li class="more"><a target="_blank" href="/category-30.html">查看更多&gt;&gt;</a></li>
+                    <li class="more"><a target="_blank" href="__APP__/More/index/name/chaju">查看更多&gt;&gt;</a></li>
                 </ul>
             </div>
       </header>
@@ -829,7 +829,51 @@
         </article>
       </section>
     </section>
-    
+<!---------------------------新闻&公告------------------------------------> 
+<section>
+      <header class="productAreaHead">
+      <h1></h1>
+      </header>
+      <section class="goods_table">
+      	<section id="con">
+            
+      		<section class="hot_news">
+           	  <header class="hn_head">
+                <center><h2>热点新闻</h2></center>
+              </header>
+              <section id="table">
+              <table width="99%" cellpadding="2px" cellspacing="2px">
+              <?php if(is_array($news)): $i = 0; $__LIST__ = $news;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+                <td width="8%" height="32px"><img id="img" src="__PUBLIC__/images/hotnews.png"/></td>
+                <td width="92%" height="32px" id="td"><a href="__APP__/Index/news/id/<?php echo (msubstr($vo["pk_News_Id"],0,28)); ?>"><?php echo ($vo["News_Title"]); ?></a></td>
+                </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+              <tfoot>
+              	<div id="div" align="center"><div id="black"><?php echo ($show); ?></div></div>
+              </tfoot>
+              </table>
+              </section>
+       		</section>                       
+        	<section class="notice">
+              <header class="hn_head">
+                <center><h2>商场公告</h2></center>
+              </header>
+              <section id="table">
+              <table width="99%" cellpadding="2px" cellspacing="2px" >
+              <?php if(is_array($notice)): $i = 0; $__LIST__ = $notice;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+              <td width="8%" height="32px"><img id="img" src="__PUBLIC__/images/notices.png"/></td>
+              <td width="92%" height="32px" id="td"><a href="__APP__/Index/notice/id/<?php echo ($vo["pk_Notice_Id"]); ?>"><?php echo (msubstr($vo["Notice_Title"],0,28)); ?></a></td>
+              </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+              <tfoot>
+              	<div id="div" align="center"><div id="black"><?php echo ($show); ?></div></div>
+              </tfoot>
+              </table>
+
+              </section>
+        	</section>
+           
+        </section>
+      </section>
+</section>
   </div>
 </div>
 <!--**************************************************尾部******************************************************-->

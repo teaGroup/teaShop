@@ -1,5 +1,5 @@
 ﻿<?php
-    class ClassifiAction extends Action{
+    class ClassifiAction extends CommonAction{
          //显示分类页
 	    public function index(){
 	      $m=M("Classifi");

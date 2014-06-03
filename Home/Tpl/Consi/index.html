@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>浮生若茶</title>
+<load href="__PUBLIC__/css/homepublic.css" />
+<load href="__PUBLIC__/css/order.css" />
+<load href="__PUBLIC__/js/jquery.min.js" />
+<load href="__PUBLIC__/js/Public.js" />
+<load href="__PUBLIC__/JS/autocal.js" />
+<style>
+#container {
+	background-color: #f6f6f6;
+	height:auto;
+	float:left;
+	width: 100%;
+}
+.content-box {
+	width:1025px;
+	height:auto;
+	float:left;	
+   	margin: 5px 0px 5px 0;
+    background: #fff;
+}
+.content-box-content {
+    padding: 20px;
+    font-size: 13px;
+    border-top: 1px solid #ccc;
+	height:auto;
+}
+.nav{
+	background:#f6f6f6;
+	float:left;
+	width:205;
+	float:left;
+	height:auto;
+}
+table td{
+	text-align:center;
+	height:45px;
+	font-size:14px;
+}
+.search{
+	/*background:#CF6;*/
+	width:300px;
+	height:30px;
+	position: absolute;
+	top:190px;
+	left:270px;
+}
+.content-box ul{
+	/*background:#06F;*/
+	position:absolute;
+	right:60px;
+	top:190px;
+}
+ul li{
+	float:left;
+	list-style-type:none;
+}
+</style>
+</head>
+
+<body>
+<!----------------头部-------------------------------->
+<div id="head"> <include file="Public:header" /> </div>
+<div id="container">
+	<div class="nav">
+		<ul id="nav"> 
+			<li class="active"><a href="__APP__/Order/index">订单查询</a></li> 
+			<li><a target="_blank" href="__APP__/UserInfo/index">个人信息管理</a></li> 
+            <li><a href="__APP__/Consi/index">管理收获地址</a></li> 
+			<li id="bar"></li> 
+		</ul> 
+	</div>
+    
+    <div class="content-box"> 
+    	<div class="content-box-header">
+        	<h3>收获地址列表</h3>
+        	<div class="clear"></div>
+      	</div>
+    	<div class="content-box-content">
+        	<div class="tab-content default-tab" id="tab1"> 
+          
+          		<div class="notification attention png_bg"></div>
+                <table>
+                 <thead>
+                	<tr>
+                    	<th width="150">收货人姓名</th>
+                        <th width="300">收货人地址</th>
+                        <th width="150">邮政编码</th>
+                        <th width="200">电话/手机</th>
+                        <th width="170">操作</th>
+                    </tr>
+                   </thead>
+                   
+                   <tbody>
+                   <volist name="addrlist" id="vo">
+                   <form action="__URL__/option" method="post" name="addr[<{$vo.pk_ConsiInfo_Id}>]">
+                     <tr>
+                     	<td><input type="text" name="name" value="<{$vo.Consi_Name}>" size="10"  /></td>
+                        <td><input type="text" name="addr" value="<{$vo.Consi_Addr}>" size="40" /></td>
+                        <td><input type="text" name="postcode" value="<{$vo.Consi_PostCode}>" size="10" /></td>
+                        <td><input type="text" name="tel" value="<{$vo.Consi_Tel}>" size="15" /></td>
+                        <td>
+                        	<input type="hidden" name="consiid" value="<{$vo.pk_ConsiInfo_Id}>" />
+                        	<input type="submit" name="modify" value="修改" />
+                            <input type="submit" name="delete" value="删除" />
+                        </td>
+                     </tr>
+                    </form>
+                    </volist>
+                   </tbody>
+                  
+                </table>
+        	</div>
+        </div>
+    </div>
+</div>
+
+</div>
+<!------------------------尾部-------------------------->
+<div id="foot"><include file="Public:footer" /> </div>
+</body>
+</html>

@@ -46,18 +46,25 @@ class OrderAction extends CommonAction{
 			if($method[0]=="old"){
 				$consigid = $_POST['addr'][0];
 			}else{
-				$consignee = D('consigneeinfo');
-
-				$phone=$_POST['Consi_Tel'];
-				$reg='/^(\d{3,4}\-)?[1-9]\d{6,7}$/';
-				$bool = preg_match($reg,$phone);
 				
-				if($consignee->create()){
-					$consignee->pk_ConsiInfo_Id=null;
-					$consignee->fk_User_Consi_Id=$_SESSION['id'];
-					$consigid = $consignee->add();
+				$sql = "select count(*) total from t_consigneeinfo where fk_User_Consi_Id=$userid";
+				$result = M()->query($sql);
+				$total = $result[0]['total'];
+				if($total<5){
+					$consignee = D('consigneeinfo');
+					$phone=$_POST['Consi_Tel'];
+					$reg='/^(\d{3,4}\-)?[1-9]\d{6,7}$/';
+					$bool = preg_match($reg,$phone);
+				
+					if($consignee->create()){
+						$consignee->pk_ConsiInfo_Id=null;
+						$consignee->fk_User_Consi_Id=$_SESSION['id'];
+						$consigid = $consignee->add();
+					}else{
+						$this->error($consignee->getError());
+					}
 				}else{
-					$this->error($consignee->getError());
+					$this->error("收获地址不能超过5条");
 				}
 				//dump($consignee);
 				//exit();
@@ -76,6 +83,7 @@ class OrderAction extends CommonAction{
 				//订单判断
 				if($orderid){
 					$orderIt = M('orderitem');
+					$goods = M('goodsinfo');
 					$orderIt->startTrans();
 					$data['pk_OrderOrderIt_id'] = $orderid;
 					for($i=0;$i<count($list);$i++){
@@ -87,6 +95,9 @@ class OrderAction extends CommonAction{
 							$orderIt->rollback();
 							break;
 						}
+						$data['Goods_BuyTime'] = date("Y-m-d H:i:s");
+						$goodsid = $list[$i]['goodsid'];
+						$goods->where("pk_GoodsInfo_Id='$goodsid'")->save($data); 
 					}
 					if($i==count($list)){
 						$cart->where(array('fk_User_Cart_Id'=>$userid))->delete();

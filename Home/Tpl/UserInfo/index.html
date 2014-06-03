@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link href="__PUBLIC__/css/userinfo.css" rel="stylesheet" media="screen" type="text/css"/>
+<load href="__PUBLIC__/js/jquery.min.js" />
+<load href="__PUBLIC__/js/Tab.js" />
+<script type="text/javascript" src="__PUBLIC__/js/userinfo.js"></script>
+
+</head>
+
+<body>
+<div id="head"> <include file="Public:header" /> </div>
+<div id="container">
+  <div class="block box">
+    <div id="ur_here">
+      当前位置: <a href="__ROOT__">首页</a> <code>&gt;</code> 会员个人信息 </div>
+  </div>
+  <div class="userCenterBox" style="_height:5%;">
+         
+                   <script type="text/javascript">
+                      var bonus_sn_empty = "请输入您要添加的红包号码！";
+                      var bonus_sn_error = "您输入的红包号码格式不正确！";
+                      var email_empty = "请输入您的电子邮件地址！";
+                      var email_error = "您输入的电子邮件地址格式不正确！";
+                      var old_password_empty = "请输入您的原密码！";
+                      var new_password_empty = "请输入您的新密码！";
+                      var confirm_password_empty = "请输入您的确认密码！";
+                      var both_password_error = "您现两次输入的密码不一致！";
+                      var msg_blank = "不能为空";
+                      var no_select_question = "- 您没有完成密码提示问题的操作";
+                  </script>
+                  <volist id="vo" name="arr">
+     <form name="formEdit" action="__URL__/update" method="post" onsubmit="return userEdit()">
+     
+      <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+                
+                <tbody>
+                
+                <script type="text/javascript">
+					window.onload=function(){
+						if(<{$vo.User_Sex}>==0){
+							document.getElementsByName('sex')[1].checked='checked';
+						}else{
+							document.getElementsByName('sex')[0].checked='checked';
+							}
+					}
+				</script>
+                <input type="hidden" name="user_id" value="<{$vo.pk_User_Id}>"/>
+                <tr>
+                  <td width="28%" height="40" align="right" bgcolor="#FFFFFF">
+                  	<label for="user_name">会员名称：</label>
+                  </td>
+                  <td width="72%" height="40" align="left" bgcolor="#FFFFFF">
+                 	<input type="text" name="user_name" id="user_name" value="<{$vo.User_Name}>">
+                  </td>
+                </tr>
+                <tr>
+                  <td width="28%" height="40" align="right" bgcolor="#FFFFFF">性　别： </td>
+                  <td width="72%" height="40" align="left" bgcolor="#FFFFFF">
+                      <input  id="sex" type="radio" name="sex" value="1">
+                    男
+                  	<input  id="sex" type="radio" name="sex" value="0">
+                    女</td>
+                </tr>
+                <tr>
+                  <td width="28%" height="40" align="right" bgcolor="#FFFFFF">邮　　箱：</td>
+                  <td width="72%" height="40" align="left" bgcolor="#FFFFFF">
+                  	<input type="text" name="user_mail" id="user_mail" value="<{$vo.User_Email}>"><span style="color:#FF0000"> *</span><span id="email"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="28%" height="40" align="right" bgcolor="#FFFFFF">
+                  	<label for="user_credit">积　　分：</label>
+                  </td>
+                  <td width="72%" height="40" align="left" bgcolor="#FFFFFF">
+                 <{$vo.User_Credit}>分
+                  </td>
+                </tr>
+                <tr>
+                  <td width="28%" height="40" align="right" bgcolor="#FFFFFF">
+                  	<label for="user_level">会员等级：</label>
+                  </td>
+                  <td width="72%" height="40" align="left" bgcolor="#FFFFFF"><{$vo.fk_UserL_User_Id}>级</td>
+                </tr>
+		        <tr>
+                  <td colspan="2" height="40"  bgcolor="#FFFFFF"><input name="act" type="hidden" value="act_edit_profile">
+                    <input name="submit" type="submit" value="确认修改" class="bnt_blue_1" style="border:none;">
+                  </td>
+                </tr>
+                
+       </tbody></table>
+    </form>
+     <form name="formPassword" action="__URL__/pwd" method="post" onsubmit="return editPassword()">
+     <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+        <tbody><tr>
+          <td width="28%" height="40" align="right" bgcolor="#FFFFFF">原密码：</td>
+          <td width="76%" height="40" align="left" bgcolor="#FFFFFF"><input name="old_password" type="password" size="25" class="inputBg" ></td>
+        </tr>
+        <tr>
+          <td width="28%" height="40"align="right" bgcolor="#FFFFFF">新密码：</td>
+          <td align="left" height="40" bgcolor="#FFFFFF"><input name="new_password" type="password" size="25" class="inputBg" id ="pwd">　<span id="reg_pwd" ></span></td>
+        </tr>
+        <tr>
+          <td width="28%"height="40"  align="right" bgcolor="#FFFFFF">确认密码：</td>
+          <td align="left" height="40" bgcolor="#FFFFFF"><input name="comfirm_password" type="password" size="25" class="inputBg" id="pwd2">　<span id="reg_pwd2" ></span></td>
+        </tr>
+        <tr>
+          <td colspan="2" height="40" bgcolor="#FFFFFF"><input name="act" type="hidden" value="act_edit_password">
+            <input name="submit" type="submit" class="bnt_blue_1" style="border:none;" value="确认修改">
+          </td>
+        </tr>
+      </tbody></table>
+    </form></volist>
+      </div>
+</div>
+<div class="clear"></div>
+<div id="foot"> 
+<include file="Public:footer" />
+</div>
+
+</body>
+</html>

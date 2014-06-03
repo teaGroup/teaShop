@@ -32,7 +32,7 @@
 						
 						<div class="notification attention png_bg"></div>
 						
-	             <form action="__APP__/Goodsinfo/search" method="post" id="fom">
+	             <form action="__APP__/Goodsinfo/search" method="get" id="fom">
 	                      <select name="tiaojian">
 		                        <option value="Goods_Name">商品名称</option>
 		                        <option value="Goods_SellTime">上市时间</option>
@@ -60,8 +60,8 @@
 		                 </tr>
 		                 <volist name="list" id="vo">
 		                 <tr align="center">
-		                      <td><{$vo.pk_GoodsInfo_Id}></td>
-		                      <td><a href="__APP__/Goodsinfo/modify/id/<{$vo.pk_GoodsInfo_Id}>"><{$vo.Goods_Name}></a></td>
+		                      <td><{$vo.pk_Goodsinfo_Id}></td>
+		                      <td><a href="__APP__/Goodsinfo/modify/id/<{$vo.pk_Goodsinfo_Id}>"><{$vo.Goods_Name}></a></td>
 		                      <td><img src="<{$vo.Goods_img}>" id="img"/></td>
 		                      <td><{$vo.Goods_Price}></td>
 		                      <td><{$vo.Classifi_Name}></td>
@@ -76,12 +76,11 @@
 		                      <td><{$vo.Goods_NetContent}></td>
 		                      <td><{$vo.Goods_Unit}></td>
 		                      <td><{$vo.Goods_SellNum}></td>
-		                      <td><a href="__APP__/Goodsinfo/del/id/<{$vo.pk_GoodsInfo_Id}>"><img src="__PUBLIC__/images/icons/cross.png" alt="Delete" /></a><a href="__APP__/Goodsinfo/modify/id/<{$vo.pk_GoodsInfo_Id}>"><img src="__PUBLIC__/images/icons/pencil.png" alt="Edit" /></a></td>
+		                      <td><a href="__APP__/Goodsinfo/del/id/<{$vo.pk_Goodsinfo_Id}>"><img src="__PUBLIC__/images/icons/cross.png" alt="Delete" /></a><a href="__APP__/Goodsinfo/modify/id/<{$vo.pk_Goodsinfo_Id}>"><img src="__PUBLIC__/images/icons/pencil.png" alt="Edit" /></a></td>
 		                 </tr>
 		                 </volist>
 	             </table>
 	            <div id="div" align="center"><div id="black"><{$show}></div></div>
-             </center>
 		   </div>
       </body>
 </html>

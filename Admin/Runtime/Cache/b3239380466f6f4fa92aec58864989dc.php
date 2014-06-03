@@ -32,12 +32,12 @@
 			<ul id="main-nav"> 
 				
 				<li>
-					<a href="__APP__/Index/index/" class="nav-top-item no-submenu">
+					<a href="__APP__/AdminPwd/index" class="nav-top-item no-submenu">
 						修改密码
 					</a>       
 				</li>
 				<li>
-					<a href="__APP__/Index/index/" class="nav-top-item no-submenu">
+					<a href="__APP__/Manauser/index" class="nav-top-item no-submenu">
 						管理会员信息
 					</a>       
 				</li>
@@ -50,7 +50,7 @@
 						<li><a href="__APP__/Classifi/index">商品分类管理</a></li>
 						<li><a href="__APP__/Goodsinfo/index">商品信息管理</a></li>
 						<li><a href="__APP__/Order/index">商品订单管理</a></li>
-						<li><a href="#">商品评价管理</a></li>
+						<li><a href="__APP__/Review/index">商品评价管理</a></li>
 					</ul>
 				</li>
 				
@@ -59,8 +59,8 @@
 						热点新闻管理
 					</a>
 					<ul>
-						<li><a href="#">添加热点新闻</a></li>
-						<li><a href="#">浏览热点新闻</a></li>
+						<li><a href="__APP__/News/add">添加热点新闻</a></li>
+						<li><a href="__APP__/News/index">浏览热点新闻</a></li>
 					</ul>
 				</li>
 				
@@ -69,8 +69,8 @@
 						商城公告管理
 					</a>
 					<ul>
-						<li><a href="#">添加公告</a></li>
-						<li><a href="#">浏览公告</a></li>
+						<li><a href="__APP__/Notices/add">添加公告</a></li>
+						<li><a href="__APP__/Notices/index">浏览公告</a></li>
 					</ul>
 				</li>
 				
@@ -79,8 +79,8 @@
 						管理业务管理员管理
 					</a>
 					<ul>
-						<li><a href="#">添加业务管理员</a></li>
-						<li><a href="#">浏览管理员信息</a></li>
+						<li><a href="__APP__/ManageAdmin/add">添加业务管理员</a></li>
+						<li><a href="__APP__/ManageAdmin/index">浏览管理员信息</a></li>
 					</ul>
 				</li> 
 
@@ -119,7 +119,7 @@
 						
 						<div class="notification attention png_bg"></div>
 						
-	             <form action="__APP__/Goodsinfo/search" method="post" id="fom">
+	             <form action="__APP__/Goodsinfo/search" method="get" id="fom">
 	                      <select name="tiaojian">
 		                        <option value="Goods_Name">商品名称</option>
 		                        <option value="Goods_SellTime">上市时间</option>
@@ -146,8 +146,8 @@
 			               <th>操作</th>
 		                 </tr>
 		                 <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr align="center">
-		                      <td><?php echo ($vo["pk_GoodsInfo_Id"]); ?></td>
-		                      <td><a href="__APP__/Goodsinfo/modify/id/<?php echo ($vo["pk_GoodsInfo_Id"]); ?>"><?php echo ($vo["Goods_Name"]); ?></a></td>
+		                      <td><?php echo ($vo["pk_Goodsinfo_Id"]); ?></td>
+		                      <td><a href="__APP__/Goodsinfo/modify/id/<?php echo ($vo["pk_Goodsinfo_Id"]); ?>"><?php echo ($vo["Goods_Name"]); ?></a></td>
 		                      <td><img src="<?php echo ($vo["Goods_img"]); ?>" id="img"/></td>
 		                      <td><?php echo ($vo["Goods_Price"]); ?></td>
 		                      <td><?php echo ($vo["Classifi_Name"]); ?></td>
@@ -160,11 +160,10 @@
 		                      <td><?php echo ($vo["Goods_NetContent"]); ?></td>
 		                      <td><?php echo ($vo["Goods_Unit"]); ?></td>
 		                      <td><?php echo ($vo["Goods_SellNum"]); ?></td>
-		                      <td><a href="__APP__/Goodsinfo/del/id/<?php echo ($vo["pk_GoodsInfo_Id"]); ?>"><img src="__PUBLIC__/images/icons/cross.png" alt="Delete" /></a><a href="__APP__/Goodsinfo/modify/id/<?php echo ($vo["pk_GoodsInfo_Id"]); ?>"><img src="__PUBLIC__/images/icons/pencil.png" alt="Edit" /></a></td>
+		                      <td><a href="__APP__/Goodsinfo/del/id/<?php echo ($vo["pk_Goodsinfo_Id"]); ?>"><img src="__PUBLIC__/images/icons/cross.png" alt="Delete" /></a><a href="__APP__/Goodsinfo/modify/id/<?php echo ($vo["pk_Goodsinfo_Id"]); ?>"><img src="__PUBLIC__/images/icons/pencil.png" alt="Edit" /></a></td>
 		                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>
 	             </table>
 	            <div id="div" align="center"><div id="black"><?php echo ($show); ?></div></div>
-             </center>
 		   </div>
       </body>
 </html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" href="__PUBLIC__/css/h-n.css" type="text/css" media="screen" />
+             <script src="__ROOT__/CKEditor/ckeditor.js"></script>
+             <load href="__PUBLIC__/js/jquery.min.js" />
+             <load href="__PUBLIC__/js/Tab.js" />
+</head>
+
+<body>
+<div id="head"> <include file="Public:header" /> </div>
+     <div id="main-content">
+     <form action="" method="post" enctype="multipart/form-data" name="form2">
+        <input type="hidden" name="id" value="<{$data.pk_Notice_Id}>"/>
+        <label for="notice_title" id="font">公告标题：</label>
+     	<input type="text" id="notice_title" name="notice_title" value="<{$data.Notice_Title}>"/><p></p>
+        <label for="notice_content" id="font">公告内容：</label>
+        <textarea name="notice_content"><{$data.Notice_Content}></textarea><br/>
+   
+     </form><br/>
+     </div>
+<div id="foot"> 
+<include file="Public:footer" />
+</div>
+</body>
+<script type="text/javascript">
+
+   // Ǵԃ CKEitor քʏԫ٦Ŝìʹԃ CKFinder ӥݾ
+
+   CKEDITOR.replace( 'notice_content', {
+
+   filebrowserBrowseUrl : '__ROOT__/CKFinder/ckfinder.html',
+
+   filebrowserImageBrowseUrl : '__ROOT__/CKFinder/ckfinder.html?Type=Images',
+
+   filebrowserFlashBrowseUrl : '__ROOT__/CKFinder/ckfinder.html?Type=Flash',
+
+   filebrowserUploadUrl : '__ROOT__/CKFinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+
+   filebrowserImageUploadUrl : '__ROOT__/CKFinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+
+   filebrowserFlashUploadUrl : '__ROOT__/CKFinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
+
+   });
+
+</script>
+</html>

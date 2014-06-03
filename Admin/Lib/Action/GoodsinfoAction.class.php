@@ -1,5 +1,5 @@
 ﻿<?php
-     class GoodsinfoAction extends Action{
+     class GoodsinfoAction extends CommonAction{
 	     //添加商品信息
 		public function add(){
 		     $m=M("Classifi");
@@ -85,15 +85,15 @@
 		    $page=new Page($count,15);//实例化分页类 传入总记录数和每页显示的记录数
 		    $show=$page->show();//分页显示输出
 		    $list=$m->limit($page->firstRow.','.$page->listRows)->order('Goods_SellTime desc')->select();
-		    $this->assign("list",$list);
-		    $this->assign("show",$show);
+		   $this->assign("list",$list);
+		   $this->assign("show",$show);
 		    $this->display();
 		}
 		//修改商品信息跳转的页面
 		public function modify(){
 		       $id=$_GET['id'];
 		       $m=M("Goodsview");
-			  $arr['pk_GoodsInfo_Id']=$id;
+			  $arr['pk_Goodsinfo_Id']=$id;
 			  $data=$m->where($arr)->find();
 			  $this->assign("data",$data);
 			  $this->display();
@@ -170,8 +170,8 @@
 		}
 		//查询商品信息
 		public function search(){
-		     $tiaojian=$_POST['tiaojian'];
-			$keyword=$_POST['keyword'];
+		     $tiaojian=$_GET['tiaojian'];
+			$keyword=$_GET['keyword'];
 			$m=M("Goodsview");
 			$data["{$tiaojian}"]=array('like',"%".$keyword."%");
 			import("ORG.Util.Page");//导入分页类
@@ -179,7 +179,7 @@
 			//$count=$m->query("select count(*) from t_goodsinfo,t_Classifi where ".$tiaojian." like '%".$keyword."%'");
 		     $page=new Page($count,5);//实例化分页类 传入总记录数和每页显示的记录数
 		     $show=$page->show();//分页显示输出
-			$list=$m->query("select * from t_goodsview where ".$tiaojian." like '%".$keyword."%'");
+			$list=$m->query("select * from t_goodsview where ".$tiaojian." like '%".$keyword."%' limit {$page->firstRow},{$page->listRows}");
 			$this->assign("list",$list);
 			$this->assign("show",$show);
 			$this->display("index");

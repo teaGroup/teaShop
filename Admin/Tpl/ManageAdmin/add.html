@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+     <head>
+             <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+	         <title>add</title>
+             <link rel="stylesheet" href="__PUBLIC__/css/hotnews_1.css" type="text/css" media="screen" />
+     </head>
+
+<body>
+	 <include file="Header:header"/>
+     <div id="main-content">
+     <center>
+	 <nav id="nav">
+         <a href="__APP__/ManageAdmin/index">浏览业务管理员</a> |
+         <a href="__APP__/ManageAdmin/add">添加业务管理员</a>
+     </nav>
+     <br/>
+     </center>
+
+
+         <form action="__APP__/ManageAdmin/insert" method="post" enctype="multipart/form-data" name="form1">
+         <fieldset>
+            <p>
+             <label for="admin_name">昵称：</label>
+                 <input type="text" name="admin_name" id="admin_name">
+             <br/>
+           </p>
+           <p>
+             <label for="admin_pwd">密码：</label>
+                 <input type="text" name="admin_pwd" id="admin_pwd">
+             <br/>
+           </p>
+           <p>
+             <label for="admin_authority">权限：</label>
+                 <input type="text" name="admin_authority" id="admin_authority">
+             <br/>
+           </p>
+           <p>
+             <label for="admin_role">角色：</label>
+                 <input type="text" name="admin_role" id="admin_role">
+             <br/>
+           </p>
+
+             <p>
+                 <input type="submit" name="submit" id="submit" value="提交">
+                 　<input type="reset" name="reset" id="reset" value="重置">
+             </p>
+         </fieldset>
+       </form>
+
+</div>
+</body>
+
+</html>
