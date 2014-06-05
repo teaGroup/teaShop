@@ -1,5 +1,5 @@
 <?php
-     class NewsAction extends Action{
+     class NewsAction extends CommonAction{
 	     //分页显示所有新闻内容
 	    public function index(){
 	         $m=M("News");
@@ -72,10 +72,7 @@
 			     $data['News_Content']=$content;
 			}
 		     $data["News_PubDate"]=date('Y-m-d H:i:s');
-			 echo "<pre>";
-			 print_r($data);
-			 echo "</pre>";
-			 
+
 			$count=$m->where("pk_News_Id={$id}")->save($data);
 			if($count>0){
 			    $this->success("数据修改成功！","index");

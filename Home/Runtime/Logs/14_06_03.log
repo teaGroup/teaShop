@@ -1,2 +1,4 @@
 [ 2014-06-03T17:08:18+08:00 ] ERR: (ThinkException) 非法操作:__APP
 [ 2014-06-03T20:47:37+08:00 ] ERR: (ThinkException) 非法操作:search
+[ 2014-06-03T22:40:54+08:00 ] ERR: (ThinkException) 无法加载模块:Header
+[ 2014-06-03T23:12:36+08:00 ] ERR: (ThinkException) 非法操作:soutgoods

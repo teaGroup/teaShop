@@ -14,10 +14,10 @@
 <div id="search_main">
        <div class="top">
        <div id="search_top">
-       <a href="__ROOT__">首页</a> <code>&gt;</code> 商品搜索_<{$_POST['keywords']}>
+       <a href="__ROOT__">首页</a> <code>&gt;</code> 商品搜索_<{$_GET['keywords']}>
        </div>
        <div id="search_way">
-       <form action="__APP__/Search/sort" method="post">
+       <form action="__APP__/Search/sort" method="get">
 	   排序方式：
 	   <select name="sort">
 	   <option value="Goods_SellTime">按上架时间排序</option>
@@ -30,11 +30,11 @@
        <div id="good_list">
             <volist name="data" id="vo">
             <div class="good_single">
-				<a href="/"><img src="" width="175" height="175"></a>
-		        <a href="/" class="good_name"><{$vo.Goods_Name}></a>
+				<a href="__APP__/GoodsInfo/index/goodsid/<{$vo.pk_GoodsInfo_Id}>"><img src="<{$vo.Goods_img}>" width="175" height="175"></a>
+		        <a href="__APP__/GoodsInfo/index/goodsid/<{$vo.pk_GoodsInfo_Id}>" class="good_name"><{$vo.Goods_Name}></a>
 		        <span class="good_price"><{$vo.Goods_Price}></span>
-		        <a href="/" class="good_comment">已有<?php echo $result;?>人评价</a>
-		        <p class="buy_panel"><a href="/" class="buy">购买</a></p>
+
+		        <p class="buy_panel"><a href="__APP__/Cart/add" class="buy">购买</a></p>
             </div>
             </volist>
        </div>

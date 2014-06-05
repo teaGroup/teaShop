@@ -1,4 +1,8 @@
 <?php if (!defined('THINK_PATH')) exit();?>﻿<!doctype html>
+
+<style>
+      .rev_index ul{list-style-type:none;}
+</style>
 <html>
      <head>
 	     <title>商品评价管理</title>
@@ -111,17 +115,20 @@
 			    <td>评价时间</td>
 			    <td>操作</td>
 			    </tr>
-			<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+			    <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
 			    <td><?php echo ($vo["pk_Review_Id"]); ?></td>
 			    <td><?php echo ($vo["Goods_Name"]); ?></td>
 			    <td><img src='<?php echo ($vo["Goods_img"]); ?>'width="40" height="40"/></td>
-			    <td><?php echo ($vo["Revi_Content"]); ?></td>
+			    <td width="295px"><?php echo ($vo["Revi_Content"]); ?></td>
 			    <td><?php echo ($vo["Revi_People"]); ?></td>
 			    <td><?php echo ($vo["Revi_Time"]); ?></td>
-			    <td><?php if($vo["pk_Review_ReplyRe_Id"] <= 0): ?><a href="__APP__/Review/reply/id/<?php echo ($vo["pk_Review_Id"]); ?>">回复</a><?php else: ?><div><?php echo ($vo["ReplyRe_Content"]); ?><br/><?php echo ($vo["ReplyRe_Time"]); ?></div><?php endif; ?></td>
+			    <td><?php if($vo["pk_ReplyRe_Id"] > 0): ?><a href="__APP__/Review/rp_index/id/<?php echo ($vo["pk_Review_Id"]); ?>">浏览回复</a><?php else: ?><a href="__APP__/Review/reply/id/<?php echo ($vo["pk_Review_Id"]); ?>">回复</a><?php endif; ?></td>
 			    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
 			</table>
-            <div id="div" align="center"><div id="black"><?php echo ($show); ?></div></div>	
-         </div>		  
+          <div id="div" align="center"><div id="black"><?php echo ($show); ?></div></div>	
+                       </div>
+                    </div>
+           </div>	
+       </div>
 	</body>
 </html>

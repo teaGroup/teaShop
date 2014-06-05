@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+     <head>
+	      <title>更多商品</title>
+		 <meta charset="utf8"/>
+		 
+		 <link rel="stylesheet" href="__PUBLIC__/css/css.css" />
+		 <link rel="stylesheet" href="__PUBLIC__/css/page.css" />
+		 <load href="__PUBLIC__/js/jquery.min.js" />
+           <load href="__PUBLIC__/js/Tab.js" />
+		 <style>
+
+		        .goods_list{
+			         width:1211px;
+				    height:auto;
+			   }
+			   .goods_list .onegoods{
+			         left:49px;
+			         width:250px;
+				    height:310px;
+					z-index:10;
+			   }
+			   .goods_list .onegoods img
+                  {
+	                   width:250px;
+	                   height:220px;
+					   
+                  }
+			   .goods_list p{
+	                   font-size:13px;
+                  }
+			   #div{
+			      left:-212px;
+				 font-size:18px;
+			   }
+		        #foot{
+			         position:relative;
+				    width:100%;
+			   }
+			   .info{
+				   font-size:36px;
+				   text-align:center;
+				   color:#930;
+				   width:100%;
+				   height:160px;
+			   }
+		 </style>
+	</head>
+	<body>
+	      <!--****************头部***********************-->
+	      <div id="head"><include file="Public:header" /> </div>
+		 <!--*****************主体部分**********************-->
+		 <article class="goods_list"> 
+          <ul>
+            <volist name="data" id="vo">
+              <li class="onegoods"> 
+                   <a class="img" target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.pk_Goodsinfo_Id}>" title="<{$vo.Goods_Name}>"> 
+                      <img src="<{$vo.Goods_img}>" alt="<{$vo.Goods_Name}>"> 
+                    </a>                             
+                    <p class="price"><strong>￥<{$vo.Goods_Price}>元</strong> </p>
+                    <p><a href="__APP__/GoodsInfo/index/goodsid/<{$vo.pk_Goodsinfo_Id}>"><{$vo.Goods_Name}></a></p>               
+              </li>
+             </volist>    
+            </ul>
+            
+        </article>
+	   <div id="div"><div id="black"><{$show}></div></div>
+       <if condition="$info neq null">
+       		<div class="info"><{$info}></div>
+       </if>
+		 <!--**************尾部***************************-->
+		 <div id="foot"><include file="Public:footer" /></div>
+	</body>
+</html>

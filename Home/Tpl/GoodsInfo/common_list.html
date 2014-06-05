@@ -5,38 +5,52 @@
 <title>商品评价</title>
 <link href="__PUBLIC__/css/pinglun.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="__PUBLIC__/css/page.css" type="text/css" media="screen" />
-</head>
+<style>
+     .replyStyle #span{
+	     font-weight:bold;
+		color:red;
+	}
+</style>
+<load href="__PUBLIC__/js/jquery.min.js" />
+<load href="__PUBLIC__/js/Tab.js" />
+<script src="__ROOT__/ckeditor/ckeditor.js"></script>
 
+</head>
 <body>
 <div id="head"> <include file="Public:header" /> </div>
 <div id="pinglun_main">
      <div class="com">
+	<if condition='$username neq null'>
+	     <form action="__APP__/GoodsInfo/insert_commo/id/<{$id}>" method="post" enctype="multipart/form-data">
+		      <textarea name="editor1" id="editor1"></textarea><br/>
+			 <input type="submit" value="评论" width="45px" height="20px"/>
+		</form>
+	</if>
           <div id="common">
                 <div class="top"><a href="__APP__/Index/index">首页</a><span>></span>评论列表</div>
                 <div class="con">
                       <ul>
+				         <volist name="listRev" id="vo">
                              <li>
                                   <div class="left">
-											<div class="pinglun_con">很好</div>
+										   <div class="pinglun_con"><{$vo.Revi_Content}></div>
 						                       <div class="pinglun_bot">
-                                                    <span class="pinglun_time">[2014.04.29]</span>
-                                                    <span class="fl">评价得分：</span>（5分）
-                                             </div>
+                                                     <span class="pinglun_time"><{$vo.Revi_Time}></span>
+                                             </div><br/>
+								<if condition="$vo.pk_ReplyRe_Id gt 0">
+								<div class="replyStyle">
+								     <span id="span">回复：</span>
+									<span><{$vo.ReplyRe_Content}></span>
+									<span><{$vo.ReplyRe_Time}></span>
+								</div>
+								</if>
 				                   </div>
-								   <div class="right"><span class="user_name">Q友_笑看未来</span><br/><span class="member_glod"></span></div>
+								   <div class="right"><span class="user_name">
+								   <{$vo.Revi_People}></span><span class="member_glod"></span></div>
 								   <div class="cb"></div>
-                             </li>
-                             <li>
-                                  <div class="left">
-											<div class="pinglun_con">很好</div>
-						                       <div class="pinglun_bot">
-                                                    <span class="pinglun_time">[2014.04.29]</span>
-                                                    <span class="fl">评价得分：</span>（5分）
-                                             </div>
-				                   </div>
-								   <div class="right"><span class="user_name">Q友_笑看未来</span><br/><span class="member_glod"></span></div>
-								   <div class="cb"></div>
-                             </li>
+						          
+						    </li>
+                            </volist>
                       </ul>
                 </div>
                 <div id="div" align="center"><div id="black"><{$show}></div></div>
@@ -46,5 +60,34 @@
 <div id="foot"> 
 <include file="Public:footer" />
 </div>
+<script type="text/javascript">
+   // Ǵԃ CKEitor քʏԫ٦Ŝìʹԃ CKFinder ӥݾ
+
+   CKEDITOR.replace( 'editor1', {
+
+   filebrowserBrowseUrl : '__ROOT__/ckfinder/ckfinder.html',
+
+   filebrowserImageBrowseUrl : '__ROOT__/ckfinder/ckfinder.html?Type=Images',
+
+   filebrowserFlashBrowseUrl : '__ROOT__/ckfinder/ckfinder.html?Type=Flash',
+
+   filebrowserUploadUrl : '__ROOT__/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+
+   filebrowserImageUploadUrl : '__ROOT__/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+
+   filebrowserFlashUploadUrl : '__ROOT__/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+   toolbar :
+             [
+                ['Bold','Italic','Underline','Subscript','Superscript'],
+                ['JustifyLeft','JustifyCenter'],
+                ['Link','Unlink','Anchor'],
+                ['Image','Smiley','SpecialChar'],
+'/',
+                ['TextColor','BGColor'],
+             ]
+
+   });
+
+</script>
 </body>
 </html>

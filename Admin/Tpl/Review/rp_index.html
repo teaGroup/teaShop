@@ -1,0 +1,32 @@
+﻿<!doctype html>
+<html>
+     <head>
+	     <title>商品评价管理</title>
+	</head>
+	<body>
+         <include file="Header:header"/>
+	    <div id="main-content"> 
+		<div class="content-box"><!-- Start Content Box -->
+				<div class="content-box-header">
+					<h3>浏览回复</h3>
+					<div class="clear"></div>
+				</div> <!-- End .content-box-header -->
+				<div class="content-box-content">
+					<div class="tab-content default-tab" id="tab1"> <!-- This is the target div. id must match the href of this div's tab -->
+						<div class="notification attention png_bg"></div>	
+						<form>
+						     <label><span>评价序号：</span><{$list[0][pk_Review_Id]}></label><br/>
+						     <label><span>商品名称：</span><{$list[0][Goods_Name]}></label><br/>
+						     <label><span>商品图片：</span><img src="<{$list[0][Goods_img]}>" width=50 height=50/></label><br/>
+						     <label><span>评价内容：</span><{$list[0][Revi_Content]}></label><br/>
+						     <label><span>评价人：</span><{$list[0][Revi_People]}></label><br/>
+						     <label><span>评价时间：</span><{$list[0][Revi_Time]}></label><br/>
+							<label><span>回复内容：</span><{$list[0][ReplyRe_Content]}></label><br/>
+							<label><span>回复时间：</span><{$list[0][ReplyRe_Time]}></label><br/>
+						</form>
+				     </div>
+				</div>
+		</div>
+		</div>
+	</body>
+</html>

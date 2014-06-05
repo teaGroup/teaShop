@@ -118,7 +118,7 @@ $("input[name=Consi_PostCode]").bind("focusout",function(e){
 					-->
 					
 					</script>
-        <form id="searchForm" name="searchForm" method="get" action="search.php" onsubmit="return checkSearchForm()" class="f_l" style="_position:relative; top:5px;">
+        <form id="searchForm" name="searchForm" method="get" action="__APP__/Search/search" onsubmit="return checkSearchForm()" class="f_l" style="_position:relative; top:5px;">
           <input name="keywords" type="text" id="keyword" value="" class="B_input" style="width:310px; height:22px; float:left;">
           <input name="imageField" type="submit" value="" class="go" style="cursor:pointer;">
         </form>
@@ -148,17 +148,17 @@ $("input[name=Consi_PostCode]").bind("focusout",function(e){
       <div class="cateMenu hide">
         <ul>
           <li style="border-top: none;">
-            <div class="cate-tag"> <strong><a href="http://www.jq-school.com">绿茶</a></strong>
+            <div class="cate-tag"> <strong><a href="__APP__/Search/sortgoods/name/绿茶">绿茶</a></strong>
               <div class="listModel">
-                <p> <a href="http://www.jq-school.com">西湖龙井</a> <a href="http://www.jq-school.com">洞庭碧螺春</a></p>
-                <p>  <a href="http://jq-school.com">黄山毛峰</a> <a href="http://www.jq-school.com">太平猴魁</a> </p>
+                <p> <a href="__APP__/Search/sortgoods/name/西湖龙井">西湖龙井</a> <a href="__APP__/Search/sortgoods/name/洞庭碧螺春">洞庭碧螺春</a></p>
+                <p>  <a href="__APP__/Search/sortgoods/name/黄山毛峰">黄山毛峰</a> <a href="__APP__/Search/sortgoods/name/太平猴魁">太平猴魁</a> </p>
               </div>
             </div>
             <div class="list-item hide">
               <ul class="itemleft">
                 <dl>
                   <dt>绿茶</dt>
-                  <dd> <a href="#">西湖龙井</a> <a href="#">洞庭碧螺春</a> <a href="http://www.jq-school.com">黄山毛峰</a> <a href="http://www.jq-school.com">太平猴魁</a> <a href="http://jq-school.com">六安瓜片</a> <a href="http://jq-school.com">安吉白茶</a> <a href="http://jq-school.com">蒙顶甘露</a> <a href="http://jq-school.com">竹叶青</a> <a href="http://www.jq-school.com">开化龙顶</a> <a href="http://www.jq-school.com">富硒绿茶</a> </dd>
+                  <dd> <a href="__APP__/Search/sortgoods/name/西湖龙井">西湖龙井</a> <a href="__APP__/Search/sortgoods/name/洞庭碧螺春">洞庭碧螺春</a> <a href="__APP__/Search/sortgoods/name/黄山毛峰">黄山毛峰</a> <a href="__APP__/Search/sortgoods/name/太平猴魁">太平猴魁</a> <a href="__APP__/Search/sortgoods/name/六安瓜片">六安瓜片</a> <a href="__APP__/Search/sortgoods/name/安吉白茶">安吉白茶</a> <a href="__APP__/Search/sortgoods/name/蒙顶甘露">蒙顶甘露</a> <a href="__APP__/Search/sortgoods/name/竹叶青">竹叶青</a> <a href="__APP__/Search/sortgoods/name/开化龙顶">开化龙顶</a> <a href="__APP__/Search/sortgoods/name/富硒绿茶">富硒绿茶</a> </dd>
                 </dl>
                 <div class="fn-clear"></div>
                 <dl>
@@ -180,17 +180,17 @@ $("input[name=Consi_PostCode]").bind("focusout",function(e){
             </div>
           </li>
           <li style="border-top: none;">
-            <div class="cate-tag"> <strong><a href="http://www.jq-school.com">乌龙茶</a></strong>
+            <div class="cate-tag"> <strong><a href="__APP__/Search/sortgoods/name/">乌龙茶</a></strong>
               <div class="listModel">
-                <p> <a href="http://www.jq-school.com">安溪铁观音</a> <a href="http://www.jq-school.com">武夷大红袍</a></p>
-                <p>  <a href="http://jq-school.com">台湾乌龙茶</a> <a href="http://www.jq-school.com">凤凰单纵</a> </p>
+                <p> <a href="__APP__/Search/sortgoods/name/">安溪铁观音</a> <a href="__APP__/Search/sortgoods/name/">武夷大红袍</a></p>
+                <p>  <a href="__APP__/Search/sortgoods/name/">台湾乌龙茶</a> <a href="__APP__/Search/sortgoods/name/">凤凰单纵</a> </p>
               </div>
             </div>
             <div class="list-item hide">
               <ul class="itemleft">
                 <dl>
                   <dt>乌龙茶</dt>
-                  <dd> <a href="#">安溪铁观音</a> <a href="#">武夷大红袍</a> <a href="http://www.jq-school.com">台湾乌龙茶</a> <a href="http://www.jq-school.com">凤凰单纵</a></dd>
+                  <dd> <a href="__APP__/Search/sortgoods/name/">安溪铁观音</a> <a href="__APP__/Search/sortgoods/name/">武夷大红袍</a> <a href="__APP__/Search/sortgoods/name/">台湾乌龙茶</a> <a href="__APP__/Search/sortgoods/name/">凤凰单纵</a></dd>
                 </dl>
                 <div class="fn-clear"></div>
                 <dl>
@@ -212,17 +212,17 @@ $("input[name=Consi_PostCode]").bind("focusout",function(e){
             </div>
           </li>
           <li style="border-top: none;">
-            <div class="cate-tag"> <strong><a href="http://www.jq-school.com">红茶</a></strong>
+            <div class="cate-tag"> <strong><a href="__APP__/Search/sortgoods/name/">红茶</a></strong>
               <div class="listModel">
-                <p> <a href="http://www.jq-school.com">正山小种</a> <a href="http://www.jq-school.com">祁门红茶</a></p>
-                <p>  <a href="http://jq-school.com">云南滇红</a> <a href="http://www.jq-school.com">金骏眉</a> </p>
+                <p> <a href="__APP__/Search/sortgoods/name/">正山小种</a> <a href="__APP__/Search/sortgoods/name/">祁门红茶</a></p>
+                <p>  <a href="__APP__/Search/sortgoods/name/">云南滇红</a> <a href="__APP__/Search/sortgoods/name/">金骏眉</a> </p>
               </div>
             </div>
             <div class="list-item hide">
               <ul class="itemleft">
                 <dl>
                   <dt>红茶</dt>
-                  <dd> <a href="#">正山小种</a> <a href="#">祁门红茶</a> <a href="http://www.jq-school.com">云南滇红</a> <a href="http://www.jq-school.com">金骏眉</a><a href="http://www.jq-school.com">坦洋工夫</a><a href="http://www.jq-school.com">白琳工夫</a><a href="http://www.jq-school.com">四川红茶</a><a href="http://www.jq-school.com">锡兰红茶</a><a href="http://www.jq-school.com">其他红茶</a></dd>
+                  <dd> <a href="__APP__/Search/sortgoods/name/">正山小种</a> <a href="__APP__/Search/sortgoods/name/">祁门红茶</a> <a href="__APP__/Search/sortgoods/name/">云南滇红</a> <a href="__APP__/Search/sortgoods/name/">金骏眉</a><a href="__APP__/Search/sortgoods/name/">坦洋工夫</a><a href="__APP__/Search/sortgoods/name/">白琳工夫</a><a href="__APP__/Search/sortgoods/name/">四川红茶</a><a href="__APP__/Search/sortgoods/name/">锡兰红茶</a><a href="__APP__/Search/sortgoods/name/">其他红茶</a></dd>
                 </dl>
                 <div class="fn-clear"></div>
                 <dl>
@@ -244,17 +244,17 @@ $("input[name=Consi_PostCode]").bind("focusout",function(e){
             </div>
           </li>
           <li style="border-top: none;">
-            <div class="cate-tag"> <strong><a href="http://www.jq-school.com">黑茶</a></strong>
+            <div class="cate-tag"> <strong><a href="__APP__/Search/sortgoods/name/">黑茶</a></strong>
               <div class="listModel">
-                <p> <a href="http://www.jq-school.com">普洱茶</a> <a href="http://www.jq-school.com">安化黑茶</a></p>
-                <p>  <a href="http://jq-school.com">泾渭茯茶</a> </p>
+                <p> <a href="__APP__/Search/sortgoods/name/">普洱茶</a> <a href="__APP__/Search/sortgoods/name/">安化黑茶</a></p>
+                <p>  <a href="__APP__/Search/sortgoods/name/">泾渭茯茶</a> </p>
               </div>
             </div>
             <div class="list-item hide">
               <ul class="itemleft">
                 <dl>
                   <dt>黑茶</dt>
-                  <dd> <a href="#">普洱茶</a> <a href="#">安化黑茶</a> <a href="http://www.jq-school.com">泾渭茯茶</a></dd>
+                  <dd> <a href="__APP__/Search/sortgoods/name/">普洱茶</a> <a href="__APP__/Search/sortgoods/name/">安化黑茶</a> <a href="__APP__/Search/sortgoods/name/">泾渭茯茶</a></dd>
                 </dl>
                 <div class="fn-clear"></div>
                 <dl>
@@ -276,16 +276,16 @@ $("input[name=Consi_PostCode]").bind("focusout",function(e){
             </div>
           </li>
           <li style="border-top: none;">
-            <div class="cate-tag"> <strong><a href="http://www.jq-school.com">白茶</a></strong>
+            <div class="cate-tag"> <strong><a href="__APP__/Search/sortgoods/name/">白茶</a></strong>
               <div class="listModel">
-                <p> <a href="http://www.jq-school.com">白毫银针</a> <a href="http://www.jq-school.com">白牡丹</a></p>
+                <p> <a href="__APP__/Search/sortgoods/name/">白毫银针</a> <a href="__APP__/Search/sortgoods/name/">白牡丹</a></p>
               </div>
             </div>
             <div class="list-item hide">
               <ul class="itemleft">
                 <dl>
                   <dt>白茶</dt>
-                  <dd> <a href="#">白毫银针</a> <a href="#">白牡丹</a></dd>
+                  <dd> <a href="__APP__/Search/sortgoods/name/">白毫银针</a> <a href="__APP__/Search/sortgoods/name/">白牡丹</a></dd>
                 </dl>
                 <div class="fn-clear"></div>
                 <dl>
@@ -307,17 +307,17 @@ $("input[name=Consi_PostCode]").bind("focusout",function(e){
             </div>
           </li>
           <li style="border-top: none;">
-            <div class="cate-tag"> <strong><a href="http://www.jq-school.com">花草茶</a></strong>
+            <div class="cate-tag"> <strong><a href="__APP__/Search/sortgoods/name/">花草茶</a></strong>
               <div class="listModel">
-                <p> <a href="http://www.jq-school.com">苦荞茶</a> <a href="http://www.jq-school.com">茉莉花茶</a></p>
-                <p>  <a href="http://jq-school.com">水果茶</a> <a href="http://jq-school.com">苦丁茶</a> </p>
+                <p> <a href="__APP__/Search/sortgoods/name/">苦荞茶</a> <a href="__APP__/Search/sortgoods/name/">茉莉花茶</a></p>
+                <p>  <a href="__APP__/Search/sortgoods/name/">水果茶</a> <a href="__APP__/Search/sortgoods/name/">苦丁茶</a> </p>
               </div>
             </div>
             <div class="list-item hide">
               <ul class="itemleft">
                 <dl>
                   <dt>花草茶</dt>
-                  <dd> <a href="#">苦荞茶</a> <a href="#">茉莉花茶</a> <a href="http://www.jq-school.com">水果茶</a> <a href="http://www.jq-school.com">苦丁茶</a><a href="http://www.jq-school.com">菊花</a><a href="http://www.jq-school.com">昆仑血菊</a><a href="http://www.jq-school.com">玫瑰花</a><a href="http://www.jq-school.com">养生茶</a></dd>
+                  <dd> <a href="__APP__/Search/sortgoods/name/">苦荞茶</a> <a href="__APP__/Search/sortgoods/name/">茉莉花茶</a> <a href="__APP__/Search/sortgoods/name/">水果茶</a> <a href="__APP__/Search/sortgoods/name/">苦丁茶</a><a href="__APP__/Search/sortgoods/name/">菊花</a><a href="__APP__/Search/sortgoods/name/">昆仑血菊</a><a href="__APP__/Search/sortgoods/name/">玫瑰花</a><a href="__APP__/Search/sortgoods/name/">养生茶</a></dd>
                 </dl>
                 <div class="fn-clear"></div>
                 <dl>
@@ -339,17 +339,17 @@ $("input[name=Consi_PostCode]").bind("focusout",function(e){
             </div>
           </li>
           <li style="border-top: none;">
-            <div class="cate-tag"> <strong><a href="http://www.jq-school.com">茶具</a></strong>
+            <div class="cate-tag"> <strong><a href="__APP__/Search/sortgoods/name/">茶具</a></strong>
               <div class="listModel">
-                <p> <a href="http://www.jq-school.com">玻璃茶具</a> <a href="http://www.jq-school.com">陶瓷茶具</a></p>
-                <p>  <a href="http://jq-school.com">紫砂茶具</a> <a href="http://jq-school.com">电茶壶</a> </p>
+                <p> <a href="__APP__/Search/sortgoods/name/">玻璃茶具</a> <a href="__APP__/Search/sortgoods/name/">陶瓷茶具</a></p>
+                <p>  <a href="__APP__/Search/sortgoods/name/">紫砂茶具</a> <a href="__APP__/Search/sortgoods/name/">电茶壶</a> </p>
               </div>
             </div>
             <div class="list-item hide">
               <ul class="itemleft">
                 <dl>
                   <dt>茶具</dt>
-                  <dd> <a href="#">玻璃茶具</a> <a href="#">陶瓷茶具</a> <a href="http://www.jq-school.com">紫砂茶具</a> <a href="http://www.jq-school.com">电茶壶</a><a href="http://www.jq-school.com">茶盘</a><a href="http://www.jq-school.com">茶宠</a><a href="http://www.jq-school.com">其他茶具</a></dd>
+                  <dd> <a href="__APP__/Search/sortgoods/name/">玻璃茶具</a> <a href="__APP__/Search/sortgoods/name/">陶瓷茶具</a> <a href="__APP__/Search/sortgoods/name/">紫砂茶具</a> <a href="__APP__/Search/sortgoods/name/">电茶壶</a><a href="__APP__/Search/sortgoods/name/">茶盘</a><a href="__APP__/Search/sortgoods/name/">茶宠</a><a href="__APP__/Search/sortgoods/name/">其他茶具</a></dd>
                 </dl>
                 <div class="fn-clear"></div>
               </ul>

@@ -2,83 +2,7 @@
 <link rel="stylesheet" href="__PUBLIC__/css/base.css" />
 <script src="__PUBLIC__/js/head.js" type="text/javascript"></script>
 
-<div class="topbar">
-  <div class="topbar2">
-    <div class="add_fav"> <a onclick="" href="###">浮生若茶--名牌正品茶叶、茶礼商城！</a> </div>
-    <div class="login-info"> <font>欢迎光临！&nbsp;&nbsp;</font> </div>
-    <div class="quick-menu">
-      <ul>
-        <li><a title="帮助中心" href="#">帮助中心</a> </li>
-        <li><a href="__APP__/Reg/reg">[免费注册]</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
- <div id="userlogin">
-  <div id="topnav" class="topnav"><a href="login" class="signin"><span>登录</span></a> </div>
-  <fieldset id="signin_menu">
-    <form method="post" id="signin" action="__APP__/Public/doLogin">
-      <p>
-      <label for="username">用户名</label>
-      <input id="username" name="username" value="" title="username" tabindex="4" type="text">
-      </p>
-      <p>
-        <label for="password">密码</label>
-        <input id="password" name="password" value="" title="password" tabindex="5" type="password">
-      </p>
-      <p>
-        <label for="code">验证码</label>
-        <input id="code" type="text" style="width:70px;" class="text-input" name="code" required="required">
-      </p>
-      <div style="margin-left:90px; margin-top:-36px; width:100px;">
-        <p id="verify-code">
-          <img height=29 width=65 src="__APP__/Public/code" onclick='this.src=this.src+"?"+Math.random()'/>
-          <span id="log_code" class="code"></span>
-        </p>
-        <div class="clear"></div>
-      </div>
-          
 
-
-      <p class="remember">
-        <input id="signin_submit" value="登 录" tabindex="6" type="submit">
-        <!--<input id="remember" name="remember_me" value="1" tabindex="7" type="checkbox">
-        <label for="remember">记住密码</label>-->
-      </p>
-    </form>
-  </fieldset>
-</div>
-<script type="text/javascript">
-        $(document).ready(function() {
-
-            $(".signin").click(function(e) {          
-				e.preventDefault();
-                $("fieldset#signin_menu").toggle();
-				$(".signin").toggleClass("menu-open");
-            });
-			
-			$("fieldset#signin_menu").mouseup(function() {
-				return false
-			});
-			$(document).mouseup(function(e) {
-				if($(e.target).parent("a.signin").length==0) {
-					$(".signin").removeClass("menu-open");
-					$("fieldset#signin_menu").hide();
-				}
-			});			
-			
-        });
-</script>
-<!--<script type="text/javascript">
-$.get("/teaShop/index.php/Reg/checkEmail",{'email':emailstr},function(data,status){
-  if(data=="no"){
-    $("#reg_email").html("<span style='color:#C00;'>该邮箱已经注册</span>");
-  }else{
-    $(this).css("border-color", "");  //格式正确，删除输入框的红色，并删除提示
-    $("#reg_email").html("");
-  }
-});
-</script>-->
 <div class="headermid">
   <div class="blank"></div>
   <div class="block clearfix">
@@ -103,7 +27,7 @@ $.get("/teaShop/index.php/Reg/checkEmail",{'email':emailstr},function(data,statu
 					-->
 					
 					</script>
-        <form id="searchForm" name="searchForm" method="get" action="search.php" onsubmit="return checkSearchForm()" class="f_l" style="_position:relative; top:5px;">
+        <form id="searchForm" name="searchForm" method="get" action="__APP__/Search/search" onsubmit="return checkSearchForm()" class="f_l" style="_position:relative; top:5px;">
           <input name="keywords" type="text" id="keyword" value="" class="B_input" style="width:310px; height:22px; float:left;">
           <input name="imageField" type="submit" value="" class="go" style="cursor:pointer;">
         </form>
@@ -363,19 +287,20 @@ $.get("/teaShop/index.php/Reg/checkEmail",{'email':emailstr},function(data,statu
         </ul>
       </div>
     </div>
-    <div class="navCon-menu fl">
+    <div class="navCon-menu fl" style="z-index:50;">
       <ul>
-        <li><a href="http://www.jq-school.com">首页</a></li>
+        <li><a href="__APP__/Index/index">首页</a></li>
         <li><a href="http://www.jq-school.com">企业文化</a></li>
       </ul>
     </div>
   </div>
+  
 </div>
 <div id="topcart" style="top: 111px;">
-  <div class="cartinfo" id="cartinfo" style="left: 926px;">
+  <div class="cartinfo" id="cartinfo" style="left: 326px;">
     <div class="cartleft">
-      <div class="cart" id="ECS_CARTINFO"> <a href="" title="查看购物车">购物车 <b class="corg">0</b> 件</a> </div>
+      <div class="cart" id="ECS_CARTINFO"> <a href="__APP__/Cart/index" title="查看购物车">购物车 <b class="corg"><?php echo ($goodsnum); ?></b> 件</a> </div>
     </div>
-    <div class="cartright"> <a href=""></a> </div>
+    <div class="cartright"> <a href="__APP__/Order/consignee"></a> </div>
   </div>
 </div>

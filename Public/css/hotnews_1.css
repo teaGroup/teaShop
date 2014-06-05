@@ -315,7 +315,8 @@ q:before, q:after {
 blockquote, q {
 	quotes: "" "";
 }
-#news_title{
+#news_title,#notices_title{
 	 width:270px;
 	 height:30px;
 	}
+#tab1{margin-left:20px;}

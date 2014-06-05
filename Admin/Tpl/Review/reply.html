@@ -21,14 +21,15 @@
 				<div class="content-box-content">
 					<div class="tab-content default-tab" id="tab1"> <!-- This is the target div. id must match the href of this div's tab -->
 						<div class="notification attention png_bg"></div>
-					     <form action="__APP__/Review/insert_rep/id/<{$id}>" method="post" enctype="multipart/form-data">	
+					     <form action="__APP__/Review/insert_rep" method="post" enctype="multipart/form-data">
+					  <input type="hidden" name="id" value="<{$list[0][pk_Review_Id]}>"/>						
 						     <label>评价序号：<{$list[0][pk_Review_Id]}></label><br/>
 						     <label>商品名称：<{$list[0][Goods_Name]}></label><br/>
 						     <label>商品图片：<img src="<{$list[0][Goods_img]}>"/></label><br/>
 						     <label>评价内容：<{$list[0][Revi_Content]}></label><br/>
 						     <label>评价人：<{$list[0][Revi_People]}></label><br/>
 						     <label>评价时间：<{$list[0][Revi_Time]}></label><br/>
-							回复：<textarea name="editor1"></textarea><br/>
+							<label>回复：<textarea name="editor1"></textarea></label><br/>
 							<input type="submit" value="提交" />
 						</form>
 				     </div>

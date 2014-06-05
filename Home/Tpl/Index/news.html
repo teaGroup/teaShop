@@ -4,46 +4,41 @@
 <meta charset="utf-8">
 <title>无标题文档</title>
 <link rel="stylesheet" href="__PUBLIC__/css/h-n.css" type="text/css" media="screen" />
-             <script src="__ROOT__/CKEditor/ckeditor.js"></script>
              <load href="__PUBLIC__/js/jquery.min.js" />
              <load href="__PUBLIC__/js/Tab.js" />
 </head>
 
 <body>
 <div id="head"> <include file="Public:header" /> </div>
-     <div id="main-content">
-     <form action="" method="post" enctype="multipart/form-data" name="form2">
-        <input type="hidden" name="id" value="<{$data.pk_News_Id}>"/>
-        <label for="news_title" id="font">新闻标题：</label>
-     	<input type="text" id="news_title" name="news_title" value="<{$data.News_Title}>"/><p></p>
-        <label for="news_content" id="font">新闻内容：</label>
-        <textarea name="news_content"><{$data.News_Content}></textarea><br/>
-   
-     </form><br/>
-     </div>
+<div id="main-content">
+     <div class="content-box"><!-- Start Content Box -->
+				
+				<div class="content-box-header">
+					
+					<center><h3><{$data.News_Title}></h3></center>
+					
+					<div class="clear"></div>
+					
+				</div> <!-- End .content-box-header -->
+				
+				<div class="content-box-content">
+					
+					<div class="tab-content default-tab" id="tab1"> <!-- This is the target div. id must match the href of this div's tab -->
+						
+						<div class="notification attention png_bg"></div>
+                        				 
+    					<{$data.News_Content}>	 	
+						
+					  </div> <!-- End #tab1 -->
+					
+					        
+					
+				</div> <!-- End .content-box-content -->
+				
+			</div>
+            </div>
 <div id="foot"> 
 <include file="Public:footer" />
 </div>
 </body>
-<script type="text/javascript">
-
-   // Ǵԃ CKEitor քʏԫ٦Ŝìʹԃ CKFinder ӥݾ
-
-   CKEDITOR.replace( 'news_content', {
-
-   filebrowserBrowseUrl : '__ROOT__/CKFinder/ckfinder.html',
-
-   filebrowserImageBrowseUrl : '__ROOT__/CKFinder/ckfinder.html?Type=Images',
-
-   filebrowserFlashBrowseUrl : '__ROOT__/CKFinder/ckfinder.html?Type=Flash',
-
-   filebrowserUploadUrl : '__ROOT__/CKFinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-
-   filebrowserImageUploadUrl : '__ROOT__/CKFinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
-
-   filebrowserFlashUploadUrl : '__ROOT__/CKFinder/core/connector/php/connector.php?command=QuickUpload&type=Flash'
-
-   });
-
-</script>
 </html>

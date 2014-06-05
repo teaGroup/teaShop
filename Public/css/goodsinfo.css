@@ -138,24 +138,112 @@ a.oos_other{color:#015A9E; float: left; display: block; padding-top: 8px;}
 .clearfix{display:inline-block}* html .clearfix{height:1%}.clearfix{display:block;}
 
 /**************************************图片放大**********************************************/
-#preview{ float:none; width:400px; background-color:#F3C;}
-.jqzoom{ width:398px; height:398px; position:relative;}
+#preview{ float:none; margin:20px auto; text-align:center; width:500px;}
+.jqzoom{ width:398px; height:350px; position:relative;}
 
 .zoomdiv{ left:859px; height:400px; width:400px;}
 .list-h li{ float:left;}
 #spec-n5{width:350px; height:56px; padding-top:6px; overflow:hidden;}
-#spec-left{ background:url(../images/left.gif) no-repeat; width:10px; height:45px; float:left; cursor:pointer; margin-top:5px;}
-#spec-right{background:url(../images/right.gif) no-repeat; width:10px; height:45px; float:left;cursor:pointer; margin-top:5px;}
-#spec-list{ width:325px; float:left; overflow:hidden; margin-left:2px; display:inline;}
-#spec-list ul li img{ padding:2px ;  width:74px; height:74px;}
 
-#n{margin:10px auto; width:920px; font-size:12px; line-height:30px;}
-#n a{ padding:0 4px; color:#333}
+#spec-list{ width:325px; float:left; overflow:hidden; margin-left:2px; display:inline; }
+#spec-list ul{ margin-top:0px;}
+#spec-list ul li{ float:left; margin-right:0px; display:inline; width:62px;}
+#spec-list ul li img{ padding-top:-50px; border:1px solid #ccc; width:50px; height:50px;}
 
 
+
+/*jqzoom www.divcss5.com */
 .jqzoom{position:relative;padding:0;}
-
+.zoomdiv{z-index:100;position:absolute;top:1px;left:0px;width:400px;height:400px;background:url(i/loading.gif) #fff no-repeat center center;border:1px solid #e4e4e4;display:none;text-align:center;overflow: hidden;}
 .bigimg{width:800px;height:800px;}
 .jqZoomPup{z-index:10;visibility:hidden;position:absolute;top:0px;left:0px;width:50px;height:50px;border:1px solid #aaa;background:#FEDE4F 50% top no-repeat;opacity:0.5;-moz-opacity:0.5;-khtml-opacity:0.5;filter:alpha(Opacity=50);cursor:move;}
-#spec-list{ position:relative; width:322px; margin-right:6px;}
-#spec-list div{ margin-top:0;margin-left:-30px; *margin-left:0;}
+
+/******************************************在线客服*****************************/
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+#box-kefu {
+	position: fixed;
+	right: 0;
+	top: 35%;
+	z-index: 100;
+	_position: absolute;
+_top: expression(eval(document.documentElement.scrollTop+100));
+}
+#box-kefu .kefu-open {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 138px;
+	padding: 46px 0 0 0;
+	background: url(../images/kefu_icon.png) no-repeat -46px 0;
+	_background-image: url(../images/kefu_icon.gif);
+	overflow: hidden;
+}
+#box-kefu .kefu-open .close {
+	display: block;
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	right: 0;
+	top: 0;
+	text-indent: -9999px;
+}
+#box-kefu .kefu-open div {
+	padding-bottom: 5px;
+	background: url(../images/kefu_bg.png) no-repeat -268px bottom;
+	width: 134px;
+}
+#box-kefu .kefu-open ul {
+	background: url(../images/kefu_bg.png) repeat-y 0 0 #939393;
+}
+#box-kefu .kefu-open li {
+	height: 32px;
+	line-height: 32px;
+	padding: 0 15px 2px;
+	background: url(../images/kefu_bg.png) no-repeat -134px bottom;
+}
+#box-kefu .kefu-open li a {
+	color: #fff;
+	display: block;
+	position: relative;
+	zoom: 1;
+	padding-left: 35px;
+}
+#box-kefu .kefu-open li a:hover {
+	text-decoration: none;
+}
+#box-kefu .kefu-open li a i {
+	display: inline-block;
+	position: absolute;
+	left: 10px;
+	top: 6px;
+	width: 21px;
+	height: 21px;
+	background: url(../images/kefu_icon.png) no-repeat 9999px 9999px;
+	_background-image: url(../images/kefu_icon.gif);
+}
+#box-kefu .kefu-open li a i.qq {
+	background-position: -86px -56px;
+}
+#box-kefu .kefu-open li a i.online {
+	background-position: -56px -56px;
+}
+#box-kefu .kefu-open li a i.txt {
+	background-position: -56px -86px;
+}
+#box-kefu .kefu-close {
+	position: absolute;
+	top: 5px;
+	right: 0;
+	width: 0;
+	height: 127px;
+	padding: 0;
+	background: url(../images/kefu_icon.png) no-repeat 0 0;
+	_background-image: url(../images/kefu_icon.gif);
+	cursor: pointer;
+	overflow: hidden;
+}

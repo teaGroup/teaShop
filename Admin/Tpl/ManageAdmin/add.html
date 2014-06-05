@@ -17,8 +17,22 @@
      <br/>
      </center>
 
-
-         <form action="__APP__/ManageAdmin/insert" method="post" enctype="multipart/form-data" name="form1">
+     <div class="content-box"><!-- Start Content Box -->
+				
+				<div class="content-box-header">
+					
+					<h3>管理员修改密码</h3>
+					
+					<div class="clear"></div>
+					
+				</div> <!-- End .content-box-header -->
+				
+				<div class="content-box-content">
+					
+					<div class="tab-content default-tab" id="tab1"> <!-- This is the target div. id must match the href of this div's tab -->
+						
+						<div class="notification attention png_bg"></div>					 
+         <form  id="tab1" action="__APP__/ManageAdmin/insert" method="post" enctype="multipart/form-data" name="form1">
          <fieldset>
             <p>
              <label for="admin_name">昵称：</label>
@@ -30,23 +44,25 @@
                  <input type="text" name="admin_pwd" id="admin_pwd">
              <br/>
            </p>
-           <p>
-             <label for="admin_authority">权限：</label>
-                 <input type="text" name="admin_authority" id="admin_authority">
-             <br/>
-           </p>
-           <p>
-             <label for="admin_role">角色：</label>
-                 <input type="text" name="admin_role" id="admin_role">
-             <br/>
-           </p>
 
              <p>
                  <input type="submit" name="submit" id="submit" value="提交">
                  　<input type="reset" name="reset" id="reset" value="重置">
              </p>
          </fieldset>
-       </form>
+       </form>				
+						
+					</div> <!-- End #tab1 -->
+					
+					        
+					
+				</div> <!-- End .content-box-content -->
+				
+			</div>
+            </div>				 
+		
+
+
 
 </div>
 </body>

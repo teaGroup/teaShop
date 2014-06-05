@@ -10,7 +10,7 @@
            <script type="text/javascript" src="__PUBLIC__/js/Tab.js"></script>
 		 <style>
 		        #head{
-			        margin-top:-20px;
+			        margin-top:-17px;
 				   padding:0px;
 			   }
 		        .goods_list{
@@ -21,11 +21,13 @@
 			         left:49px;
 			         width:250px;
 				    height:310px;
+					z-index:10;
 			   }
 			   .goods_list .onegoods img
                   {
 	                   width:250px;
 	                   height:220px;
+					   
                   }
 			   .goods_list p{
 	                   font-size:13px;
@@ -50,17 +52,69 @@
   <div class="topbar2">
     <div class="add_fav"> <a onclick="" href="###">浮生若茶--名牌正品茶叶、茶礼商城！</a> </div>
     <div class="login-info"> <font>欢迎光临！&nbsp;&nbsp;</font> </div>
-    <div class="quick-menu2">
+    <div class="quick-menu">
       <ul>
-        <li><a title="我的帐户" href="__APP__/Order/query">我的帐户</a> </li>
         <li><a title="帮助中心" href="#">帮助中心</a> </li>
-        <li>欢迎你，<font style="color:#B10A04;"><?php echo ($username); ?></font></li>
-        <li><a href="__APP__/Public/logout">退出</a></li>
+        <li><a href="__APP__/Reg/reg">[免费注册]</a></li>
       </ul>
     </div>
   </div>
 </div>
+ <div id="userlogin">
+  <div id="topnav" class="topnav"><a href="#" class="signin"><span>登录</span></a> </div>
+  <fieldset id="signin_menu">
+    <form method="post" id="signin" action="__APP__/Public/doLogin">
+      <p>
+      <label for="username">用户名</label>
+      <input id="username" name="username" value="" title="username" tabindex="4" type="text">
+      </p>
+      <p>
+        <label for="password">密码</label>
+        <input id="password" name="password" value="" title="password" tabindex="5" type="password">
+      </p>
+      <p>
+        <label for="code">验证码</label>
+        <input id="code" type="text" style="width:70px;" class="text-input" name="code" required="required">
+      </p>
+      <div style="margin-left:90px; margin-top:-36px; width:100px;">
+        <p id="verify-code">
+          <img height=29 width=65 src="__APP__/Public/code" onclick='this.src=this.src+"?"+Math.random()'/>
+          <span id="log_code" class="code"></span>
+        </p>
+        <div class="clear"></div>
+      </div>
+          
 
+
+      <p class="remember">
+        <input id="signin_submit" value="登 录" tabindex="6" type="submit">
+        <!--<input id="remember" name="remember_me" value="1" tabindex="7" type="checkbox">
+        <label for="remember">记住密码</label>-->
+      </p>
+    </form>
+  </fieldset>
+</div>
+<script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".signin").click(function(e) {          
+				e.preventDefault();
+                $("fieldset#signin_menu").toggle();
+				$(".signin").toggleClass("menu-open");
+            });
+			
+			$("fieldset#signin_menu").mouseup(function() {
+				return false
+			});
+			$(document).mouseup(function(e) {
+				if($(e.target).parent("a.signin").length==0) {
+					$(".signin").removeClass("menu-open");
+					$("fieldset#signin_menu").hide();
+				}
+			});			
+			
+        });
+</script>
 
 <div class="headermid">
   <div class="blank"></div>
@@ -86,7 +140,7 @@
 					-->
 					
 					</script>
-        <form id="searchForm" name="searchForm" method="get" action="search.php" onsubmit="return checkSearchForm()" class="f_l" style="_position:relative; top:5px;">
+        <form id="searchForm" name="searchForm" method="get" action="__APP__/Search/search" onsubmit="return checkSearchForm()" class="f_l" style="_position:relative; top:5px;">
           <input name="keywords" type="text" id="keyword" value="" class="B_input" style="width:310px; height:22px; float:left;">
           <input name="imageField" type="submit" value="" class="go" style="cursor:pointer;">
         </form>
@@ -116,17 +170,17 @@
       <div class="cateMenu hide">
         <ul>
           <li style="border-top: none;">
-            <div class="cate-tag"> <strong><a href="http://www.jq-school.com">绿茶</a></strong>
+            <div class="cate-tag"> <strong><a href="__APP__/Search/sortgoods/name/绿茶">绿茶</a></strong>
               <div class="listModel">
-                <p> <a href="http://www.jq-school.com">西湖龙井</a> <a href="http://www.jq-school.com">洞庭碧螺春</a></p>
-                <p>  <a href="http://jq-school.com">黄山毛峰</a> <a href="http://www.jq-school.com">太平猴魁</a> </p>
+                <p> <a href="__APP__/Search/sortgoods/name/西湖龙井">西湖龙井</a> <a href="__APP__/Search/sortgoods/name/洞庭碧螺春">洞庭碧螺春</a></p>
+                <p>  <a href="__APP__/Search/sortgoods/name/黄山毛峰">黄山毛峰</a> <a href="__APP__/Search/sortgoods/name/太平猴魁">太平猴魁</a> </p>
               </div>
             </div>
             <div class="list-item hide">
               <ul class="itemleft">
                 <dl>
                   <dt>绿茶</dt>
-                  <dd> <a href="#">西湖龙井</a> <a href="#">洞庭碧螺春</a> <a href="http://www.jq-school.com">黄山毛峰</a> <a href="http://www.jq-school.com">太平猴魁</a> <a href="http://jq-school.com">六安瓜片</a> <a href="http://jq-school.com">安吉白茶</a> <a href="http://jq-school.com">蒙顶甘露</a> <a href="http://jq-school.com">竹叶青</a> <a href="http://www.jq-school.com">开化龙顶</a> <a href="http://www.jq-school.com">富硒绿茶</a> </dd>
+                  <dd> <a href="__APP__/Search/sortgoods/name/西湖龙井">西湖龙井</a> <a href="__APP__/Search/sortgoods/name/洞庭碧螺春">洞庭碧螺春</a> <a href="__APP__/Search/sortgoods/name/黄山毛峰">黄山毛峰</a> <a href="__APP__/Search/sortgoods/name/太平猴魁">太平猴魁</a> <a href="__APP__/Search/sortgoods/name/六安瓜片">六安瓜片</a> <a href="__APP__/Search/sortgoods/name/安吉白茶">安吉白茶</a> <a href="__APP__/Search/sortgoods/name/蒙顶甘露">蒙顶甘露</a> <a href="__APP__/Search/sortgoods/name/竹叶青">竹叶青</a> <a href="__APP__/Search/sortgoods/name/开化龙顶">开化龙顶</a> <a href="__APP__/Search/sortgoods/name/富硒绿茶">富硒绿茶</a> </dd>
                 </dl>
                 <div class="fn-clear"></div>
                 <dl>
@@ -148,17 +202,17 @@
             </div>
           </li>
           <li style="border-top: none;">
-            <div class="cate-tag"> <strong><a href="http://www.jq-school.com">乌龙茶</a></strong>
+            <div class="cate-tag"> <strong><a href="__APP__/Search/sortgoods/name/乌龙茶">乌龙茶</a></strong>
               <div class="listModel">
-                <p> <a href="http://www.jq-school.com">安溪铁观音</a> <a href="http://www.jq-school.com">武夷大红袍</a></p>
-                <p>  <a href="http://jq-school.com">台湾乌龙茶</a> <a href="http://www.jq-school.com">凤凰单纵</a> </p>
+                <p> <a href="__APP__/Search/sortgoods/name/安溪铁观音">安溪铁观音</a> <a href="__APP__/Search/sortgoods/name/武夷大红袍">武夷大红袍</a></p>
+                <p>  <a href="__APP__/Search/sortgoods/name/台湾乌龙茶">台湾乌龙茶</a> <a href="__APP__/Search/sortgoods/name/凤凰单纵">凤凰单纵</a> </p>
               </div>
             </div>
             <div class="list-item hide">
               <ul class="itemleft">
                 <dl>
                   <dt>乌龙茶</dt>
-                  <dd> <a href="#">安溪铁观音</a> <a href="#">武夷大红袍</a> <a href="http://www.jq-school.com">台湾乌龙茶</a> <a href="http://www.jq-school.com">凤凰单纵</a></dd>
+                  <dd> <a href="__APP__/Search/sortgoods/name/安溪铁观音">安溪铁观音</a> <a href="__APP__/Search/sortgoods/name/武夷大红袍">武夷大红袍</a> <a href="__APP__/Search/sortgoods/name/台湾乌龙茶">台湾乌龙茶</a> <a href="__APP__/Search/sortgoods/name/凤凰单纵">凤凰单纵</a></dd>
                 </dl>
                 <div class="fn-clear"></div>
                 <dl>
@@ -180,17 +234,17 @@
             </div>
           </li>
           <li style="border-top: none;">
-            <div class="cate-tag"> <strong><a href="http://www.jq-school.com">红茶</a></strong>
+            <div class="cate-tag"> <strong><a href="__APP__/Search/sortgoods/name/红茶">红茶</a></strong>
               <div class="listModel">
-                <p> <a href="http://www.jq-school.com">正山小种</a> <a href="http://www.jq-school.com">祁门红茶</a></p>
-                <p>  <a href="http://jq-school.com">云南滇红</a> <a href="http://www.jq-school.com">金骏眉</a> </p>
+                <p> <a href="__APP__/Search/sortgoods/name/正山小种">正山小种</a> <a href="__APP__/Search/sortgoods/name/祁门红茶">祁门红茶</a></p>
+                <p>  <a href="__APP__/Search/sortgoods/name/云南滇红">云南滇红</a> <a href="__APP__/Search/sortgoods/name/金骏眉">金骏眉</a> </p>
               </div>
             </div>
             <div class="list-item hide">
               <ul class="itemleft">
                 <dl>
                   <dt>红茶</dt>
-                  <dd> <a href="#">正山小种</a> <a href="#">祁门红茶</a> <a href="http://www.jq-school.com">云南滇红</a> <a href="http://www.jq-school.com">金骏眉</a><a href="http://www.jq-school.com">坦洋工夫</a><a href="http://www.jq-school.com">白琳工夫</a><a href="http://www.jq-school.com">四川红茶</a><a href="http://www.jq-school.com">锡兰红茶</a><a href="http://www.jq-school.com">其他红茶</a></dd>
+                  <dd> <a href="__APP__/Search/sortgoods/name/正山小种">正山小种</a> <a href="__APP__/Search/sortgoods/name/祁门红茶">祁门红茶</a> <a href="__APP__/Search/sortgoods/name/云南滇红">云南滇红</a> <a href="__APP__/Search/sortgoods/name/金骏眉">金骏眉</a><a href="__APP__/Search/sortgoods/name/坦洋工夫">坦洋工夫</a><a href="__APP__/Search/sortgoods/name/白琳工夫">白琳工夫</a><a href="__APP__/Search/sortgoods/name/四川红茶">四川红茶</a><a href="__APP__/Search/sortgoods/name/锡兰红茶">锡兰红茶</a><a href="__APP__/Search/sortgoods/name/其他红茶">其他红茶</a></dd>
                 </dl>
                 <div class="fn-clear"></div>
                 <dl>
@@ -212,17 +266,17 @@
             </div>
           </li>
           <li style="border-top: none;">
-            <div class="cate-tag"> <strong><a href="http://www.jq-school.com">黑茶</a></strong>
+            <div class="cate-tag"> <strong><a href="__APP__/Search/sortgoods/name/黑茶">黑茶</a></strong>
               <div class="listModel">
-                <p> <a href="http://www.jq-school.com">普洱茶</a> <a href="http://www.jq-school.com">安化黑茶</a></p>
-                <p>  <a href="http://jq-school.com">泾渭茯茶</a> </p>
+                <p> <a href="__APP__/Search/sortgoods/name/普洱茶">普洱茶</a> <a href="__APP__/Search/sortgoods/name/安化黑茶">安化黑茶</a></p>
+                <p>  <a href="__APP__/Search/sortgoods/name/泾渭茯茶">泾渭茯茶</a> </p>
               </div>
             </div>
             <div class="list-item hide">
               <ul class="itemleft">
                 <dl>
                   <dt>黑茶</dt>
-                  <dd> <a href="#">普洱茶</a> <a href="#">安化黑茶</a> <a href="http://www.jq-school.com">泾渭茯茶</a></dd>
+                  <dd> <a href="__APP__/Search/sortgoods/name/普洱茶">普洱茶</a> <a href="__APP__/Search/sortgoods/name/安化黑茶">安化黑茶</a> <a href="__APP__/Search/sortgoods/name/泾渭茯茶">泾渭茯茶</a></dd>
                 </dl>
                 <div class="fn-clear"></div>
                 <dl>
@@ -244,16 +298,16 @@
             </div>
           </li>
           <li style="border-top: none;">
-            <div class="cate-tag"> <strong><a href="http://www.jq-school.com">白茶</a></strong>
+            <div class="cate-tag"> <strong><a href="__APP__/Search/sortgoods/name/白茶">白茶</a></strong>
               <div class="listModel">
-                <p> <a href="http://www.jq-school.com">白毫银针</a> <a href="http://www.jq-school.com">白牡丹</a></p>
+                <p> <a href="__APP__/Search/sortgoods/name/白毫银针">白毫银针</a> <a href="__APP__/Search/sortgoods/name/白牡丹">白牡丹</a></p>
               </div>
             </div>
             <div class="list-item hide">
               <ul class="itemleft">
                 <dl>
                   <dt>白茶</dt>
-                  <dd> <a href="#">白毫银针</a> <a href="#">白牡丹</a></dd>
+                  <dd> <a href="__APP__/Search/sortgoods/name/白毫银针">白毫银针</a> <a href="__APP__/Search/sortgoods/name/白牡丹">白牡丹</a></dd>
                 </dl>
                 <div class="fn-clear"></div>
                 <dl>
@@ -275,17 +329,17 @@
             </div>
           </li>
           <li style="border-top: none;">
-            <div class="cate-tag"> <strong><a href="http://www.jq-school.com">花草茶</a></strong>
+            <div class="cate-tag"> <strong><a href="__APP__/Search/sortgoods/name/花草茶">花草茶</a></strong>
               <div class="listModel">
-                <p> <a href="http://www.jq-school.com">苦荞茶</a> <a href="http://www.jq-school.com">茉莉花茶</a></p>
-                <p>  <a href="http://jq-school.com">水果茶</a> <a href="http://jq-school.com">苦丁茶</a> </p>
+                <p> <a href="__APP__/Search/sortgoods/name/苦荞茶">苦荞茶</a> <a href="__APP__/Search/sortgoods/name/茉莉花茶">茉莉花茶</a></p>
+                <p>  <a href="__APP__/Search/sortgoods/name/水果茶">水果茶</a> <a href="__APP__/Search/sortgoods/name/苦丁茶">苦丁茶</a> </p>
               </div>
             </div>
             <div class="list-item hide">
               <ul class="itemleft">
                 <dl>
                   <dt>花草茶</dt>
-                  <dd> <a href="#">苦荞茶</a> <a href="#">茉莉花茶</a> <a href="http://www.jq-school.com">水果茶</a> <a href="http://www.jq-school.com">苦丁茶</a><a href="http://www.jq-school.com">菊花</a><a href="http://www.jq-school.com">昆仑血菊</a><a href="http://www.jq-school.com">玫瑰花</a><a href="http://www.jq-school.com">养生茶</a></dd>
+                  <dd> <a href="__APP__/Search/sortgoods/name/苦荞茶">苦荞茶</a> <a href="__APP__/Search/sortgoods/name/茉莉花茶">茉莉花茶</a> <a href="__APP__/Search/sortgoods/name/水果茶">水果茶</a> <a href="__APP__/Search/sortgoods/name/苦丁茶">苦丁茶</a><a href="__APP__/Search/sortgoods/name/菊花">菊花</a><a href="__APP__/Search/sortgoods/name/昆仑血菊">昆仑血菊</a><a href="__APP__/Search/sortgoods/name/玫瑰花">玫瑰花</a><a href="__APP__/Search/sortgoods/name/养生茶">养生茶</a></dd>
                 </dl>
                 <div class="fn-clear"></div>
                 <dl>
@@ -307,17 +361,17 @@
             </div>
           </li>
           <li style="border-top: none;">
-            <div class="cate-tag"> <strong><a href="http://www.jq-school.com">茶具</a></strong>
+            <div class="cate-tag"> <strong><a href="__APP__/Search/sortgoods/name/茶具">茶具</a></strong>
               <div class="listModel">
-                <p> <a href="http://www.jq-school.com">玻璃茶具</a> <a href="http://www.jq-school.com">陶瓷茶具</a></p>
-                <p>  <a href="http://jq-school.com">紫砂茶具</a> <a href="http://jq-school.com">电茶壶</a> </p>
+                <p> <a href="__APP__/Search/sortgoods/name/玻璃茶具">玻璃茶具</a> <a href="__APP__/Search/sortgoods/name/陶瓷茶具">陶瓷茶具</a></p>
+                <p>  <a href="__APP__/Search/sortgoods/name/紫砂茶具">紫砂茶具</a> <a href="__APP__/Search/sortgoods/name/电茶壶">电茶壶</a> </p>
               </div>
             </div>
             <div class="list-item hide">
               <ul class="itemleft">
                 <dl>
                   <dt>茶具</dt>
-                  <dd> <a href="#">玻璃茶具</a> <a href="#">陶瓷茶具</a> <a href="http://www.jq-school.com">紫砂茶具</a> <a href="http://www.jq-school.com">电茶壶</a><a href="http://www.jq-school.com">茶盘</a><a href="http://www.jq-school.com">茶宠</a><a href="http://www.jq-school.com">其他茶具</a></dd>
+                  <dd> <a href="__APP__/Search/sortgoods/name/玻璃茶具">玻璃茶具</a> <a href="__APP__/Search/sortgoods/name/陶瓷茶具">陶瓷茶具</a> <a href="__APP__/Search/sortgoods/name/紫砂茶具">紫砂茶具</a> <a href="__APP__/Search/sortgoods/name/电茶壶">电茶壶</a><a href="__APP__/Search/sortgoods/name/茶盘"></a><a href="__APP__/Search/sortgoods/name/茶宠">茶宠</a><a href="__APP__/Search/sortgoods/name/其他茶具">其他茶具</a></dd>
                 </dl>
                 <div class="fn-clear"></div>
               </ul>
@@ -369,11 +423,11 @@
 		 <article class="goods_list"> 
           <ul>
             <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="onegoods"> 
-                   <a class="img" target="_blank" href="__APP__/GoodsInfo/index/name/<?php echo ($vo["Goods_Name"]); ?>" title="<?php echo ($vo["Goods_Name"]); ?>"> 
+                   <a class="img" target="_blank" href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["pk_Goodsinfo_Id"]); ?>" title="<?php echo ($vo["Goods_Name"]); ?>"> 
                       <img src="<?php echo ($vo["Goods_img"]); ?>" alt="<?php echo ($vo["Goods_Name"]); ?>"> 
                     </a>                             
                     <p class="price"><strong>￥<?php echo ($vo["Goods_Price"]); ?>元</strong> </p>
-                    <p><a href="__APP__/GoodsInfo/index/name/<?php echo ($vo["Goods_Name"]); ?>"><?php echo ($vo["Goods_Name"]); ?></a></p>               
+                    <p><a href="__APP__/GoodsInfo/index/goodsid/<?php echo ($vo["pk_Goodsinfo_Id"]); ?>"><?php echo ($vo["Goods_Name"]); ?></a></p>               
               </li><?php endforeach; endif; else: echo "" ;endif; ?>    
             </ul>
         </article>

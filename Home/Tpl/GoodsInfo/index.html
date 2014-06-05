@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>商品详情</title>
 <link href="__PUBLIC__/css/goodsinfo.css" rel="stylesheet" media="screen" type="text/css" />
-<SCRIPT src="__PUBLIC__/js/picBig/jquery-1.2.6.pack.js" type='text/javascript'></SCRIPT>
-<SCRIPT src="__PUBLIC__/js/picBig/js/base.js" type='text/javascript'></SCRIPT>
-<SCRIPT src="__PUBLIC__/js/picBig/lib.js" type='text/javascript'></SCRIPT>
-<SCRIPT src="__PUBLIC__/js/picBig/163css.js" type='text/javascript'></SCRIPT>
+<load href="__PUBLIC__/js/jquery.min.js" />
+<SCRIPT src="__PUBLIC__/js/picBig/jquery-1.8.3.js" type=text/javascript></SCRIPT>
+<SCRIPT src="__PUBLIC__/js/picBig/base.js" type=text/javascript></SCRIPT>
+<script src="__PUBLIC__/js/onlineService.js" type="text/javascript"></script>
+
 <style>
 .btnbuy{
 	background-image:__PUBLIC__/images/btnbuy.jpg;
@@ -16,37 +17,78 @@
 </head>
 
 <body>
-<div id="head"> <include file="Public:header" /></div>
+<div id="head"><include file="Public:header" /> </div>
 <div id="container">
-     <div class="inner">
+<div class="inner">
           <div id="good">
                <div id="crumb">
                	<a href="__APP__/Index/index">首页</a>
 				<span>»</span>
 				<a href=""><{$list[0][Classifi_Name]}></a>
-				<!--<span>»</span>
-				<a href="/" style="background-color:#0F0;">安吉白茶</a>
-				<span>»</span>
-				<a href="/" style="background-color:#0F0;">张家山</a>-->
 				<span>»</span>
 				<a href="/"><{$list[0][Goods_Name]}></a>									
-               </div><!--END crumb-->
-               <div class="images">
-				<div class="image_big"><img src="<{$list[0].Goods_img}>" width="398" height="398"/></div>
-				<div class="images_small">
-				<div class="image_small"><img src="<{$list[0].Goods_img}>" width="74" height="74"/></div>
-                
-				<if condition="$list[0][Goods_img1] neq null">
-				<div class="image_small"><img src="<{$list[0].Goods_img1}>" width="74" height="74"/></div>
-				</if>
-				<if condition="$list[0][Goods_img2] neq null">
-				<div class="image_small"><img src="<{$list[0].Goods_img2}>" width="74" height="74"/></div>
-				</if>
-				<if condition="$list[0][Goods_img3] neq null">
-				<div class="image_small"><img src="<{$list[0].Goods_img3}>" width="74" height="74" /></div>
-				</if>
-				</div>
-				</div><!--END images-->
+               </div>
+<div class="images">
+<div id="preview">
+	<div class="jqzoom" id="spec-n1"><IMG height=350 src="<{$list[0].Goods_img}>" jqimg="<{$list[0].Goods_img}>" width=398>
+	</div>
+	<div id="spec-n5">
+		<div id="spec-list">
+			<ul class="list-h">
+				<li><img src="<{$list[0].Goods_img}>"> </li>
+                <if condition="$list[0][Goods_img1] neq null">
+					<li><img src="<{$list[0].Goods_img1}>"> </li>
+                </if>
+                <if condition="$list[0][Goods_img2] neq null">
+					<li><img src="<{$list[0].Goods_img2}>"> </li>
+                </if>
+                <if condition="$list[0][Goods_img3] neq null">
+					<li><img src="<{$list[0].Goods_img3}>"> </li>
+                </if>
+			</ul>
+		</div>
+
+		
+    </div>
+</div>
+<SCRIPT type=text/javascript>
+	$(function(){			
+	   $(".jqzoom").jqueryzoom({
+			xzoom:400,
+			yzoom:400,
+			offset:10,
+			position:"right",
+			preload:1,
+			lens:1
+		});
+		$("#spec-list").jdMarquee({
+			deriction:"left",
+			width:398,
+			height:56,
+
+		});
+		$("#spec-list img").bind("mouseover",function(){
+			var src=$(this).attr("src");
+			$("#spec-n1 img").eq(0).attr({
+				src:src.replace("\/n5\/","\/n1\/"),
+				jqimg:src.replace("\/n5\/","\/n0\/")
+			});
+			$(this).css({
+				"border":"2px solid #ff6600",
+				"padding":"1px"
+			});
+		}).bind("mouseout",function(){
+			$(this).css({
+				"border":"1px solid #ccc",
+				"padding":"2px"
+			});
+		});		
+	})
+	</SCRIPT>
+
+<SCRIPT src="__PUBLIC__/js/picBig/lib.js" type=text/javascript></SCRIPT>
+<SCRIPT src="__PUBLIC__/js/picBig/keleyi.js" type=text/javascript></SCRIPT>
+</div>
                 <div class="good_info">
 				<h1><span style="color:#F00;">【2014新茶】</span>
 				<if condition='$list[0][Goods_Num] gt 0'>
@@ -74,27 +116,25 @@
                     		<li>净含量：<{$list[0][Goods_NetContent]}>克</li>
                     	  </ul>
                         <div class="cb"></div>
-				</div><!--good_pinpai-->
+				</div>
                     <div class="good_tobuy">
 					<form action="__APP__/Cart/add" name="buybox" id="buybox" method="post">
 						<div class="buy_bum">
 							<span class="fl">我要买：</span>
 							<div class="good_numall">
-							    <!-- <a class="min"></a><input type="text" value="1" class="good_num" name="item_number"><a class="add"></a>-->
+							  
                                 <input type="number" value="1" class="good_num" name="item_number">
 							</div>
 							<div class="cb"></div>
 							<p class="p_buybtn">
                             	<input type="hidden" name="goodsid" value="<{$list[0]['pk_Goodsinfo_Id']}>">
-						          <!--<input type="button" class="addtocart_btn" onclick="document.buybox.submit()">-->
                                   <input type="image" src="__PUBLIC__/images/btnbuy.jpg" onClick="document.buybox.submit()" />	
 							</p>
 							<div class="cb"></div>
 						</div>
 					</form>
 					<p class="baoyou">购物提示：普通快递满200元包邮，顺丰快递款到发货满300元包邮 <a href="/" target="_blank">详情点击</a></p>
-				</div><!--good_tobuy-->
-                    <!-- Baidu Button BEGIN -->
+				</div>
 					<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
 					<span class="bds_more">分享到：</span>
 					<a class="bds_tsina" title="分享到新浪微博" href="#">新浪微博</a>
@@ -110,20 +150,19 @@
 					<script type="text/javascript">
 					document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
 					</script>
-					<!-- Baidu Button END -->
 					
                     
-                </div><!--END good_info-->
-          </div><!--END good-->
+                </div>
+          </div>
           <div class="cb"></div>
           <div id="good_sidebar">
 				<div id="seealsobab" style="display: block;">
                       <div><h3 class="title">买过该商品的茶友还买过</h3>
                            <ul class="inner">
                                 <li class="good_small">
-                                     <a class="good_img fl" title="御牌" href="__APP__/GoodsInfo/index/name/<{$other[0][Goods_img]}>" target="_blank">
+                                     <a class="good_img fl" title="御牌" href="__APP__/GoodsInfo/index/goodsid/<{$other[0]['pk_Goodsinfo_Id']}>" target="_blank">
                                           <img width="70" height="70" src="<{$other[0][Goods_img]}>" alt="御牌" style="border: 0 none;"></a> 
-                                     <a class="good_name" title="御牌" href="__APP__/GoodsInfo/index/name/<{$other[0][Goods_img]}>" target="_blank"><{$other[0][Goods_Name]}></a>                                     
+                                     <a class="good_name" title="御牌" href="__APP__/GoodsInfo/index/goodsid/<{$other[0]['pk_Goodsinfo_Id']}>" target="_blank"><{$other[0][Goods_Name]}></a>                                     
                                      <span class="good_price"> ￥<{$other[0][Goods_Price]}> </span>
                                 </li>
                             </ul>
@@ -133,8 +172,8 @@
 					<div class="title"><a href="#" onclick="return mcw_clear_history();" class="pr10">清空</a>浏览记录</div>
 					<div class="inner">
 												<div class="good_small">
- 							<a href="##" class="good_img fl"><img src="<{$other[1][Goods_img]}>" height="70"></a>
- 							<a href="__APP__/GoodsInfo/index/name/<{$other[1][Goods_Name]}>" class="good_name">
+ 							<a href="__APP__/GoodsInfo/index/goodsid/<{$other[1]['pk_Goodsinfo_Id']}>" target="_blank" class="good_img fl"><img src="<{$other[1][Goods_img]}>" height="70"></a>
+ 							<a href="__APP__/GoodsInfo/index/goodsid/<{$other[1]['pk_Goodsinfo_Id']}>" target="_blank" class="good_name">
 							<if condition='$other[1][Goods_Num] gt 0'>
 				                【现货】
 				               <else />
@@ -149,9 +188,9 @@
                             <h3 class="title">看过该商品的茶友还看过</h3>
                                  <ul class="inner">
                                     <li class="good_small">
-                                       <a class="good_img fl" title="张家山" href="__APP__/GoodsInfo/index/name/<{$other[2][Goods_Name]}>" target="_blank">
+                                       <a class="good_img fl" title="张家山" href="__APP__/GoodsInfo/index/goodsid/<{$other[2]['pk_Goodsinfo_Id']}>" target="_blank">
                                                <img width="70" height="70" src="<{$other[2][Goods_img]}>" alt="张家山" style="border: 0 none;"></a> 
-                                       <a class="good_name" title="张家山" href="__APP__/GoodsInfo/index/name/<{$other[2][Goods_Name]}>" target="_blank"><{$other[2][Goods_Name]}></a> 
+                                       <a class="good_name" title="张家山" href="__APP__/GoodsInfo/index/goodsid/<{$other[2]['pk_Goodsinfo_Id']}>" target="_blank"><{$other[2][Goods_Name]}></a> 
                                        <span class="good_price"> ￥<{$other[2][Goods_Price]}> </span>
                                     </li>
                                  </ul>
@@ -160,9 +199,9 @@
 			</div><!---END good_sidebar-->
             <div id="good_detail">
                   <div class="arrow_tabs"><a href="#" class="active">商品详情</a>
-			       <a href="__URL__/common_list" target="_blank">商品评论</a>
+			       <a href="__URL__/common_list/id/<{$list[0][pk_Goodsinfo_Id]}>" target="_blank">商品评论</a>
 			   </div>
-                  <div class="inner" style="display: block;background:#093;">
+                  <div class="inner" style="display: block;">
 					<div class="attrs clearfix mt10">
                           <div id="zi">
 										<span style=" width:185px"><b>品牌：</b>张家山</span>
@@ -187,50 +226,54 @@
             
             </div><!------inner---------->
      </div> <!---END inner-->
-        
-</div><!---END container-->
-
-<div id="foot"> 
-<include file="Public:footer" />
 </div>
-<SCRIPT type=text/javascript>
-	$(function(){			
-	   $(".jqzoom").jqueryzoom({
-			xzoom:400,
-			yzoom:400,
-			offset:10,
-			position:"right",
-			preload:1,
-			lens:1
-		});
-		$("#spec-list").jdMarquee({
-			deriction:"left",
-			width:350,
-			height:56,
-			step:2,
-			speed:4,
-			delay:10,
-			control:true,
-			_front:"#spec-right",
-			_back:"#spec-left"
-		});
-		$("#spec-list img").bind("mouseover",function(){
-			var src=$(this).attr("src");
-			$("#spec-n1 img").eq(0).attr({
-				src:src.replace("\/n5\/","\/n1\/"),
-				jqimg:src.replace("\/n5\/","\/n0\/")
-			});
-			$(this).css({
-				"border":"2px solid #ff6600",
-				"padding":"1px"
-			});
-		}).bind("mouseout",function(){
-			$(this).css({
-				"border":"1px solid #ccc",
-				"padding":"2px"
-			});
-		});				
-	})
-	</SCRIPT>
+<div id="foot"><include file="Public:footer" /></div>
+
+<div id="box-kefu">
+    <div class="kefu-close"></div>
+    <div class="kefu-open">
+        <div>
+        <ul>
+            <li><a href="http://wpa.qq.com/msgrd?v=3&uin=1192835359&site=qq&menu=yes" target="_blank"><i class="qq"></i>在线客服1</a></li>
+            <li><a href="http://wpa.qq.com/msgrd?v=3&uin=425528994&site=qq&menu=yes" target="_blank"><i class="qq"></i>在线客服2</a></li>
+            <li><a href="http://wpa.qq.com/msgrd?v=3&uin=1234569871&site=qq&menu=yes" target="_blank"><i class="qq"></i>在线客服3</a></li>
+        </ul>
+        </div>
+        <a href="javascript:;" class="close">关闭</a>
+    </div>
+</div>
+<script>var online= new Array();</script>
+<script src="http://webpresence.qq.com/getonline?Type=1&645481746:1712816412:645481746:"></script>
+<script>
+(function($){
+    for (var i=0; i<online.length; i++) {
+        if (online[i]) jQuery("#box-kefu .qq").eq(i).addClass("online");
+    }
+    var _open = $("#box-kefu").find(".kefu-open"),
+        _close = $("#box-kefu").find(".kefu-close");
+    _open.find("a").hover(function(){
+        $(this).stop(true,true).animate({paddingLeft:20},200).find("i").stop(true,true).animate({left:75},200);
+    },function(){
+        $(this).stop(true,true).animate({paddingLeft:35},200).find("i").stop(true,true).animate({left:10},200);
+    });
+    
+
+    _open.find(".close").click(function(){
+        _open.animate({width:148},200,function(){
+            _open.animate({width:0},200,function(){
+                _close.animate({width:34},200);
+
+            });
+        });
+    });
+    _close.click(function(){
+        _close.animate({width:44},200,function(){
+            _close.animate({width:0},200,function(){
+                _open.animate({width:138},200);
+            });
+        });
+    });
+})(jQuery)
+</script>
 </body>
 </html>

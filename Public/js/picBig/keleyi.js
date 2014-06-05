@@ -1,9 +1,4 @@
-
-
-
-
-
-
+// JavaScript Document
 /*jqueryzoom&&jcarousel*/
 (function($){
 $.fn.jqueryzoom=function(options){

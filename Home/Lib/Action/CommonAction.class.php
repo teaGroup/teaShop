@@ -24,7 +24,7 @@
         	$this->assign("goodsnum",$goodsnum);
         	
 			if(!isset($_SESSION['username']) || $_SESSION['username']==""){
-				$this->error("请先登录",U('Index/index'));
+				$this->error("请先登录");
 			}
 		}
 	}

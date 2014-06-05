@@ -24,7 +24,7 @@
 				
 				<div class="content-box-header">
 					
-					<h3>Content box</h3>
+					<h3>热点新闻</h3>
 					
 					<div class="clear"></div>
 					
@@ -40,7 +40,7 @@
 							
 							<thead>
 								<tr>
-								   <th ><input class="check-all" type="checkbox" /></th>
+								   <th ></th>
 								   <th>新闻标题</th>
 								   
 								   <th>新闻内容</th>
@@ -53,14 +53,6 @@
 							<tfoot>
 								<tr>
 									<td colspan="6">
-										<div class="bulk-actions align-left">
-											<select name="dropdown">
-												<option value="option1">Choose an action...</option>
-												<option value="option2">Edit</option>
-												<option value="option3">Delete</option>
-											</select>
-											<a class="button" href="#">Apply to selected</a>
-										</div>
 										
 						               <div id="div" align="center"><div id="black"><{$show}></div></div>
 										<div class="clear"></div>
@@ -73,10 +65,10 @@
 									
                        <volist name="arr" id="vo">
               <tr>
-                   <td><input type="checkbox" /></td>
-                  <td width="13%" font_color="black"><a href="__APP__/News/modify/id/<{$vo.pk_News_Id}>" title="Edit"><{$vo.News_Title|msubstr=0,10}><strong>...</strong></a></td>
-                  <td width="72%" font_color="black"><a href="__APP__/News/modify/id/<{$vo.pk_News_Id}>" title="Edit"><{$vo.News_Content|msubstr=0,34}><strong>...</strong></a></td>
-                  <td width="15%" font_color="black"><{$vo.News_PubDate}></td>
+                   <td></td>
+                  <td font_color="black"><a href="__APP__/News/modify/id/<{$vo.pk_News_Id}>" title="Edit"><{$vo.News_Title|msubstr=0,10}></a></td>
+                  <td font_color="black"><a href="__APP__/News/modify/id/<{$vo.pk_News_Id}>" title="Edit"><{$vo.News_Content|msubstr=0,34}></a></td>
+                  <td font_color="black"><{$vo.News_PubDate}></td>
 									<td width="84">
 										<!-- Icons -->
 										 <a href="__APP__/News/modify/id/<{$vo.pk_News_Id}>" title="Edit"><img src="__PUBLIC__/images/icons/pencil.png" alt="Edit" /></a>

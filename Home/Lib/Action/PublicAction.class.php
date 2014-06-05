@@ -12,6 +12,11 @@
 			$this->display();
 		}
 		public function header(){
+			/*$classifi = M('classifi');
+			$clist = $classifi->where("fk_Classifi_ParentId is null")->select();
+			$clist2 = $classifi->Where("fk_Classifi_ParentId is not null")->select();
+			$this->assign('clist',$clist);
+			$this->assign('clist2',$clist2);*/
 			$this->display();
 		}
 		//尾部
@@ -42,7 +47,7 @@
 					$data['User_LastLogTime'] = date("Y-m-d H:i:s");
 					$data['User_LoginNum'] = $arr['User_LoginNum']+1;
 					$user->where($where)->save($data);
-					$this->success('登录成功',U('Index/index'));
+					$this->success('登录成功');
 				}else{
 					$this->error('用户名或密码错误');
 				}

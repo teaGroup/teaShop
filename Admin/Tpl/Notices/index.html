@@ -24,7 +24,7 @@
 				
 				<div class="content-box-header">
 					
-					<h3>Content box</h3>
+					<h3>商城公告</h3>
 					
 					<div class="clear"></div>
 					
@@ -40,7 +40,7 @@
 							
 							<thead>
 								<tr>
-								   <th ><input class="check-all" type="checkbox" /></th>
+								   <th >&nbsp;</th>
 								   <th>公告标题</th>								  
 								   <th>公告内容</th>
 								   <th>发布时间</th>
@@ -51,14 +51,6 @@
 							<tfoot>
 								<tr>
 									<td colspan="6">
-										<div class="bulk-actions align-left">
-											<select name="dropdown">
-												<option value="option1">Choose an action...</option>
-												<option value="option2">Edit</option>
-												<option value="option3">Delete</option>
-											</select>
-											<a class="button" href="#">Apply to selected</a>
-										</div>
                                         
 										
 						               <div id="div" align="center"><div id="black"><{$show}></div></div>
@@ -72,9 +64,9 @@
 									
                        <volist name="arr" id="vo">
               <tr>
-                   <td><input type="checkbox" /></td>
-                  <td font_color="black"> <a href="__APP__/Notices/modify/id/<{$vo.pk_Notice_Id}>" title="Edit"><{$vo.Notice_Title|msubstr=0,10}><strong>...</strong></a></td>
-                  <td font_color="black"> <a href="__APP__/Notices/modify/id/<{$vo.pk_Notice_Id}>" title="Edit"><{$vo.Notice_Content|msubstr=0,34}><strong>...</strong></a></td>
+                   <td>&nbsp;</td>
+                  <td font_color="black"> <a href="__APP__/Notices/modify/id/<{$vo.pk_Notice_Id}>" title="Edit"><{$vo.Notice_Title|msubstr=0,10}></a></td>
+                  <td font_color="black"> <a href="__APP__/Notices/modify/id/<{$vo.pk_Notice_Id}>" title="Edit"><{$vo.Notice_Content|msubstr=0,34}></a></td>
                   <td font_color="black"><{$vo.Notice_PubDate}></td>
 									<td width="84">
 										<!-- Icons -->

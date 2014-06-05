@@ -95,7 +95,7 @@ $(function(){
 					$(this).css("border-color", "#C00");
 					$(this).css("border-width","1px");
 					var instr="<span style='color:#C00;'>两次输入的密码不一致</span>";
-					$("#reg_pwd2").html(instr);	
+					$("#reg_pwd2").html(instr);				
 					flag3=false;	
 				}
 				});

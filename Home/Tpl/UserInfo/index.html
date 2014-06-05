@@ -19,18 +19,6 @@
   </div>
   <div class="userCenterBox" style="_height:5%;">
          
-                   <script type="text/javascript">
-                      var bonus_sn_empty = "请输入您要添加的红包号码！";
-                      var bonus_sn_error = "您输入的红包号码格式不正确！";
-                      var email_empty = "请输入您的电子邮件地址！";
-                      var email_error = "您输入的电子邮件地址格式不正确！";
-                      var old_password_empty = "请输入您的原密码！";
-                      var new_password_empty = "请输入您的新密码！";
-                      var confirm_password_empty = "请输入您的确认密码！";
-                      var both_password_error = "您现两次输入的密码不一致！";
-                      var msg_blank = "不能为空";
-                      var no_select_question = "- 您没有完成密码提示问题的操作";
-                  </script>
                   <volist id="vo" name="arr">
      <form name="formEdit" action="__URL__/update" method="post" onsubmit="return userEdit()">
      
@@ -104,11 +92,11 @@
         </tr>
         <tr>
           <td width="28%"height="40"  align="right" bgcolor="#FFFFFF">确认密码：</td>
-          <td align="left" height="40" bgcolor="#FFFFFF"><input name="comfirm_password" type="password" size="25" class="inputBg" id="pwd2">　<span id="reg_pwd2" ></span></td>
+          <td align="left" height="40" bgcolor="#FFFFFF"><input name="confirm" type="password" size="25" class="inputBg" id="pwd2">　<span id="reg_pwd2" ></span></td>
         </tr>
         <tr>
           <td colspan="2" height="40" bgcolor="#FFFFFF"><input name="act" type="hidden" value="act_edit_password">
-            <input name="submit" type="submit" class="bnt_blue_1" style="border:none;" value="确认修改">
+            <input name="submit" type="submit" class="bnt_blue_1" style="border:none;" value="确认修改" id="xiugaipwd">
           </td>
         </tr>
       </tbody></table>

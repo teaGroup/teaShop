@@ -1,24 +1,37 @@
 <?php
-	class AdminPwdAction extends Action{
+	class AdminPwdAction extends CommonAction{
 		public function index(){		
 		    $this->display();
 		}
 		public function pwd(){
-		$old_password=$_POST['old_password'];
-		$new_password=$_POST['new_password'];
-		$confirm_password=$_POST['confirm_password'];
-		$m=M('admin');
-		if($old_password=$data['Admin_Pwd']&&!empty($old_password)){
-			if(!empty($new_password)&&$new_password==$confirm_password){
-				$data['Admin_Pwd']=$new_password;
+				if(!$this->isPost()){
+					halt('页面不存在');
 				}
-			}
-	   	$count=$m->save($data);
-		if($count>0){
-			   $this->success("密码修改成功！","index");
-		}else{
-			   $this->error("密码修改失败！");
-		   }
+		$m=M('admin');
+		$where = array('pk_Admin_Id' => $_SESSION['id']);
+		$adminid = $_SESSION['id'];
+		$old_password = $m->where($where)->getField('Admin_Pwd');
+		
+		if($this->_POST('old_password','md5')!= $old_password){
+			$this->error('旧密码错误');	
 		}
+		if($this->_POST('new_password')!=$this->_POST('confirm')){
+		
+		    echo $_POST['confirm'];
+			$this->error('两次密码不一致');
+		}
+		$newPwd = $this->_POST('new_password','md5');
+		$data=array(
+			'pk_Admin_Id' => $_SESSION['id'],
+			'Admin_Pwd' => $newPwd
+		);
+		$count=$m->where("pk_Admin_Id='$adminid'")->save($data);
+		if($count>0){
+			$this->success('修改成功',U('index'));
+		}else{
+			$this->error('修改失败,请重试...');
+		}
+
+	 }
 	}
 ?>

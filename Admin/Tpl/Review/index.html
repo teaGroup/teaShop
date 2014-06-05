@@ -1,4 +1,8 @@
 ﻿<!doctype html>
+
+<style>
+      .rev_index ul{list-style-type:none;}
+</style>
 <html>
      <head>
 	     <title>商品评价管理</title>
@@ -24,19 +28,22 @@
 			    <td>评价时间</td>
 			    <td>操作</td>
 			    </tr>
-			<volist name="list" id="vo">
+			    <volist name="list" id="vo">
 			    <tr>
 			    <td><{$vo.pk_Review_Id}></td>
 			    <td><{$vo.Goods_Name}></td>
 			    <td><img src='<{$vo.Goods_img}>'width="40" height="40"/></td>
-			    <td><{$vo.Revi_Content}></td>
+			    <td width="295px"><{$vo.Revi_Content}></td>
 			    <td><{$vo.Revi_People}></td>
 			    <td><{$vo.Revi_Time}></td>
-			    <td><if condition="$vo.pk_Review_ReplyRe_Id elt 0"><a href="__APP__/Review/reply/id/<{$vo.pk_Review_Id}>">回复</a><else /><div><{$vo.ReplyRe_Content}><br/><{$vo.ReplyRe_Time}></div></if></td>
+			    <td><if condition="$vo.pk_ReplyRe_Id gt 0"><a href="__APP__/Review/rp_index/id/<{$vo.pk_Review_Id}>">浏览回复</a><else /><a href="__APP__/Review/reply/id/<{$vo.pk_Review_Id}>">回复</a></if></td>
 			    </tr>
-			</volist>
+			    </volist>
 			</table>
-            <div id="div" align="center"><div id="black"><{$show}></div></div>	
-         </div>		  
+          <div id="div" align="center"><div id="black"><{$show}></div></div>	
+                       </div>
+                    </div>
+           </div>	
+       </div>
 	</body>
 </html>

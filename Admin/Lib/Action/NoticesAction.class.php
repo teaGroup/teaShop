@@ -1,5 +1,5 @@
 <?php
-     class NoticesAction extends Action{
+     class NoticesAction extends CommonAction{
 	     //分页显示所有公告内容
 	    public function index(){
 	         $m=M("Notice");
@@ -72,9 +72,6 @@
 			     $data['Notice_Content']=$content;
 			}
 		     $data["Notice_PubDate"]=date('Y-m-d H:i:s');
-			 echo "<pre>";
-			 print_r($data);
-			 echo "</pre>";
 			 
 			$count=$m->where("pk_Notice_Id={$id}")->save($data);
 			if($count>0){

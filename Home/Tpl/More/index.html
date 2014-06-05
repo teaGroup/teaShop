@@ -10,7 +10,7 @@
            <load href="__PUBLIC__/js/Tab.js" />
 		 <style>
 		        #head{
-			        margin-top:-20px;
+			        margin-top:-17px;
 				   padding:0px;
 			   }
 		        .goods_list{
@@ -21,11 +21,13 @@
 			         left:49px;
 			         width:250px;
 				    height:310px;
+					z-index:10;
 			   }
 			   .goods_list .onegoods img
                   {
 	                   width:250px;
 	                   height:220px;
+					   
                   }
 			   .goods_list p{
 	                   font-size:13px;
@@ -48,11 +50,11 @@
           <ul>
             <volist name="data" id="vo">
               <li class="onegoods"> 
-                   <a class="img" target="_blank" href="__APP__/GoodsInfo/index/name/<{$vo.Goods_Name}>" title="<{$vo.Goods_Name}>"> 
+                   <a class="img" target="_blank" href="__APP__/GoodsInfo/index/goodsid/<{$vo.pk_Goodsinfo_Id}>" title="<{$vo.Goods_Name}>"> 
                       <img src="<{$vo.Goods_img}>" alt="<{$vo.Goods_Name}>"> 
                     </a>                             
                     <p class="price"><strong>￥<{$vo.Goods_Price}>元</strong> </p>
-                    <p><a href="__APP__/GoodsInfo/index/name/<{$vo.Goods_Name}>"><{$vo.Goods_Name}></a></p>               
+                    <p><a href="__APP__/GoodsInfo/index/goodsid/<{$vo.pk_Goodsinfo_Id}>"><{$vo.Goods_Name}></a></p>               
               </li>
              </volist>    
             </ul>
