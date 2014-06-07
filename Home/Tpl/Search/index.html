@@ -20,9 +20,11 @@
        <form action="__APP__/Search/sort" method="get">
 	   排序方式：
 	   <select name="sort">
-	   <option value="Goods_SellTime">按上架时间排序</option>
-       <option value="Goods_SellNum" selected>按销售量排序</option>
-       <option value="Goods_Price">按价格排序</option>
+	   	<option value="Goods_SellTime">按上架时间排序</option>
+       	<option value="Goods_SellNum" selected>按销售量排序</option>
+       	<option value="Goods_Price">按价格排序</option>
+        </select>
+         <input type="hidden" name="keywords" value="<{$keywords}>" />
 	   <input id="img" type="image" name="imageField" src="__PUBLIC__/images/bnt_go.gif" alt="go"/>				
        </form>
        </div>

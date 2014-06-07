@@ -17,17 +17,69 @@
   <div class="topbar2">
     <div class="add_fav"> <a onclick="" href="###">浮生若茶--名牌正品茶叶、茶礼商城！</a> </div>
     <div class="login-info"> <font>欢迎光临！&nbsp;&nbsp;</font> </div>
-    <div class="quick-menu2">
+    <div class="quick-menu">
       <ul>
-        <li><a title="我的帐户" href="__APP__/Order/query">我的帐户</a> </li>
         <li><a title="帮助中心" href="__PUBLIC__/help.htm" target="_blank">帮助中心</a> </li>
-        <li>欢迎你，<font style="color:#B10A04;"><?php echo ($username); ?></font></li>
-        <li><a href="__APP__/Public/logout">退出</a></li>
+        <li><a href="__APP__/Reg/reg">[免费注册]</a></li>
       </ul>
     </div>
   </div>
 </div>
+ <div id="userlogin">
+  <div id="topnav" class="topnav"><a href="#" class="signin"><span>登录</span></a> </div>
+  <fieldset id="signin_menu">
+    <form method="post" id="signin" action="__APP__/Public/doLogin">
+      <p>
+      <label for="username">用户名</label>
+      <input id="username" name="username" value="" title="username" tabindex="4" type="text">
+      </p>
+      <p>
+        <label for="password">密码</label>
+        <input id="password" name="password" value="" title="password" tabindex="5" type="password">
+      </p>
+      <p>
+        <label for="code">验证码</label>
+        <input id="code" type="text" style="width:70px;" class="text-input" name="code" required="required">
+      </p>
+      <div style="margin-left:90px; margin-top:-36px; width:100px;">
+        <p id="verify-code">
+          <img height=29 width=65 src="__APP__/Public/code" onclick='this.src=this.src+"?"+Math.random()'/>
+          <span id="log_code" class="code"></span>
+        </p>
+        <div class="clear"></div>
+      </div>
+          
 
+
+      <p class="remember">
+        <input id="signin_submit" value="登 录" tabindex="6" type="submit">
+        <!--<input id="remember" name="remember_me" value="1" tabindex="7" type="checkbox">
+        <label for="remember">记住密码</label>-->
+      </p>
+    </form>
+  </fieldset>
+</div>
+<script type="text/javascript">
+        $(document).ready(function() {
+
+            $(".signin").click(function(e) {          
+				e.preventDefault();
+                $("fieldset#signin_menu").toggle();
+				$(".signin").toggleClass("menu-open");
+            });
+			
+			$("fieldset#signin_menu").mouseup(function() {
+				return false
+			});
+			$(document).mouseup(function(e) {
+				if($(e.target).parent("a.signin").length==0) {
+					$(".signin").removeClass("menu-open");
+					$("fieldset#signin_menu").hide();
+				}
+			});			
+			
+        });
+</script>
 
 <div class="headermid">
   <div class="blank"></div>
@@ -61,14 +113,14 @@
       <div class="searchtags">
         <ul>
           <li>热门搜索:</li>
-          <li style="padding-left:5px;"><a href="__APP__/Search/search/name/谢裕大">谢裕大</a> </li>
-          <li style="padding-left:5px;"><a href="__APP__/Search/search/name/武夷星">武夷星</a></li>
-          <li style="padding-left:5px;"><a href="__APP__/Search/search/name/怡清源">怡清源</a></li>
-          <li style="padding-left:5px;"><a href="__APP__/Search/search/name/鑫基">鑫基</a></li>
-          <li style="padding-left:5px;"><a href="__APP__/Search/search/name/绿雪芽">绿雪芽</a></li>
-          <li style="padding-left:5px;"><a href="__APP__/Search/search/name/西湖龙井">西湖龙井</a></li>
-          <li style="padding-left:5px;"><a href="__APP__/Search/search/name/黑茶">黑茶</a></li>
-          <li style="padding-left:5px;"><a href="__APP__/Search/search/name/御牌">御牌</a></li>
+          <li style="padding-left:5px;"><a href="__APP__/Search/search/keywords/谢裕大">谢裕大</a> </li>
+          <li style="padding-left:5px;"><a href="__APP__/Search/search/keywords/武夷星">武夷星</a></li>
+          <li style="padding-left:5px;"><a href="__APP__/Search/search/keywords/怡清源">怡清源</a></li>
+          <li style="padding-left:5px;"><a href="__APP__/Search/search/keywords/鑫基">鑫基</a></li>
+          <li style="padding-left:5px;"><a href="__APP__/Search/search/keywords/绿雪芽">绿雪芽</a></li>
+          <li style="padding-left:5px;"><a href="__APP__/Search/search/keywords/西湖龙井">西湖龙井</a></li>
+          <li style="padding-left:5px;"><a href="__APP__/Search/search/keywords/黑茶">黑茶</a></li>
+          <li style="padding-left:5px;"><a href="__APP__/Search/search/keywords/御牌">御牌</a></li>
         </ul>
       </div>
     </div>
@@ -337,9 +389,11 @@
        <form action="__APP__/Search/sort" method="get">
 	   排序方式：
 	   <select name="sort">
-	   <option value="Goods_SellTime">按上架时间排序</option>
-       <option value="Goods_SellNum" selected>按销售量排序</option>
-       <option value="Goods_Price">按价格排序</option>
+	   	<option value="Goods_SellTime">按上架时间排序</option>
+       	<option value="Goods_SellNum" selected>按销售量排序</option>
+       	<option value="Goods_Price">按价格排序</option>
+        </select>
+         <input type="hidden" name="keywords" value="<?php echo ($keywords); ?>" />
 	   <input id="img" type="image" name="imageField" src="__PUBLIC__/images/bnt_go.gif" alt="go"/>				
        </form>
        </div>

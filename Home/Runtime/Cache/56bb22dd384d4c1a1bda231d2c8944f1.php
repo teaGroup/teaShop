@@ -111,19 +111,19 @@ ul li{
           <input name="imageField" type="submit" value="" class="go" style="cursor:pointer;">
         </form>
       </div>
-      <!--<div class="searchtags">
+      <div class="searchtags">
         <ul>
           <li>热门搜索:</li>
-          <li style="padding-left:5px;"><a href="###">有机</a> </li>
-          <li style="padding-left:5px;"><a href="###">黑玫瑰</a></li>
-          <li style="padding-left:5px;"><a href="###">袋泡茶</a></li>
-          <li style="padding-left:5px;"><a href="###">金花</a></li>
-          <li style="padding-left:5px;"><a href="###">龙润</a></li>
-          <li style="padding-left:5px;"><a href="###">西湖龙井</a></li>
-          <li style="padding-left:5px;"><a href="###">黑茶</a></li>
-          <li style="padding-left:5px;"><a href="###">木盒</a></li>
+          <li style="padding-left:5px;"><a href="__APP__/Search/search/keywords/谢裕大">谢裕大</a> </li>
+          <li style="padding-left:5px;"><a href="__APP__/Search/search/keywords/武夷星">武夷星</a></li>
+          <li style="padding-left:5px;"><a href="__APP__/Search/search/keywords/怡清源">怡清源</a></li>
+          <li style="padding-left:5px;"><a href="__APP__/Search/search/keywords/鑫基">鑫基</a></li>
+          <li style="padding-left:5px;"><a href="__APP__/Search/search/keywords/绿雪芽">绿雪芽</a></li>
+          <li style="padding-left:5px;"><a href="__APP__/Search/search/keywords/西湖龙井">西湖龙井</a></li>
+          <li style="padding-left:5px;"><a href="__APP__/Search/search/keywords/黑茶">黑茶</a></li>
+          <li style="padding-left:5px;"><a href="__APP__/Search/search/keywords/御牌">御牌</a></li>
         </ul>
-      </div>-->
+      </div>
     </div>
   </div>
   <div class="blank"></div>

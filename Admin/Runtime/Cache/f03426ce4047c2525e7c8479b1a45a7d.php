@@ -111,7 +111,7 @@
 				
 				<div class="content-box-header">
 					
-					<h3>Content box</h3>
+					<h3>管理业务管理员</h3>
 					
 					<div class="clear"></div>
 					
@@ -127,12 +127,9 @@
 							
 							<thead>
 								<tr>
-								   <th ><input class="check-all" type="checkbox" /></th>
+								   <th ></th>
 							      <th>昵称</th>
-								   <th>密码</th>
-								   <th>权限</th>
-								   <th>角色</th>
-		
+									 <th>操作</th>
 								</tr>
 								
 							</thead>
@@ -140,14 +137,7 @@
 							<tfoot>
 								<tr>
 									<td colspan="6">
-										<div class="bulk-actions align-left">
-											<select name="dropdown">
-												<option value="option1">Choose an action...</option>
-												<option value="option2">Edit</option>
-												<option value="option3">Delete</option>
-											</select>
-											<a class="button" href="#">Apply to selected</a>
-										</div>
+
 										
 						               <div id="div" align="center"><div id="black"><?php echo ($show); ?></div></div>
 										<div class="clear"></div>
@@ -160,14 +150,10 @@
 									
                        <?php if(is_array($arr)): $i = 0; $__LIST__ = $arr;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><input type="hidden" name="id" value="<?php echo ($data["pk_Admin_Id"]); ?>"/>
               <tr>
-                   <td><input type="checkbox" /></td>
-                  <td font_color="black"><input type="text" value="<?php echo ($vo["Admin_Name"]); ?>" name="admin_name"/></td>
-                  <td font_color="black"><input type="text" value="<?php echo ($vo["Admin_Pwd"]); ?>" name="admin_pwd"/></td>
-                  <td font_color="black"><input type="text" value="<?php echo ($vo["Authority_Name"]); ?>" name="admin_authority"/></td>
-                  <td font_color="black"><input type="text" value="<?php echo ($vo["Role_Name"]); ?>" name="admin_role"/></td>
-									<td width="84">
+                   <td></td>
+                  <td font_color="black"><?php echo ($vo["Admin_Name"]); ?></td>
+									<td>
 										<!-- Icons -->
-										 <a href="__APP__/ManageAdmin/update/id/<?php echo ($vo["pk_Admin_Id"]); ?>" title="Edit"><img src="__PUBLIC__/images/icons/pencil.png" alt="Edit" /></a>
 								    <a href="__APP__/ManageAdmin/del/id/<?php echo ($vo["pk_Admin_Id"]); ?>" title="Delete"><img src="__PUBLIC__/images/icons/cross.png" alt="Delete" /></a></td>
               </tr><?php endforeach; endif; else: echo "" ;endif; ?>
 							

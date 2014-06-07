@@ -42,7 +42,7 @@
 								<tr>
 								   <th ></th>
 							      <th>昵称</th>
-		
+									 <th>操作</th>
 								</tr>
 								
 							</thead>
@@ -65,10 +65,9 @@
                        <input type="hidden" name="id" value="<{$data.pk_Admin_Id}>"/>
               <tr>
                    <td></td>
-                  <td font_color="black"><input type="text" value="<{$vo.Admin_Name}>" name="admin_name"/></td>
+                  <td font_color="black"><{$vo.Admin_Name}></td>
 									<td>
 										<!-- Icons -->
-										 <a href="__APP__/ManageAdmin/update/id/<{$vo.pk_Admin_Id}>" title="Edit"><img src="__PUBLIC__/images/icons/pencil.png" alt="Edit" /></a>
 								    <a href="__APP__/ManageAdmin/del/id/<{$vo.pk_Admin_Id}>" title="Delete"><img src="__PUBLIC__/images/icons/cross.png" alt="Delete" /></a></td>
               </tr>
          				</volist>

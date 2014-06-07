@@ -88,13 +88,13 @@ class TestAction extends Action{
 		}
 
 		public function insert(){
-		     $name=$_POST['name'];
-		     $sell=$_POST['sell'];
-		     $num=$_POST['num'];
+		     $name='桂花香凤凰单丛特级480克铁桶装';
+		     //$sell='';
+		     $num=100;
 		     $sellTime=date('Y-m-d H:i:s');
-		     $price=$_POST['price'];
-		     $rewardCred=$_POST['rewardCred'];
-			$str=$_POST['editor1'];
+		     $price=100;
+		     //$rewardCred='';
+			//$str='<html><body>abcdefg</body></html>';
 			if(!empty($str)){
 			      $str=preg_replace("/(\!.*?)>/si",'',$str); //过滤DOCTYPE
 				 $str=preg_replace("/(\/?html.*?)>/si",'',$str); //过滤html标签
@@ -103,9 +103,9 @@ class TestAction extends Action{
 				 $intro=preg_replace("/(\/?body.*?)>/si",'',$str); //过滤body标签
 				 
                }
-		     $netContent=$_POST['netContent'];
-		     $classifi=$_POST['classifi'];
-		     $unit=$_POST['unit'];
+		     //$netContent=100;
+		     //$classifi='红茶';
+		     //$unit='克';
 			$model=M("Goodsinfo");
 			if(!empty($classifi)){
 			    $m=M("Classifi");
@@ -126,16 +126,7 @@ class TestAction extends Action{
 			if(!empty($intro)){
 			    $model->Goods_Intro=$intro;
 			}
-			import('ORG.Net.UploadFile');
-               $upload = new UploadFile();// 实例化上传类
-               $upload->maxSize  = 3145728 ;// 设置附件上传大小
-               $upload->allowExts  = array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
-               $upload->savePath =  './Uploads/';// 设置附件上传目录
-			if(!$upload->upload()) {// 上传错误提示错误信息
-                      $this->error($upload->getErrorMsg());
-               }else{// 上传成功 获取上传文件信息
-                      $info =  $upload->getUploadFileInfo();
-               }
+
 			if(!empty($info)){
 			     $model->Goods_img='__ROOT__/Uploads/'.$info[0]['savename'];
 				$model->Goods_img1='__ROOT__/Uploads/'.$info[1]['savename'];
@@ -150,10 +141,66 @@ class TestAction extends Action{
 			}
 			$count=$model->add();
 			if($count>0){
-			    $this->success("商品信息添加成功！","index");
+			    echo "商品信息添加成功！";
 			}else{
-			    $this->error("商品信息添加失败！");
+			    echo "商品信息添加失败！";
 			}
+		}
+
+		public function update(){
+		     $id=35;
+		     //$name='【日川】桂花香凤凰单丛特级480克铁桶装2';
+		     //$sell=1;
+		     //$num=100;
+		     //$price=250;
+		     //$rewardCred=100;
+		     //$str='<html><body>abcdefg</body></html>';
+			if(!empty($str)){
+			      $str=preg_replace("/(\!.*?)>/si",'',$str); //过滤DOCTYPE
+				 $str=preg_replace("/(\/?html.*?)>/si",'',$str); //过滤html标签
+				 $str=preg_replace("/(\/?head.*?)>/si",'',$str); //过滤head标签
+				 $str=preg_replace("/(\/?meta.*?)>/si",'',$str); //过滤meta标签
+				 $intro=preg_replace("/(\/?body.*?)>/si",'',$str); //过滤body标签	 
+               }
+		     //$netContent=100;
+		     //$classifi='红茶';
+		     //$unit='克';
+		     $m=M("Goodsinfo");
+			if(!empty($name)){
+			    $data['Goods_Name']=$name;
+			}
+			if(!empty($price)){
+			    $data['Goods_Price']=$price;
+			}
+			if(!empty($classifi)){
+			    $model=M("Classifi");
+			    $class['Classifi_Name']=$classifi;
+			    $arr=$model->where($class)->select();
+			    $data['fk_Classifi_Goods_Id']=$arr[0]['pk_Classifi_Id'];
+			}
+			if(!empty($sell)){
+			    $data['Goods_IsSell']=$sell;
+			}
+			if(!empty($num)){
+			    $data['Goods_Num']=$num;
+			}
+			if(!empty($rewardCred)){
+			    $data['Goods_RewardCred']=$rewardCred;
+			}
+			if(!empty($netContent)){
+			    $data['Goods_NetContent']=$netContent;
+			}
+			if(!empty($unit)){
+			    $data['Goods_Unit']=$unit;
+			}
+			    $data['Goods_Intro']=$intro;
+			$count=$m->where('pk_GoodsInfo_Id='.$id)->save($data);
+			if($count>0){
+			    echo "商品信息更新成功！";
+			}else{
+			    echo "商品信息更新失败！";
+			}
+			  
 		}
 }
 ?>

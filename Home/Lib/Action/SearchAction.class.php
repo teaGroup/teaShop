@@ -35,6 +35,7 @@
 			$m=M('goodsinfo');
 			 import("ORG.Util.Page");//导入分页类
 		     $keywords = $_GET['keywords'];
+
 			if(isset($keywords)&&$keywords!=null){
 			 $where['Goods_Name']=array('like',"%{$keywords}%");
 			 $count=$m->where($where)->count();//获取数据库中存在的总数
@@ -42,15 +43,9 @@
 		     $show=$page->show();//分页显示输出
 		     $arr=$m->where($where)->select();		 
 			}
-            $searchname=$_GET['name'];
-            if(isset($searchname)&&$searchname!=null){
-			$where['Goods_Name']=array('like',"%{$searchname}%");
-			$count=$m->where($where)->count();//获取数据库中存在的总数
-		    $page=new Page($count,15);//实例化分页类 传入总记录数和每页显示的记录数
-		    $show=$page->show();//分页显示输出
-		    $arr=$m->where($where)->select();	
-			}
+            
 			$this->assign('name',$name);
+			$this->assign('keywords',$keywords);
 			$this->assign("show",$show);
 			$this->assign('data',$arr);
 			$this->display('index');	
@@ -75,14 +70,17 @@
 		 
 			$sort=$_GET['sort'];
 			$keywords=$_GET['keywords'];
+
 			$m=M('goodsinfo');
 			import("ORG.Util.Page");//导入分页类
-		    $data['sort']=array('like',"%".$keywords."%");
+		    $data['Goods_Name']=array('like',"%".$keywords."%");
 			$arr=$m->where($data)->order($sort)->select();
+
 		    $count=$m->where($data)->count();//获取数据库中存在的总数
 		    $page=new Page($count,15);//实例化分页类 传入总记录数和每页显示的记录数
 		    $show=$page->show();//分页显示输出
 			$this->assign("data",$arr);
+			$this->assign("keywords",$keywords);
 			$this->assign("show",$show);
 			$this->display("index");
 		}

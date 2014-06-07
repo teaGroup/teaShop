@@ -45,7 +45,7 @@
 		       $this->error("数据删除失败！");
 		   }	   
 		}	
-		public function update(){
+		/*public function update(){
 			$id=$_GET['id'];
 		    $name=$_POST["admin_name"];
 			$pwd=$_POST["admin_pwd"];
@@ -64,6 +64,6 @@
 			}else{
 			    $this->error("数据修改失败！");
 			}
-	    }	
+	    }*/	
 	}
 ?>
